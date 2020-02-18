@@ -16,10 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-
- 
-        
-        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .white
         
@@ -27,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let viewController = SplashViewController()
         viewController.modalTransitionStyle = .crossDissolve
 //        let navigationController = UINavigationController(rootViewController: viewController)
-   
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
         
@@ -35,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let delay: TimeInterval = 1.75
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-            let viewController = ViewController()
+            let viewController = WelcomeViewController()
             viewController.modalTransitionStyle = .crossDissolve
             let navigationController = UINavigationController(rootViewController: viewController)
             self.window?.rootViewController = navigationController

@@ -75,6 +75,7 @@ enum TTNorms {
     case bold
     case medium
     case regular
+    case extraBold
 }
 
 
@@ -86,6 +87,9 @@ extension UIFont {
         var fontName: String
         switch type {
             
+        case .extraBold:
+            fontName = "TTNorms-ExtraBold"
+            break
         case .bold:
             fontName = "TTNorms-Bold"
             break

@@ -23,7 +23,6 @@
 		137ADD1723FC09A300237368 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD1623FC09A300237368 /* NetworkDataFetcher.swift */; };
 		137ADD1923FC09B600237368 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD1823FC09B600237368 /* DataFetcherService.swift */; };
 		137ADD1C23FC09F600237368 /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD1B23FC09F600237368 /* StoryboardInitializable.swift */; };
-		137ADD1E23FC0A8200237368 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD1D23FC0A8200237368 /* ViewController.swift */; };
 		137ADD3023FC0B0500237368 /* TTNorms-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 137ADD2023FC0B0500237368 /* TTNorms-Thin.ttf */; };
 		137ADD3123FC0B0500237368 /* TTNorms-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 137ADD2123FC0B0500237368 /* TTNorms-BoldItalic.ttf */; };
 		137ADD3223FC0B0500237368 /* TTNorms-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 137ADD2223FC0B0500237368 /* TTNorms-Bold.ttf */; };
@@ -41,6 +40,8 @@
 		137ADD3E23FC0B0500237368 /* TTNorms-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 137ADD2E23FC0B0500237368 /* TTNorms-Heavy.ttf */; };
 		137ADD3F23FC0B0500237368 /* TTNorms-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 137ADD2F23FC0B0500237368 /* TTNorms-Italic.ttf */; };
 		137ADD4223FC147800237368 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD4123FC147800237368 /* SplashViewController.swift */; };
+		137ADD4723FC25B600237368 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD4623FC25B600237368 /* WelcomeViewController.swift */; };
+		137ADD4923FC296300237368 /* UILabel + lineSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD4823FC296300237368 /* UILabel + lineSpacing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +63,6 @@
 		137ADD1623FC09A300237368 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		137ADD1823FC09B600237368 /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
 		137ADD1B23FC09F600237368 /* StoryboardInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
-		137ADD1D23FC0A8200237368 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		137ADD2023FC0B0500237368 /* TTNorms-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Thin.ttf"; sourceTree = "<group>"; };
 		137ADD2123FC0B0500237368 /* TTNorms-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-BoldItalic.ttf"; sourceTree = "<group>"; };
 		137ADD2223FC0B0500237368 /* TTNorms-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Bold.ttf"; sourceTree = "<group>"; };
@@ -80,6 +80,8 @@
 		137ADD2E23FC0B0500237368 /* TTNorms-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Heavy.ttf"; sourceTree = "<group>"; };
 		137ADD2F23FC0B0500237368 /* TTNorms-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Italic.ttf"; sourceTree = "<group>"; };
 		137ADD4123FC147800237368 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		137ADD4623FC25B600237368 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		137ADD4823FC296300237368 /* UILabel + lineSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + lineSpacing.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				137ADD4023FC142100237368 /* Splash */,
-				137ADD1D23FC0A8200237368 /* ViewController.swift */,
+				137ADD4523FC259A00237368 /* Welcome */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				137ADD0523FC081700237368 /* UILabel + Theme.swift */,
+				137ADD4823FC296300237368 /* UILabel + lineSpacing.swift */,
 			);
 			path = UILabel;
 			sourceTree = "<group>";
@@ -271,6 +274,14 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		137ADD4523FC259A00237368 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				137ADD4623FC25B600237368 /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,6 +373,7 @@
 				137ADD1C23FC09F600237368 /* StoryboardInitializable.swift in Sources */,
 				137ADD1123FC095200237368 /* PasswordTextFieldView.swift in Sources */,
 				137ADD0A23FC085700237368 /* UIButton + Theme.swift in Sources */,
+				137ADD4723FC25B600237368 /* WelcomeViewController.swift in Sources */,
 				137ADD0F23FC093E00237368 /* LoginTextFieldView.swift in Sources */,
 				137ADD1923FC09B600237368 /* DataFetcherService.swift in Sources */,
 				137ADCF823FC076200237368 /* Constraints.swift in Sources */,
@@ -370,8 +382,8 @@
 				137ADD0823FC082A00237368 /* UIColor + hexValue.swift in Sources */,
 				137ADD0623FC081700237368 /* UILabel + Theme.swift in Sources */,
 				137ADD1523FC099000237368 /* NetworkService.swift in Sources */,
-				137ADD1E23FC0A8200237368 /* ViewController.swift in Sources */,
 				137ADD0223FC07F500237368 /* UIColor + ThemeColors.swift in Sources */,
+				137ADD4923FC296300237368 /* UILabel + lineSpacing.swift in Sources */,
 				137ADD4223FC147800237368 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
