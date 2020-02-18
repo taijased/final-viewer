@@ -30,15 +30,18 @@ final class ViewController: UIViewController {
     
     
     fileprivate func setupUI() {
-        view.backgroundColor = .random()
         
+        self.view.alpha = 0
+        view.backgroundColor = .random()
         view.addSubview(infoLabel)
         infoLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         infoLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         infoLabel.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         infoLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        
+        UIView.animate(withDuration: 0.25) {
+            self.view.alpha = 1
+        }
     }
     
     

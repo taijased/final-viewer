@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		137ADCE123FC04F700237368 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADCE023FC04F700237368 /* AppDelegate.swift */; };
-		137ADCE323FC04F700237368 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADCE223FC04F700237368 /* SceneDelegate.swift */; };
 		137ADCEA23FC04F900237368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 137ADCE923FC04F900237368 /* Assets.xcassets */; };
 		137ADCED23FC04F900237368 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 137ADCEB23FC04F900237368 /* LaunchScreen.storyboard */; };
 		137ADCF823FC076200237368 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADCF723FC076200237368 /* Constraints.swift */; };
@@ -41,12 +40,12 @@
 		137ADD3D23FC0B0500237368 /* TTNorms-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 137ADD2D23FC0B0500237368 /* TTNorms-Light.ttf */; };
 		137ADD3E23FC0B0500237368 /* TTNorms-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 137ADD2E23FC0B0500237368 /* TTNorms-Heavy.ttf */; };
 		137ADD3F23FC0B0500237368 /* TTNorms-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 137ADD2F23FC0B0500237368 /* TTNorms-Italic.ttf */; };
+		137ADD4223FC147800237368 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD4123FC147800237368 /* SplashViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		137ADCDD23FC04F700237368 /* swift-starter-kit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-starter-kit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		137ADCDD23FC04F700237368 /* viewer-final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "viewer-final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		137ADCE023FC04F700237368 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		137ADCE223FC04F700237368 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		137ADCE923FC04F900237368 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		137ADCEC23FC04F900237368 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		137ADCEE23FC04F900237368 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,6 +79,7 @@
 		137ADD2D23FC0B0500237368 /* TTNorms-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Light.ttf"; sourceTree = "<group>"; };
 		137ADD2E23FC0B0500237368 /* TTNorms-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Heavy.ttf"; sourceTree = "<group>"; };
 		137ADD2F23FC0B0500237368 /* TTNorms-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Italic.ttf"; sourceTree = "<group>"; };
+		137ADD4123FC147800237368 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +96,7 @@
 		137ADCD423FC04F700237368 = {
 			isa = PBXGroup;
 			children = (
-				137ADCDF23FC04F700237368 /* swift-starter-kit */,
+				137ADCDF23FC04F700237368 /* viewer-final */,
 				137ADCDE23FC04F700237368 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,16 +104,15 @@
 		137ADCDE23FC04F700237368 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				137ADCDD23FC04F700237368 /* swift-starter-kit.app */,
+				137ADCDD23FC04F700237368 /* viewer-final.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		137ADCDF23FC04F700237368 /* swift-starter-kit */ = {
+		137ADCDF23FC04F700237368 /* viewer-final */ = {
 			isa = PBXGroup;
 			children = (
 				137ADCE023FC04F700237368 /* AppDelegate.swift */,
-				137ADCE223FC04F700237368 /* SceneDelegate.swift */,
 				137ADD1A23FC09E600237368 /* Library */,
 				137ADCF523FC073000237368 /* Screens */,
 				137ADD1223FC097300237368 /* Services */,
@@ -121,7 +120,7 @@
 				137ADCF623FC074200237368 /* Helpers */,
 				137ADCF423FC064700237368 /* Supporting Files */,
 			);
-			path = "swift-starter-kit";
+			path = "viewer-final";
 			sourceTree = "<group>";
 		};
 		137ADCF423FC064700237368 /* Supporting Files */ = {
@@ -137,6 +136,7 @@
 		137ADCF523FC073000237368 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				137ADD4023FC142100237368 /* Splash */,
 				137ADD1D23FC0A8200237368 /* ViewController.swift */,
 			);
 			path = Screens;
@@ -263,12 +263,20 @@
 			path = ttnorms;
 			sourceTree = "<group>";
 		};
+		137ADD4023FC142100237368 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				137ADD4123FC147800237368 /* SplashViewController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		137ADCDC23FC04F700237368 /* swift-starter-kit */ = {
+		137ADCDC23FC04F700237368 /* viewer-final */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 137ADCF123FC04F900237368 /* Build configuration list for PBXNativeTarget "swift-starter-kit" */;
+			buildConfigurationList = 137ADCF123FC04F900237368 /* Build configuration list for PBXNativeTarget "viewer-final" */;
 			buildPhases = (
 				137ADCD923FC04F700237368 /* Sources */,
 				137ADCDA23FC04F700237368 /* Frameworks */,
@@ -278,9 +286,9 @@
 			);
 			dependencies = (
 			);
-			name = "swift-starter-kit";
+			name = "viewer-final";
 			productName = "swift-starter-kit";
-			productReference = 137ADCDD23FC04F700237368 /* swift-starter-kit.app */;
+			productReference = 137ADCDD23FC04F700237368 /* viewer-final.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -298,7 +306,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 137ADCD823FC04F700237368 /* Build configuration list for PBXProject "swift-starter-kit" */;
+			buildConfigurationList = 137ADCD823FC04F700237368 /* Build configuration list for PBXProject "viewer-final" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -311,7 +319,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				137ADCDC23FC04F700237368 /* swift-starter-kit */,
+				137ADCDC23FC04F700237368 /* viewer-final */,
 			);
 		};
 /* End PBXProject section */
@@ -359,12 +367,12 @@
 				137ADCF823FC076200237368 /* Constraints.swift in Sources */,
 				137ADCE123FC04F700237368 /* AppDelegate.swift in Sources */,
 				137ADCFA23FC077700237368 /* WebImageView.swift in Sources */,
-				137ADCE323FC04F700237368 /* SceneDelegate.swift in Sources */,
 				137ADD0823FC082A00237368 /* UIColor + hexValue.swift in Sources */,
 				137ADD0623FC081700237368 /* UILabel + Theme.swift in Sources */,
 				137ADD1523FC099000237368 /* NetworkService.swift in Sources */,
 				137ADD1E23FC0A8200237368 /* ViewController.swift in Sources */,
 				137ADD0223FC07F500237368 /* UIColor + ThemeColors.swift in Sources */,
+				137ADD4223FC147800237368 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,12 +510,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8F3CLJ592;
-				INFOPLIST_FILE = "swift-starter-kit/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "viewer-final/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "taijased.swift-starter-kit";
+				PRODUCT_BUNDLE_IDENTIFIER = "taijased.viewer-final";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -520,12 +528,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8F3CLJ592;
-				INFOPLIST_FILE = "swift-starter-kit/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "viewer-final/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "taijased.swift-starter-kit";
+				PRODUCT_BUNDLE_IDENTIFIER = "taijased.viewer-final";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -535,7 +543,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		137ADCD823FC04F700237368 /* Build configuration list for PBXProject "swift-starter-kit" */ = {
+		137ADCD823FC04F700237368 /* Build configuration list for PBXProject "viewer-final" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				137ADCEF23FC04F900237368 /* Debug */,
@@ -544,7 +552,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		137ADCF123FC04F900237368 /* Build configuration list for PBXNativeTarget "swift-starter-kit" */ = {
+		137ADCF123FC04F900237368 /* Build configuration list for PBXNativeTarget "viewer-final" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				137ADCF223FC04F900237368 /* Debug */,

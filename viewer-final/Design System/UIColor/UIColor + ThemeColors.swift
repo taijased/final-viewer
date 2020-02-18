@@ -34,7 +34,6 @@ protocol SocialColor {
     static var vk: UIColor { get }
     static var twitter: UIColor { get }
     static var apple: UIColor { get }
-    
 }
 
 
@@ -67,7 +66,7 @@ protocol PrimaryColor {
 extension UIColor {
     
     enum Primary: PrimaryColor {
-        static let primary = UIColor(hexValue: "#00D6D8", alpha: 1.0)!
+        static let primary = UIColor(hexValue: "#4737D6", alpha: 1.0)!
         static let light = UIColor(hexValue: "#E5FBFB", alpha: 1.0)!
     }
     
