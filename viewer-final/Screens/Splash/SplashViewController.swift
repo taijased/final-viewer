@@ -10,18 +10,13 @@ import UIKit
 
 final class SplashViewController: UIViewController {
     
-    
-    
-    
-    let logoView: UIImageView = {
-        let view  = UIImageView()
+
+    fileprivate let logoView: ARQIconView = {
+        let view = ARQIconView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .clear
-        view.image = UIImage(named: "arq-viewer")
+        view.fillColor = .white
         return view
     }()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,9 +27,13 @@ final class SplashViewController: UIViewController {
     fileprivate func setupUI() {
         view.backgroundColor = UIColor.Primary.primary
         
+        
+        
         view.addSubview(logoView)
         logoView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         logoView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        logoView.heightAnchor.constraint(equalToConstant: 160).isActive = true
+        logoView.widthAnchor.constraint(equalToConstant: 220).isActive = true
         
         
         UIView.animate(withDuration: 1.5, animations: {
@@ -63,3 +62,6 @@ final class SplashViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 }
+
+
+
