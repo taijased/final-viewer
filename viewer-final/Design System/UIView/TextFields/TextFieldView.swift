@@ -29,18 +29,11 @@ final class TextFieldView: UIView {
     
     
     fileprivate let iconView: UIButton = {
-        
-        
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "done"), for: .normal)
-        button.backgroundColor = UIColor.Green.primary
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        button.layer.shadowRadius = 1.0
-        button.layer.shadowOpacity = 0.5
-        button.layer.cornerRadius = 20
         button.layer.masksToBounds = false
+        button.alpha = 0
         return button
     }()
     
