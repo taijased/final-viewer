@@ -20,21 +20,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .white
         
         
-        let viewController = SplashViewController()
+        let viewController = AuthViewController()
         viewController.modalTransitionStyle = .crossDissolve
-//        let navigationController = UINavigationController(rootViewController: viewController)
-        window?.rootViewController = viewController
+        let navigationController = UINavigationController(rootViewController: viewController)
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
         
         
-        let delay: TimeInterval = 1.75
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-            let viewController = WelcomeViewController()
-            viewController.modalTransitionStyle = .crossDissolve
-            let navigationController = UINavigationController(rootViewController: viewController)
-            self.window?.rootViewController = navigationController
-        }
+//        let delay: TimeInterval = 1.75
+//        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+//            let viewController = AuthViewController()
+//            viewController.modalTransitionStyle = .crossDissolve
+//            let navigationController = UINavigationController(rootViewController: viewController)
+//            self.window?.rootViewController = navigationController
+//        }
         
         return true
     }

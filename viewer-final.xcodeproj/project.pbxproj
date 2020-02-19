@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130B97F623FD27FD00DE6C60 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130B97F523FD27FD00DE6C60 /* TextFieldViewModel.swift */; };
+		130B97F823FD282700DE6C60 /* TextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130B97F723FD282700DE6C60 /* TextFieldModel.swift */; };
+		130B97FA23FD290700DE6C60 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130B97F923FD290700DE6C60 /* TextFieldView.swift */; };
 		137ADCE123FC04F700237368 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADCE023FC04F700237368 /* AppDelegate.swift */; };
 		137ADCEA23FC04F900237368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 137ADCE923FC04F900237368 /* Assets.xcassets */; };
 		137ADCED23FC04F900237368 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 137ADCEB23FC04F900237368 /* LaunchScreen.storyboard */; };
@@ -17,8 +20,6 @@
 		137ADD0823FC082A00237368 /* UIColor + hexValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD0723FC082A00237368 /* UIColor + hexValue.swift */; };
 		137ADD0A23FC085700237368 /* UIButton + Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD0923FC085700237368 /* UIButton + Theme.swift */; };
 		137ADD0D23FC092400237368 /* UIButton + Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD0C23FC092400237368 /* UIButton + Custom.swift */; };
-		137ADD0F23FC093E00237368 /* LoginTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD0E23FC093E00237368 /* LoginTextFieldView.swift */; };
-		137ADD1123FC095200237368 /* PasswordTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD1023FC095200237368 /* PasswordTextFieldView.swift */; };
 		137ADD1523FC099000237368 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD1423FC099000237368 /* NetworkService.swift */; };
 		137ADD1723FC09A300237368 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD1623FC09A300237368 /* NetworkDataFetcher.swift */; };
 		137ADD1923FC09B600237368 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD1823FC09B600237368 /* DataFetcherService.swift */; };
@@ -44,9 +45,16 @@
 		137ADD4923FC296300237368 /* UILabel + lineSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD4823FC296300237368 /* UILabel + lineSpacing.swift */; };
 		137ADD4C23FC303800237368 /* ARQLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD4B23FC303800237368 /* ARQLogo.swift */; };
 		137ADD5123FC328E00237368 /* ARQIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD5023FC328E00237368 /* ARQIconView.swift */; };
+		137ADD5723FC36C600237368 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD5623FC36C600237368 /* AuthViewController.swift */; };
+		137ADD5923FC36D300237368 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD5823FC36D300237368 /* AuthViewModel.swift */; };
+		137ADD5C23FC371000237368 /* AuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD5B23FC371000237368 /* AuthData.swift */; };
+		137ADD6123FC3E4600237368 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD6023FC3E4600237368 /* UIView+Border.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		130B97F523FD27FD00DE6C60 /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
+		130B97F723FD282700DE6C60 /* TextFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModel.swift; sourceTree = "<group>"; };
+		130B97F923FD290700DE6C60 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		137ADCDD23FC04F700237368 /* viewer-final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "viewer-final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		137ADCE023FC04F700237368 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		137ADCE923FC04F900237368 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,8 +67,6 @@
 		137ADD0723FC082A00237368 /* UIColor + hexValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + hexValue.swift"; sourceTree = "<group>"; };
 		137ADD0923FC085700237368 /* UIButton + Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Theme.swift"; sourceTree = "<group>"; };
 		137ADD0C23FC092400237368 /* UIButton + Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Custom.swift"; sourceTree = "<group>"; };
-		137ADD0E23FC093E00237368 /* LoginTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFieldView.swift; sourceTree = "<group>"; };
-		137ADD1023FC095200237368 /* PasswordTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextFieldView.swift; sourceTree = "<group>"; };
 		137ADD1423FC099000237368 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		137ADD1623FC09A300237368 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		137ADD1823FC09B600237368 /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
@@ -86,6 +92,10 @@
 		137ADD4823FC296300237368 /* UILabel + lineSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + lineSpacing.swift"; sourceTree = "<group>"; };
 		137ADD4B23FC303800237368 /* ARQLogo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARQLogo.swift; sourceTree = "<group>"; };
 		137ADD5023FC328E00237368 /* ARQIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARQIconView.swift; sourceTree = "<group>"; };
+		137ADD5623FC36C600237368 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		137ADD5823FC36D300237368 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		137ADD5B23FC371000237368 /* AuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthData.swift; sourceTree = "<group>"; };
+		137ADD6023FC3E4600237368 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +220,7 @@
 			children = (
 				137ADD4F23FC328100237368 /* icons */,
 				137ADD0B23FC090A00237368 /* TextFields */,
+				137ADD6023FC3E4600237368 /* UIView+Border.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -217,8 +228,9 @@
 		137ADD0B23FC090A00237368 /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
-				137ADD0E23FC093E00237368 /* LoginTextFieldView.swift */,
-				137ADD1023FC095200237368 /* PasswordTextFieldView.swift */,
+				130B97F723FD282700DE6C60 /* TextFieldModel.swift */,
+				130B97F923FD290700DE6C60 /* TextFieldView.swift */,
+				130B97F523FD27FD00DE6C60 /* TextFieldViewModel.swift */,
 			);
 			path = TextFields;
 			sourceTree = "<group>";
@@ -318,6 +330,7 @@
 		137ADD5323FC366400237368 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				137ADD5823FC36D300237368 /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -325,6 +338,7 @@
 		137ADD5423FC366800237368 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				137ADD5623FC36C600237368 /* AuthViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -332,6 +346,7 @@
 		137ADD5523FC366B00237368 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				137ADD5B23FC371000237368 /* AuthData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -425,19 +440,24 @@
 				137ADD1723FC09A300237368 /* NetworkDataFetcher.swift in Sources */,
 				137ADD0D23FC092400237368 /* UIButton + Custom.swift in Sources */,
 				137ADD1C23FC09F600237368 /* StoryboardInitializable.swift in Sources */,
-				137ADD1123FC095200237368 /* PasswordTextFieldView.swift in Sources */,
+				137ADD5C23FC371000237368 /* AuthData.swift in Sources */,
+				137ADD6123FC3E4600237368 /* UIView+Border.swift in Sources */,
 				137ADD0A23FC085700237368 /* UIButton + Theme.swift in Sources */,
 				137ADD4723FC25B600237368 /* WelcomeViewController.swift in Sources */,
-				137ADD0F23FC093E00237368 /* LoginTextFieldView.swift in Sources */,
+				130B97F623FD27FD00DE6C60 /* TextFieldViewModel.swift in Sources */,
+				130B97F823FD282700DE6C60 /* TextFieldModel.swift in Sources */,
 				137ADD4C23FC303800237368 /* ARQLogo.swift in Sources */,
+				130B97FA23FD290700DE6C60 /* TextFieldView.swift in Sources */,
 				137ADD1923FC09B600237368 /* DataFetcherService.swift in Sources */,
 				137ADCF823FC076200237368 /* Constraints.swift in Sources */,
 				137ADCE123FC04F700237368 /* AppDelegate.swift in Sources */,
 				137ADCFA23FC077700237368 /* WebImageView.swift in Sources */,
+				137ADD5723FC36C600237368 /* AuthViewController.swift in Sources */,
 				137ADD0823FC082A00237368 /* UIColor + hexValue.swift in Sources */,
 				137ADD0623FC081700237368 /* UILabel + Theme.swift in Sources */,
 				137ADD1523FC099000237368 /* NetworkService.swift in Sources */,
 				137ADD5123FC328E00237368 /* ARQIconView.swift in Sources */,
+				137ADD5923FC36D300237368 /* AuthViewModel.swift in Sources */,
 				137ADD0223FC07F500237368 /* UIColor + ThemeColors.swift in Sources */,
 				137ADD4923FC296300237368 /* UILabel + lineSpacing.swift in Sources */,
 				137ADD4223FC147800237368 /* SplashViewController.swift in Sources */,

@@ -17,7 +17,7 @@ extension UIButton {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: imageName), for: .normal)
-        button.backgroundColor = UIColor.Yellow.primary
+        button.backgroundColor = UIColor.Green.primary
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         button.layer.shadowRadius = 1.0
