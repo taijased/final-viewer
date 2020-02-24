@@ -59,6 +59,15 @@
 		137ADD5923FC36D300237368 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD5823FC36D300237368 /* AuthViewModel.swift */; };
 		137ADD5C23FC371000237368 /* AuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD5B23FC371000237368 /* AuthData.swift */; };
 		137ADD6123FC3E4600237368 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD6023FC3E4600237368 /* UIView+Border.swift */; };
+		13BAE7F42403FDDE008A44E0 /* SelectCloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE7F32403FDDE008A44E0 /* SelectCloudViewController.swift */; };
+		13BAE7F62403FDEC008A44E0 /* SelectCloudVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE7F52403FDEC008A44E0 /* SelectCloudVM.swift */; };
+		13BAE7F82404026C008A44E0 /* SelectCloudTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE7F72404026C008A44E0 /* SelectCloudTableView.swift */; };
+		13BAE7FC24040327008A44E0 /* SelectCloudTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE7FB24040327008A44E0 /* SelectCloudTableViewCell.swift */; };
+		13BAE7FE240403B2008A44E0 /* SelectCloudTableViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE7FD240403B2008A44E0 /* SelectCloudTableViewVM.swift */; };
+		13BAE80024040401008A44E0 /* SelectCloudTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE7FF24040401008A44E0 /* SelectCloudTableViewCellVM.swift */; };
+		13BAE802240404F9008A44E0 /* SelectCloudHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE801240404F9008A44E0 /* SelectCloudHeaderView.swift */; };
+		13BAE806240408ED008A44E0 /* SelectFilesDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE805240408ED008A44E0 /* SelectFilesDescriptionView.swift */; };
+		13BAE80824040E05008A44E0 /* SelectCloudModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE80724040E05008A44E0 /* SelectCloudModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +125,15 @@
 		137ADD5823FC36D300237368 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		137ADD5B23FC371000237368 /* AuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthData.swift; sourceTree = "<group>"; };
 		137ADD6023FC3E4600237368 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
+		13BAE7F32403FDDE008A44E0 /* SelectCloudViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCloudViewController.swift; sourceTree = "<group>"; };
+		13BAE7F52403FDEC008A44E0 /* SelectCloudVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCloudVM.swift; sourceTree = "<group>"; };
+		13BAE7F72404026C008A44E0 /* SelectCloudTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCloudTableView.swift; sourceTree = "<group>"; };
+		13BAE7FB24040327008A44E0 /* SelectCloudTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCloudTableViewCell.swift; sourceTree = "<group>"; };
+		13BAE7FD240403B2008A44E0 /* SelectCloudTableViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCloudTableViewVM.swift; sourceTree = "<group>"; };
+		13BAE7FF24040401008A44E0 /* SelectCloudTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCloudTableViewCellVM.swift; sourceTree = "<group>"; };
+		13BAE801240404F9008A44E0 /* SelectCloudHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCloudHeaderView.swift; sourceTree = "<group>"; };
+		13BAE805240408ED008A44E0 /* SelectFilesDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFilesDescriptionView.swift; sourceTree = "<group>"; };
+		13BAE80724040E05008A44E0 /* SelectCloudModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCloudModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +229,8 @@
 		137ADCF523FC073000237368 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				13BAE809240413B4008A44E0 /* FormatList */,
+				13BAE7EE2403FD86008A44E0 /* SelectFrom */,
 				130B981B23FD644100DE6C60 /* Projects */,
 				137ADD4523FC259A00237368 /* Welcome */,
 				137ADD4023FC142100237368 /* Splash */,
@@ -413,6 +433,77 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		13BAE7EE2403FD86008A44E0 /* SelectFrom */ = {
+			isa = PBXGroup;
+			children = (
+				13BAE7F22403FDA2008A44E0 /* Model */,
+				13BAE7F12403FDA0008A44E0 /* VIew */,
+				13BAE7EF2403FD97008A44E0 /* ViewModel */,
+			);
+			path = SelectFrom;
+			sourceTree = "<group>";
+		};
+		13BAE7EF2403FD97008A44E0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				13BAE7F52403FDEC008A44E0 /* SelectCloudVM.swift */,
+				13BAE7FD240403B2008A44E0 /* SelectCloudTableViewVM.swift */,
+				13BAE7FF24040401008A44E0 /* SelectCloudTableViewCellVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		13BAE7F12403FDA0008A44E0 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				13BAE7F32403FDDE008A44E0 /* SelectCloudViewController.swift */,
+				13BAE7F72404026C008A44E0 /* SelectCloudTableView.swift */,
+				13BAE7FB24040327008A44E0 /* SelectCloudTableViewCell.swift */,
+				13BAE801240404F9008A44E0 /* SelectCloudHeaderView.swift */,
+				13BAE805240408ED008A44E0 /* SelectFilesDescriptionView.swift */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		13BAE7F22403FDA2008A44E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13BAE80724040E05008A44E0 /* SelectCloudModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		13BAE809240413B4008A44E0 /* FormatList */ = {
+			isa = PBXGroup;
+			children = (
+				13BAE813240414B8008A44E0 /* Model */,
+				13BAE812240414B6008A44E0 /* View */,
+				13BAE811240414B3008A44E0 /* ModelView */,
+			);
+			path = FormatList;
+			sourceTree = "<group>";
+		};
+		13BAE811240414B3008A44E0 /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelView;
+			sourceTree = "<group>";
+		};
+		13BAE812240414B6008A44E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13BAE813240414B8008A44E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -505,14 +596,19 @@
 				137ADD0D23FC092400237368 /* UIButton + Custom.swift in Sources */,
 				137ADD1C23FC09F600237368 /* StoryboardInitializable.swift in Sources */,
 				137ADD5C23FC371000237368 /* AuthData.swift in Sources */,
+				13BAE7FE240403B2008A44E0 /* SelectCloudTableViewVM.swift in Sources */,
 				137ADD6123FC3E4600237368 /* UIView+Border.swift in Sources */,
 				137ADD0A23FC085700237368 /* UIButton + Theme.swift in Sources */,
 				130B982E23FD6EC100DE6C60 /* UINavigationBar + bottomLine.swift in Sources */,
 				130B982023FD647500DE6C60 /* ProjectsViewController.swift in Sources */,
 				130B984B23FFC92C00DE6C60 /* EmailFieldViewModel.swift in Sources */,
 				137ADD4723FC25B600237368 /* WelcomeViewController.swift in Sources */,
+				13BAE7F62403FDEC008A44E0 /* SelectCloudVM.swift in Sources */,
+				13BAE80824040E05008A44E0 /* SelectCloudModel.swift in Sources */,
 				130B97F823FD282700DE6C60 /* TextFieldModel.swift in Sources */,
+				13BAE806240408ED008A44E0 /* SelectFilesDescriptionView.swift in Sources */,
 				130B982C23FD695F00DE6C60 /* ProjectsCollectionViewCell.swift in Sources */,
+				13BAE7F42403FDDE008A44E0 /* SelectCloudViewController.swift in Sources */,
 				130B983023FD6F8C00DE6C60 /* ProjectsContextViewMenu.swift in Sources */,
 				130B982223FD64C000DE6C60 /* ProjectsViewModel.swift in Sources */,
 				137ADD4C23FC303800237368 /* ARQLogo.swift in Sources */,
@@ -520,10 +616,12 @@
 				130B97FA23FD290700DE6C60 /* TextFieldView.swift in Sources */,
 				137ADD1923FC09B600237368 /* DataFetcherService.swift in Sources */,
 				137ADCF823FC076200237368 /* Constraints.swift in Sources */,
+				13BAE80024040401008A44E0 /* SelectCloudTableViewCellVM.swift in Sources */,
 				137ADCE123FC04F700237368 /* AppDelegate.swift in Sources */,
 				137ADCFA23FC077700237368 /* WebImageView.swift in Sources */,
 				137ADD5723FC36C600237368 /* AuthViewController.swift in Sources */,
 				137ADD0823FC082A00237368 /* UIColor + hexValue.swift in Sources */,
+				13BAE7F82404026C008A44E0 /* SelectCloudTableView.swift in Sources */,
 				130B982423FD67A000DE6C60 /* ProjectsCollectionView.swift in Sources */,
 				137ADD0623FC081700237368 /* UILabel + Theme.swift in Sources */,
 				137ADD1523FC099000237368 /* NetworkService.swift in Sources */,
@@ -531,6 +629,8 @@
 				137ADD5123FC328E00237368 /* ARQIconView.swift in Sources */,
 				137ADD5923FC36D300237368 /* AuthViewModel.swift in Sources */,
 				137ADD0223FC07F500237368 /* UIColor + ThemeColors.swift in Sources */,
+				13BAE7FC24040327008A44E0 /* SelectCloudTableViewCell.swift in Sources */,
+				13BAE802240404F9008A44E0 /* SelectCloudHeaderView.swift in Sources */,
 				137ADD4923FC296300237368 /* UILabel + lineSpacing.swift in Sources */,
 				137ADD4223FC147800237368 /* SplashViewController.swift in Sources */,
 			);

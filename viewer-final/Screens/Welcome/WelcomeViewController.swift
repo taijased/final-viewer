@@ -39,10 +39,16 @@ final class WelcomeViewController: UIViewController {
     }()
     
     fileprivate let enterButton: UIButton = {
-        let button  = UIButton.getCustomButton(label: "Login")
+        let button  = UIButton.getCustomButton(label: "Import file")
         button.titleLabel?.font = UIFont.getTTNormsFont(type: .medium, size: 16)
+        button.addTarget(self, action: #selector(enterButtonTapped), for: .touchUpInside)
         return button
     }()
+    
+    @objc func enterButtonTapped(_ sender: UIButton) {
+        navigation(.chooseCloud)
+    }
+    
     
     
     override func viewDidLoad() {
@@ -57,7 +63,7 @@ final class WelcomeViewController: UIViewController {
         view.backgroundColor = .white
         
         
-
+        
         
         view.addSubview(enterButton)
         enterButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
@@ -85,7 +91,7 @@ final class WelcomeViewController: UIViewController {
         bgView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -50).isActive = true
         bgView.heightAnchor.constraint(equalToConstant: 380).isActive = true
         
-//        bgView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
+        //        bgView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
         
         
         
@@ -95,6 +101,21 @@ final class WelcomeViewController: UIViewController {
             
         }
     }
+    
+    
+    fileprivate func navigation(_ type: WelcomeModel) {
+        switch type {
+        case .chooseCloud:
+            let viewController = SelectCloudViewController()
+            self.present(viewController, animated: true, completion: nil)
+        case .dismiss:
+            self.dismiss(animated: true, completion: nil)
+            
+        }
+    }
+    
+    
+    
     
     
     // MARK: settings Navigation bar
@@ -111,3 +132,13 @@ final class WelcomeViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 }
+
+
+
+//MARK: - WelcomeModel
+
+enum WelcomeModel {
+    case chooseCloud
+    case dismiss
+}
+
