@@ -1,5 +1,5 @@
 //
-//  SelectCloudModel.swift
+//  FormatListModel.swift
 //  viewer-final
 //
 //  Created by Максим Спиридонов on 24.02.2020.
@@ -8,14 +8,7 @@
 
 import Foundation
 
-struct SelectCloudModel {
+
+struct FormatListModel {
     var label: String
-    var iconName: String
-}
-
-
-
-enum SelectNavigationModel {
-    case formats
-    case dismiss
 }

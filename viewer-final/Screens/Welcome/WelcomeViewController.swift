@@ -66,19 +66,19 @@ final class WelcomeViewController: UIViewController {
         
         
         view.addSubview(enterButton)
-        enterButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        enterButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        enterButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
+        enterButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
         enterButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
         enterButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
         
         view.addSubview(descriptionLabel)
-        descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
         descriptionLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
         descriptionLabel.bottomAnchor.constraint(equalTo: enterButton.topAnchor, constant: -33).isActive = true
         descriptionLabel.heightAnchor.constraint(equalToConstant: 120).isActive = true
         
         view.addSubview(titleLabel)
-        titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
         titleLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -10).isActive = true
         titleLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
@@ -90,8 +90,6 @@ final class WelcomeViewController: UIViewController {
         bgView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -45).isActive = true
         bgView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -50).isActive = true
         bgView.heightAnchor.constraint(equalToConstant: 380).isActive = true
-        
-        //        bgView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
         
         
         
@@ -106,7 +104,9 @@ final class WelcomeViewController: UIViewController {
     fileprivate func navigation(_ type: WelcomeModel) {
         switch type {
         case .chooseCloud:
-            let viewController = SelectCloudViewController()
+//            let viewController = SelectCloudViewController()
+            let viewController = FormatListViewController()
+            
             self.present(viewController, animated: true, completion: nil)
         case .dismiss:
             self.dismiss(animated: true, completion: nil)

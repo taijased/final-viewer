@@ -1,20 +1,22 @@
 //
-//  SelectCloudViewController.swift
+//  FormatListViewController.swift
 //  viewer-final
 //
 //  Created by Максим Спиридонов on 24.02.2020.
 //  Copyright © 2020 Максим Спиридонов. All rights reserved.
 //
 
+
+
 import UIKit
 
-final class SelectCloudViewController: UIViewController {
+final class FormatListViewController: UIViewController {
     
-    fileprivate var viewModel: SelectCloudVMType?
+    fileprivate var viewModel: FormatListVMType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = SelectCloudVM()
+        viewModel = FormatListVM()
         setupUI()
     }
     
@@ -27,7 +29,6 @@ final class SelectCloudViewController: UIViewController {
         viewModel.tableView.fillSuperview()
         
     }
-    
     
     
 }

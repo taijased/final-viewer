@@ -68,6 +68,14 @@
 		13BAE802240404F9008A44E0 /* SelectCloudHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE801240404F9008A44E0 /* SelectCloudHeaderView.swift */; };
 		13BAE806240408ED008A44E0 /* SelectFilesDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE805240408ED008A44E0 /* SelectFilesDescriptionView.swift */; };
 		13BAE80824040E05008A44E0 /* SelectCloudModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE80724040E05008A44E0 /* SelectCloudModel.swift */; };
+		13BAE81524041552008A44E0 /* FormatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE81424041552008A44E0 /* FormatListViewController.swift */; };
+		13BAE81724041569008A44E0 /* FormatListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE81624041569008A44E0 /* FormatListVM.swift */; };
+		13BAE81924041583008A44E0 /* FormatListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE81824041583008A44E0 /* FormatListTableView.swift */; };
+		13BAE81B2404158F008A44E0 /* FormatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE81A2404158F008A44E0 /* FormatListTableViewCell.swift */; };
+		13BAE81D2404159B008A44E0 /* FormatListTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE81C2404159B008A44E0 /* FormatListTableHeaderView.swift */; };
+		13BAE81F240415AA008A44E0 /* FormatListTableViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE81E240415AA008A44E0 /* FormatListTableViewVM.swift */; };
+		13BAE821240415B3008A44E0 /* FormatListTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE820240415B3008A44E0 /* FormatListTableViewCellVM.swift */; };
+		13BAE823240417C7008A44E0 /* FormatListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE822240417C7008A44E0 /* FormatListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +142,14 @@
 		13BAE801240404F9008A44E0 /* SelectCloudHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCloudHeaderView.swift; sourceTree = "<group>"; };
 		13BAE805240408ED008A44E0 /* SelectFilesDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFilesDescriptionView.swift; sourceTree = "<group>"; };
 		13BAE80724040E05008A44E0 /* SelectCloudModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCloudModel.swift; sourceTree = "<group>"; };
+		13BAE81424041552008A44E0 /* FormatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatListViewController.swift; sourceTree = "<group>"; };
+		13BAE81624041569008A44E0 /* FormatListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatListVM.swift; sourceTree = "<group>"; };
+		13BAE81824041583008A44E0 /* FormatListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatListTableView.swift; sourceTree = "<group>"; };
+		13BAE81A2404158F008A44E0 /* FormatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatListTableViewCell.swift; sourceTree = "<group>"; };
+		13BAE81C2404159B008A44E0 /* FormatListTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatListTableHeaderView.swift; sourceTree = "<group>"; };
+		13BAE81E240415AA008A44E0 /* FormatListTableViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatListTableViewVM.swift; sourceTree = "<group>"; };
+		13BAE820240415B3008A44E0 /* FormatListTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatListTableViewCellVM.swift; sourceTree = "<group>"; };
+		13BAE822240417C7008A44E0 /* FormatListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -486,6 +502,9 @@
 		13BAE811240414B3008A44E0 /* ModelView */ = {
 			isa = PBXGroup;
 			children = (
+				13BAE81624041569008A44E0 /* FormatListVM.swift */,
+				13BAE81E240415AA008A44E0 /* FormatListTableViewVM.swift */,
+				13BAE820240415B3008A44E0 /* FormatListTableViewCellVM.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -493,6 +512,10 @@
 		13BAE812240414B6008A44E0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				13BAE81424041552008A44E0 /* FormatListViewController.swift */,
+				13BAE81824041583008A44E0 /* FormatListTableView.swift */,
+				13BAE81A2404158F008A44E0 /* FormatListTableViewCell.swift */,
+				13BAE81C2404159B008A44E0 /* FormatListTableHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -500,6 +523,7 @@
 		13BAE813240414B8008A44E0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				13BAE822240417C7008A44E0 /* FormatListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -591,9 +615,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				130B982823FD690B00DE6C60 /* ProjectsCollectionViewVM.swift in Sources */,
+				13BAE81524041552008A44E0 /* FormatListViewController.swift in Sources */,
 				130B982A23FD695300DE6C60 /* ProjectsCollectionViewCellVM.swift in Sources */,
 				137ADD1723FC09A300237368 /* NetworkDataFetcher.swift in Sources */,
 				137ADD0D23FC092400237368 /* UIButton + Custom.swift in Sources */,
+				13BAE81724041569008A44E0 /* FormatListVM.swift in Sources */,
 				137ADD1C23FC09F600237368 /* StoryboardInitializable.swift in Sources */,
 				137ADD5C23FC371000237368 /* AuthData.swift in Sources */,
 				13BAE7FE240403B2008A44E0 /* SelectCloudTableViewVM.swift in Sources */,
@@ -601,7 +627,9 @@
 				137ADD0A23FC085700237368 /* UIButton + Theme.swift in Sources */,
 				130B982E23FD6EC100DE6C60 /* UINavigationBar + bottomLine.swift in Sources */,
 				130B982023FD647500DE6C60 /* ProjectsViewController.swift in Sources */,
+				13BAE81F240415AA008A44E0 /* FormatListTableViewVM.swift in Sources */,
 				130B984B23FFC92C00DE6C60 /* EmailFieldViewModel.swift in Sources */,
+				13BAE823240417C7008A44E0 /* FormatListModel.swift in Sources */,
 				137ADD4723FC25B600237368 /* WelcomeViewController.swift in Sources */,
 				13BAE7F62403FDEC008A44E0 /* SelectCloudVM.swift in Sources */,
 				13BAE80824040E05008A44E0 /* SelectCloudModel.swift in Sources */,
@@ -612,9 +640,12 @@
 				130B983023FD6F8C00DE6C60 /* ProjectsContextViewMenu.swift in Sources */,
 				130B982223FD64C000DE6C60 /* ProjectsViewModel.swift in Sources */,
 				137ADD4C23FC303800237368 /* ARQLogo.swift in Sources */,
+				13BAE821240415B3008A44E0 /* FormatListTableViewCellVM.swift in Sources */,
 				130B982623FD688000DE6C60 /* AppleMusicModel.swift in Sources */,
 				130B97FA23FD290700DE6C60 /* TextFieldView.swift in Sources */,
 				137ADD1923FC09B600237368 /* DataFetcherService.swift in Sources */,
+				13BAE81D2404159B008A44E0 /* FormatListTableHeaderView.swift in Sources */,
+				13BAE81B2404158F008A44E0 /* FormatListTableViewCell.swift in Sources */,
 				137ADCF823FC076200237368 /* Constraints.swift in Sources */,
 				13BAE80024040401008A44E0 /* SelectCloudTableViewCellVM.swift in Sources */,
 				137ADCE123FC04F700237368 /* AppDelegate.swift in Sources */,
@@ -628,6 +659,7 @@
 				130B984923FFC91600DE6C60 /* PasswordFieldViewModel.swift in Sources */,
 				137ADD5123FC328E00237368 /* ARQIconView.swift in Sources */,
 				137ADD5923FC36D300237368 /* AuthViewModel.swift in Sources */,
+				13BAE81924041583008A44E0 /* FormatListTableView.swift in Sources */,
 				137ADD0223FC07F500237368 /* UIColor + ThemeColors.swift in Sources */,
 				13BAE7FC24040327008A44E0 /* SelectCloudTableViewCell.swift in Sources */,
 				13BAE802240404F9008A44E0 /* SelectCloudHeaderView.swift in Sources */,
