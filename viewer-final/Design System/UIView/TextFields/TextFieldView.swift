@@ -1,8 +1,8 @@
 //
 //  TextFieldView.swift
-//  viewer-final
+//  custom-textfield
 //
-//  Created by Максим Спиридонов on 19.02.2020.
+//  Created by Максим Спиридонов on 20.02.2020.
 //  Copyright © 2020 Максим Спиридонов. All rights reserved.
 //
 
@@ -14,7 +14,7 @@ import UIKit
 final class TextFieldView: UIView {
     
     
-    var viewModel: TextFieldViewModelType?
+    var viewModel: TextFieldProtocol?
     
     fileprivate let mainView: UIView = {
         let view = UIView()
@@ -73,9 +73,8 @@ final class TextFieldView: UIView {
     
     
     
-    init(frame: CGRect, viewModel: TextFieldViewModelType) {
+    init(frame: CGRect, viewModel: TextFieldProtocol) {
         self.viewModel = viewModel
-        
         super.init(frame: frame)
         
         
@@ -102,13 +101,24 @@ final class TextFieldView: UIView {
         
         
         
-        switch viewModel.type {
-        case .email:
-            self.initLogin()
+        self.titleLabel.text = viewModel.getType().getLabelName()
+        self.textField.attributedPlaceholder = NSAttributedString(string: viewModel.getType().getPlaceholderName(), attributes: [NSAttributedString.Key.foregroundColor: UIColor.Gray.extraLight])
+        
+        
+        
+        switch viewModel.getType() {
+       
         case .password:
-            self.initPassword()
-            
+            self.textField.isSecureTextEntry = true
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapIconView(recognzier:)))
+            iconView.addGestureRecognizer(tap)
+        case .email:
+            print("email")
+
         }
+        
+        
+        
         
         
         addSubview(mainView)
@@ -144,24 +154,10 @@ final class TextFieldView: UIView {
         
         
         
-    }
-    
-    fileprivate func initLogin() {
         
-        guard let viewModel = viewModel else { return }
-        self.titleLabel.text = viewModel.type.getLabelName()
-        self.textField.attributedPlaceholder = NSAttributedString(string: viewModel.type.getPlaceholderName(), attributes: [NSAttributedString.Key.foregroundColor: UIColor.Gray.extraLight])
         
     }
     
-    fileprivate func initPassword() {
-        guard let viewModel = viewModel else { return }
-        self.titleLabel.text = viewModel.type.getLabelName()
-        self.textField.attributedPlaceholder = NSAttributedString(string: viewModel.type.getPlaceholderName(), attributes: [NSAttributedString.Key.foregroundColor: UIColor.Gray.extraLight])
-        self.textField.isSecureTextEntry = true
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapIconView(recognzier:)))
-        iconView.addGestureRecognizer(tap)
-    }
     
     @objc fileprivate func tapIconView(recognzier: UITapGestureRecognizer) {
         self.textField.isSecureTextEntry = !self.textField.isSecureTextEntry
@@ -183,7 +179,7 @@ final class TextFieldView: UIView {
     }
     
     
-    fileprivate func updateField(value: FieldStatus) {
+    fileprivate func updateField(value: TextFieldStatus) {
         var errorLabelAlpha: CGFloat = 0
         var errorLabelMSG: String = ""
         var borderColor: UIColor = .clear
@@ -228,7 +224,7 @@ final class TextFieldView: UIView {
     
     
     
-    fileprivate func updateIcon(value: FieldIconStatus) {
+    fileprivate func updateIcon(value: TextFieldIconStatus) {
         
         
         var imageName: String = ""
@@ -249,7 +245,7 @@ final class TextFieldView: UIView {
             if imageName.isEmpty {
                 self.iconView.alpha = 0
             } else {
-//                self.iconView.set = UIImage(named: imageName)
+                //                self.iconView.set = UIImage(named: imageName)
                 self.iconView.setImage(UIImage(named: imageName), for: .normal)
                 self.iconView.alpha = 1
             }
@@ -266,14 +262,9 @@ extension TextFieldView: UITextFieldDelegate {
         
         guard  let viewModel = viewModel, let value = textField.text else { return false }
         viewModel.validate(value: value)
-        
-        
-        
         textField.resignFirstResponder()
         return true
     }
-    
-    
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -281,4 +272,9 @@ extension TextFieldView: UITextFieldDelegate {
         return true;
     }
     
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        guard  let viewModel = viewModel, let value = textField.text else { return }
+        viewModel.validate(value: value)
+    }
 }

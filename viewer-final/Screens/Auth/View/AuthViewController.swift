@@ -53,6 +53,13 @@ final class AuthViewController: UIViewController {
         viewModel.password.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
         viewModel.password.heightAnchor.constraint(equalToConstant: 56).isActive = true
         
+        
+        view.addSubview(viewModel.enterButton)
+        viewModel.enterButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        viewModel.enterButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
+        viewModel.enterButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
+        viewModel.enterButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        
     }
     
     

@@ -15,9 +15,10 @@ class DataFetcherService {
     }
     
     
-//    func fetchWallpapers(completion: @escaping (YmlCatalog?) -> Void) {
-//        let urlString = "https://www.demmoksi.ru/bitrix/catalog_export/yandex.php"
-//        dataFetcher.fetchGenericXMLData(urlString: urlString, response: completion)
-//    }
+    func fetchRSSAppleMusic(completion: @escaping (RSSModel?) -> Void) {
+        let urlString = "https://rss.itunes.apple.com/api/v1/us/apple-music/hot-tracks/all/20/explicit.json"
+        dataFetcher.fetchGenericJSONData(urlString: urlString, response: completion)
+    }
+    
     
 }
