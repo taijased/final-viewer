@@ -83,7 +83,6 @@ class FormatListTableViewVM: FormatListTableViewVMType {
     """
     
     init() {
-        
         cells = getCells()
     }
     

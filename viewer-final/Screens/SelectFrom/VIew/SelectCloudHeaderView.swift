@@ -30,14 +30,16 @@ final class SelectCloudHeaderView: UIView {
 
     
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         setupUI()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     
@@ -48,14 +50,13 @@ final class SelectCloudHeaderView: UIView {
         
         addSubview(titleLabel)
         titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32).isActive = true
         titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 32).isActive = true
         titleLabel.heightAnchor.constraint(equalToConstant: 36).isActive = true
         
         
         
         let privacyPolicyView = SelectFilesDescriptionView()
-
+        
         addSubview(privacyPolicyView)
         privacyPolicyView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32).isActive = true
         privacyPolicyView.widthAnchor.constraint(equalToConstant: 260).isActive = true

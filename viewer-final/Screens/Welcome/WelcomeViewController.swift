@@ -105,7 +105,7 @@ final class WelcomeViewController: UIViewController {
         switch type {
         case .chooseCloud:
 //            let viewController = SelectCloudViewController()
-            let viewController = FormatListViewController()
+            let viewController = SelectCloudViewController()
             
             self.present(viewController, animated: true, completion: nil)
         case .dismiss:
