@@ -43,7 +43,7 @@ final class CloudTableView: UITableView {
     
     fileprivate func setupUI() {
         translatesAutoresizingMaskIntoConstraints = false
-//        backgroundColor = .random()
+        backgroundColor = .white
         delegate = self
         dataSource = self
         register(CloudTableViewCell.self, forCellReuseIdentifier: CloudTableViewCell.reuseId)
@@ -114,7 +114,15 @@ extension CloudTableView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return viewModel?.heightForHeaderInSection ?? 0
+        
+        guard let height = viewModel?.heightForHeaderInSection else { return 0}
+        return height
+        
+//        if section == 0 {
+//            return viewModel.heightForHeaderInSection * 2
+//        } else {
+//            return viewModel.heightForHeaderInSection
+//        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

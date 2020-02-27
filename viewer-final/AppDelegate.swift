@@ -17,30 +17,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = .white
+        window?.backgroundColor = UIColor.Primary.primary
         
         
-        let viewController = CloudViewController()
+        let viewController = SplashViewController()
+        viewController.finishedSplashScreen = {
+            let viewController = CloudViewController()
+            viewController.modalTransitionStyle = .crossDissolve
+            let navigationController = UINavigationController(rootViewController: viewController)
+            self.window?.rootViewController = navigationController
+        }
         
-//        viewController.modalTransitionStyle = .crossDissolve
-        let navigationController = UINavigationController(rootViewController: viewController)
-        window?.rootViewController = navigationController
+        window?.rootViewController = viewController
         window?.makeKeyAndVisible()
         
-        
-//        let delay: TimeInterval = 1.75
-//        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-//            let viewController = AuthViewController()
-//            viewController.modalTransitionStyle = .crossDissolve
-//            let navigationController = UINavigationController(rootViewController: viewController)
-//            self.window?.rootViewController = navigationController
-//        }
+
         
         
         
         return true
     }
     
-
+ 
 }
 

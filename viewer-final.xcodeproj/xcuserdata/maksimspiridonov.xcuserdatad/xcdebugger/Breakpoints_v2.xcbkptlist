@@ -158,9 +158,9 @@
                   urlString = "file:///Users/maksimspiridonov/Documents/ARQ/IOS/New%20Viewer/swift-starter-kit/viewer-final/Screens/Cloud/View/CloudViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "1065">
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "1296">
                </Location>
                <Location
                   uuid = "856F4CA0-F1A0-4970-BFAC-E1B64237FC42 - 381d38c86bb1b157"
@@ -173,8 +173,8 @@
                   urlString = "file:///Users/maksimspiridonov/Documents/ARQ/IOS/New%20Viewer/swift-starter-kit/viewer-final/Screens/Cloud/View/CloudViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
                   offsetFromSymbolStart = "89">
                </Location>
             </Locations>
@@ -193,6 +193,115 @@
             startingLineNumber = "36"
             endingLineNumber = "36"
             landmarkName = "setupUI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B3196AF1-EAA5-49AB-A006-D5723C822845"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "viewer-final/Screens/Cloud/View/CloudViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "B3196AF1-EAA5-49AB-A006-D5723C822845 - cdeaee8a542a01b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "viewer_final.CloudViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; viewer_final.CloudViewController"
+                  moduleName = "viewer-final"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimspiridonov/Documents/ARQ/IOS/New%20Viewer/swift-starter-kit/viewer-final/Screens/Cloud/View/CloudViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "B3196AF1-EAA5-49AB-A006-D5723C822845 - 6af0b0b8d146a9ba"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "viewer_final.CloudViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; viewer_final.CloudViewController"
+                  moduleName = "viewer-final"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimspiridonov/Documents/ARQ/IOS/New%20Viewer/swift-starter-kit/viewer-final/Screens/Cloud/View/CloudViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "B3196AF1-EAA5-49AB-A006-D5723C822845 - a477e7dcf313274"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "viewer_final.CloudViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;viewer_final.CloudViewController&gt;"
+                  moduleName = "viewer-final"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimspiridonov/Documents/ARQ/IOS/New%20Viewer/swift-starter-kit/viewer-final/Screens/Cloud/View/CloudViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "B3196AF1-EAA5-49AB-A006-D5723C822845 - a5a8f807245c954b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "viewer_final.CloudViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;viewer_final.CloudViewController&gt;"
+                  moduleName = "viewer-final"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimspiridonov/Documents/ARQ/IOS/New%20Viewer/swift-starter-kit/viewer-final/Screens/Cloud/View/CloudViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "141">
+               </Location>
+               <Location
+                  uuid = "B3196AF1-EAA5-49AB-A006-D5723C822845 - b0833fc4ecede6d6"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "viewer_final.CloudViewController.__deallocating_deinit"
+                  moduleName = "viewer-final"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimspiridonov/Documents/ARQ/IOS/New%20Viewer/swift-starter-kit/viewer-final/Screens/Cloud/View/CloudViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0AC1BB3-AFE3-4CA3-98F8-F47FD65FEEDB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "viewer-final/Screens/Cloud/View/CloudTableView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "tableView(_:heightForHeaderInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

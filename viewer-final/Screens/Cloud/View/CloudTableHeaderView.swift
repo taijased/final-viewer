@@ -131,14 +131,15 @@ final class CloudTableHeaderView: UIView {
     fileprivate var containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .red
+        view.backgroundColor = .clear
         return view
     }()
     
     fileprivate let fixedView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .random()
+//        view.backgroundColor = .random()
+        view.backgroundColor = .white
         view.layer.masksToBounds = true
         return view
     }()
@@ -210,10 +211,10 @@ final class CloudTableHeaderView: UIView {
         
         
         fixedView.addSubview(searchView)
-        searchView.leadingAnchor.constraint(equalTo: fixedView.leadingAnchor, constant: 16).isActive = true
-        searchView.trailingAnchor.constraint(equalTo: fixedView.trailingAnchor, constant: -16).isActive = true
         searchView.topAnchor.constraint(equalTo: fixedView.topAnchor, constant: 65).isActive = true
         searchView.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        searchView.widthAnchor.constraint(equalToConstant: frame.width - 32).isActive = true
+        searchView.centerXAnchor.constraint(equalTo: fixedView.centerXAnchor).isActive = true
         
         
         
