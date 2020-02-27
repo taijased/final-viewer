@@ -45,9 +45,6 @@ final class SelectCloudHeaderView: UIView {
     
     fileprivate func setupUI() {
         
-        
-        
-        
         addSubview(titleLabel)
         titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32).isActive = true
         titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 32).isActive = true

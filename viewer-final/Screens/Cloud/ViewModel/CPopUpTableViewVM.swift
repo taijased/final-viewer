@@ -1,8 +1,8 @@
 //
-//  SelectCloudTableViewVM.swift
+//  CPopUpTableViewVM.swift
 //  viewer-final
 //
-//  Created by Максим Спиридонов on 24.02.2020.
+//  Created by Максим Спиридонов on 27.02.2020.
 //  Copyright © 2020 Максим Спиридонов. All rights reserved.
 //
 
@@ -11,19 +11,21 @@ import UIKit
 
 
 
-
-protocol SelectCloudTableViewVMType {
+protocol CPopUpTableViewVMType {
     func heightForRowAt(indexPath: IndexPath) -> CGFloat
     func numberOfRows() -> Int
     func numberOfRowsInSection() -> Int
-    func cellViewModel(forIndexPath indexPath: IndexPath) -> SelectCloudTableViewCellVMType?
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> CPopUpTableViewCellVMType?
     var onReloadData: (() -> Void)? { get set }
+    func getHeightCell() -> CGFloat
     func selectItem(atIndexPath indexPath: IndexPath)
     func viewModelForSelectedRow() -> SelectCloudModel?
+    var onDismiss: (() -> Void)? { get set }
 }
 
-class SelectCloudTableViewVM: SelectCloudTableViewVMType {
+class CPopUpTableViewVM: CPopUpTableViewVMType {
     
+    var onDismiss: (() -> Void)?
     private var selectedIndexPath: IndexPath?
     var onReloadData: (() -> Void)?
     
@@ -53,13 +55,18 @@ class SelectCloudTableViewVM: SelectCloudTableViewVMType {
     }
     
     func heightForRowAt(indexPath: IndexPath) -> CGFloat {
-        return 65.0
+        return 45
     }
     
-    func cellViewModel(forIndexPath indexPath: IndexPath) -> SelectCloudTableViewCellVMType? {
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> CPopUpTableViewCellVMType? {
         guard let cells = cells else { return nil }
         let cell = cells[indexPath.row]
-        return SelectCloudTableViewCellVM(cell: cell)
+        return CPopUpTableViewCellVM(cell: cell)
+    }
+    
+    func getHeightCell() -> CGFloat  {
+        
+        return  CGFloat((cells?.count ?? 0) * 40)
     }
     
     func selectItem(atIndexPath indexPath: IndexPath) {
@@ -72,5 +79,4 @@ class SelectCloudTableViewVM: SelectCloudTableViewVMType {
         guard let selectedIndexPath = selectedIndexPath, let cells = cells  else { return nil }
         return cells[selectedIndexPath.row]
     }
-    
 }

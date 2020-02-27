@@ -24,7 +24,6 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
     }
     
     
-    
     let cardView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -105,6 +104,7 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
         label.leadingAnchor.constraint(equalTo: labelView.leadingAnchor, constant: 10).isActive = true
         label.trailingAnchor.constraint(equalTo: labelView.trailingAnchor).isActive = true
         label.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        
         
     }
     

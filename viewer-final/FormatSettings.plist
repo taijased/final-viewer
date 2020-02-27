@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   FormatSettings.plist
+   viewer-final
+
+   Created by Максим Спиридонов on 26.02.2020.
+   Copyright (c) 2020 Максим Спиридонов. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        
+        <key>CFBundleDocumentTypes</key>
+        <array>
+            <dict>
+                <key>CFBundleTypeIconFiles</key>
+                <array>
+                    <string>viewer-file.png</string>
+                </array>
+                <key>CFBundleTypeName</key>
+                <string>ARQ supported formats</string>
+                <key>LSItemContentTypes</key>
+                <array>
+                    <string>public.arqproject</string>
+                </array>
+            </dict>
+            <dict>
+                <key>CFBundleTypeIconFiles</key>
+                <array/>
+                <key>CFBundleTypeName</key>
+                <string></string>
+                <key>LSItemContentTypes</key>
+                <array/>
+            </dict>
+        </array>
+        
+        
+        
+    
+    </dict>
+</plist>

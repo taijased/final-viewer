@@ -20,12 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .white
         
         
-        let viewController = WelcomeViewController()
-        viewController.modalTransitionStyle = .crossDissolve
+        let viewController = CloudViewController()
+        
+//        viewController.modalTransitionStyle = .crossDissolve
         let navigationController = UINavigationController(rootViewController: viewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-        
         
         
 //        let delay: TimeInterval = 1.75
@@ -36,7 +36,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            self.window?.rootViewController = navigationController
 //        }
         
+        
+        
         return true
     }
+    
+
 }
 

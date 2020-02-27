@@ -11,11 +11,20 @@ import Foundation
 struct SelectCloudModel {
     var label: String
     var iconName: String
+    var type: CloudModel
+    init(type: CloudModel) {
+        self.type = type
+        self.iconName = type.getIconName()
+        self.label = type.getLabel()
+    }
 }
 
 
 
-enum SelectNavigationModel {
-    case formats
+enum SelectCloudNavigation {
+    case documentPicker
+    case errorFormat(msg: String)
     case dismiss
 }
+
+

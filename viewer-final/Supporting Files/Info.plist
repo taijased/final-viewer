@@ -20,6 +20,13 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>TTNorms-ExtraBold.ttf</string>
+		<string>TTNorms-Medium.ttf</string>
+		<string>TTNorms-Bold.ttf</string>
+		<string>TTNorms-Regular.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>TestLaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -38,13 +45,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>TTNorms-ExtraBold.ttf</string>
-		<string>TTNorms-Medium.ttf</string>
-		<string>TTNorms-Bold.ttf</string>
-		<string>TTNorms-Regular.ttf</string>
 	</array>
 </dict>
 </plist>

@@ -59,6 +59,7 @@ final class WelcomeViewController: UIViewController {
     
     fileprivate func setupUI() {
         
+               
         self.view.alpha = 0
         view.backgroundColor = .white
         
@@ -96,7 +97,6 @@ final class WelcomeViewController: UIViewController {
         
         UIView.animate(withDuration: 0.25) {
             self.view.alpha = 1
-            
         }
     }
     
@@ -104,10 +104,12 @@ final class WelcomeViewController: UIViewController {
     fileprivate func navigation(_ type: WelcomeModel) {
         switch type {
         case .chooseCloud:
-//            let viewController = SelectCloudViewController()
             let viewController = SelectCloudViewController()
-            
-            self.present(viewController, animated: true, completion: nil)
+//            let viewController = CloudViewController()
+          
+            let navigationController = UINavigationController(rootViewController: viewController)
+//            navigationController.modalPresentationStyle = .currentContext
+            self.present(navigationController, animated: true, completion: nil)
         case .dismiss:
             self.dismiss(animated: true, completion: nil)
             
