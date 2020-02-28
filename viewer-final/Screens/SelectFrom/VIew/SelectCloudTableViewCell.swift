@@ -8,12 +8,14 @@
 
 import UIKit
 
+protocol SelectCloudTableViewCellDelegate: class {
+    func clickLink()
+}
+
 class SelectCloudTableViewCell: UITableViewCell {
     
-    
+    weak var delegate: SelectCloudTableViewCellDelegate?
     static let reuseId = "SelectCloudTableViewCell"
-    
-    
     
     
     weak var viewModel: SelectCloudTableViewCellVMType? {
@@ -21,6 +23,8 @@ class SelectCloudTableViewCell: UITableViewCell {
             guard let viewModel = viewModel else { return }
             headerLabel.text = viewModel.label
             cloudLogo.image = UIImage(named: viewModel.iconName)
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(close))
+            headerLabel.addGestureRecognizer(tapGestureRecognizer)
             
         }
     }
@@ -87,9 +91,13 @@ class SelectCloudTableViewCell: UITableViewCell {
         headerLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
 //        headerLabel.heightAnchor.constraint(equalToConstant: 36).isActive = true
         
-          
-    
         
+    }
+    
+    
+    
+    @objc private func close() {
+        self.delegate?.clickLink()
     }
     
     

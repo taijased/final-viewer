@@ -8,10 +8,16 @@
 
 import UIKit
 
+protocol SelectCloudViewControllerDelegate: class {
+    func deinitController()
+}
 
 final class SelectCloudViewController: UIViewController {
     
     fileprivate var viewModel: SelectCloudVMType?
+    weak var delegate: SelectCloudViewControllerDelegate?
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +48,6 @@ final class SelectCloudViewController: UIViewController {
             guard let viewModel = viewModel else { return }
             viewModel.documentPicker.delegate = self
             self.present(viewModel.documentPicker, animated: true, completion: nil)
-      
         case .errorFormat(let msg):
             self.showToast(msg)
         case .dismiss:
@@ -56,6 +61,7 @@ final class SelectCloudViewController: UIViewController {
         self.present(toast, animated: true)
         Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
             toast.dismiss(animated: true)
+            self.dismiss(animated: true, completion: nil)
         }
     }
 
@@ -71,6 +77,7 @@ final class SelectCloudViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        delegate?.deinitController()
     }
     
 }

@@ -15,6 +15,7 @@ import UIKit
 
 protocol SelectCloudDelegate: class {
     func didSelectItemAt(_ item: SelectCloudModel)
+    func openSupportedFormats()
 }
 
 
@@ -86,6 +87,7 @@ extension SelectCloudTableView: UITableViewDelegate, UITableViewDataSource {
         guard let viewCell = cell, let viewModel = viewModel else { return UITableViewCell() }
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
         viewCell.viewModel = cellViewModel
+        viewCell.delegate = self
         return viewCell
         
     }
@@ -103,3 +105,15 @@ extension SelectCloudTableView: UITableViewDelegate, UITableViewDataSource {
         selectDelegate?.didSelectItemAt(selectItem)
     }
 }
+
+
+
+
+//MARK: Binding SelectCloudTableViewCell
+
+extension SelectCloudTableView: SelectCloudTableViewCellDelegate {
+    func clickLink() {
+        self.selectDelegate?.openSupportedFormats()
+    }
+}
+

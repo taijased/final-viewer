@@ -112,6 +112,7 @@
 		13D5BB1B240944D200A65256 /* ProjectFileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D5BB1A240944D200A65256 /* ProjectFileModel.swift */; };
 		13D5BB2524094D2C00A65256 /* LocalFileFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D5BB2424094D2C00A65256 /* LocalFileFetcher.swift */; };
 		13D5BB29240950C000A65256 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D5BB28240950C000A65256 /* StorageManager.swift */; };
+		13D5BB3E2409698400A65256 /* TrueFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D5BB3D2409698400A65256 /* TrueFormats.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -221,6 +222,11 @@
 		13D5BB1A240944D200A65256 /* ProjectFileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFileModel.swift; sourceTree = "<group>"; };
 		13D5BB2424094D2C00A65256 /* LocalFileFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileFetcher.swift; sourceTree = "<group>"; };
 		13D5BB28240950C000A65256 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		13D5BB2C24095C2500A65256 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13D5BB2D24095C2500A65256 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13D5BB3624095D2900A65256 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13D5BB3724095D2900A65256 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13D5BB3D2409698400A65256 /* TrueFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueFormats.swift; sourceTree = "<group>"; };
 		15B78AE3BE72EE7682A8D499 /* Pods-viewer-final.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viewer-final.release.xcconfig"; path = "Target Support Files/Pods-viewer-final/Pods-viewer-final.release.xcconfig"; sourceTree = "<group>"; };
 		1CB4FC396E21FD3D16F776BB /* Pods_viewer_final.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_viewer_final.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D942D03D497D7DD5A3203887 /* Pods-viewer-final.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viewer-final.debug.xcconfig"; path = "Target Support Files/Pods-viewer-final/Pods-viewer-final.debug.xcconfig"; sourceTree = "<group>"; };
@@ -692,6 +698,7 @@
 				13D5BB1A240944D200A65256 /* ProjectFileModel.swift */,
 				13D5BB2424094D2C00A65256 /* LocalFileFetcher.swift */,
 				13D5BB28240950C000A65256 /* StorageManager.swift */,
+				13D5BB3D2409698400A65256 /* TrueFormats.swift */,
 			);
 			path = FileManager;
 			sourceTree = "<group>";
@@ -699,6 +706,10 @@
 		3A8DB4FDA48B643755DAA3AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				13D5BB3624095D2900A65256 /* Realm.framework */,
+				13D5BB3724095D2900A65256 /* RealmSwift.framework */,
+				13D5BB2C24095C2500A65256 /* Realm.framework */,
+				13D5BB2D24095C2500A65256 /* RealmSwift.framework */,
 				1CB4FC396E21FD3D16F776BB /* Pods_viewer_final.framework */,
 			);
 			name = Frameworks;
@@ -901,6 +912,7 @@
 				137ADCE123FC04F700237368 /* AppDelegate.swift in Sources */,
 				13BAE83524054033008A44E0 /* UIImage + UIView.swift in Sources */,
 				13D5BB1B240944D200A65256 /* ProjectFileModel.swift in Sources */,
+				13D5BB3E2409698400A65256 /* TrueFormats.swift in Sources */,
 				130ADC102407C3BE00E6EAE3 /* CPopUpTableView.swift in Sources */,
 				13D5BB1024092B9600A65256 /* UIAlertAction + setup.swift in Sources */,
 				133A5973240559ED00BAC954 /* FilesTableViewCellVM.swift in Sources */,
@@ -1066,7 +1078,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C8F3CLJ592;
+				DEVELOPMENT_TEAM = 4226M9N553;
 				INFOPLIST_FILE = "viewer-final/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1085,7 +1097,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C8F3CLJ592;
+				DEVELOPMENT_TEAM = 4226M9N553;
 				INFOPLIST_FILE = "viewer-final/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

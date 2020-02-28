@@ -79,6 +79,7 @@ final class ProjectsViewController: UIViewController {
             self.present(viewModel.optionMenu, animated: true, completion: nil)
         case .selectCloud:
             let viewController = SelectCloudViewController()
+            viewController.delegate = self
             let navigationController = UINavigationController(rootViewController: viewController)
             self.present(navigationController, animated: true, completion: nil)
         case .openProject:
@@ -107,3 +108,11 @@ extension ProjectsViewController: ProjectsViewModelDelegate {
     }
 }
     
+
+//MARK: - SelectCloudViewController
+
+extension ProjectsViewController: SelectCloudViewControllerDelegate {
+    func deinitController() {
+        self.viewModel?.update()
+    }
+}

@@ -22,6 +22,7 @@ protocol ProjectsViewModelType {
     var collectionView: ProjectsCollectionView { get }
     var plusButton: UIButton { get }
     var delegate: ProjectsViewModelDelegate? { get set }
+    func update()
 }
 
 
@@ -80,6 +81,11 @@ class ProjectsViewModel: ProjectsViewModelType {
     init() {
         self.collectionView = ProjectsCollectionView()
         self.collectionView.collectionDelegate = self
+    }
+    
+    
+    func update() {
+        collectionView.reloadData()
     }
     
     

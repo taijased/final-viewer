@@ -22,7 +22,9 @@ class LocalFileFetcher {
 
     func fetchLocalData(response: @escaping([URL]?) -> Void) {
         guard let files = fileManager.contentsOfDirectoryURLs(for: .documentDirectory) else { response(nil); return}
-        response(files)
+        let resultFiles = files.filter { String($0.pathExtension) == "fbx" }
+        
+        response(resultFiles)
     }
 }
 

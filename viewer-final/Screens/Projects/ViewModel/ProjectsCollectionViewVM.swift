@@ -47,17 +47,7 @@ class ProjectsCollectionViewVM: ProjectsCollectionViewVMType {
     }
     
     fileprivate func fetchFromRealm() {
-        
-        self.fileFetcher.fetchLocalData { urls in
-            guard let urls = urls else { return }
-            for item in urls {
-                StorageManager.create(item) {
-                    print("success")
-                }
-            }
-            self.cells = realm.objects(ProjectFileModel.self)
-        }
-      
+        self.cells = realm.objects(ProjectFileModel.self)
     }
     
     

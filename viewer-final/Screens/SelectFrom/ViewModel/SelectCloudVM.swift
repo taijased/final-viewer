@@ -41,39 +41,10 @@ class SelectCloudVM: SelectCloudVMType {
         
         guard let selectedFileURL = urls.first else { return }
         
-        
-        
-        
-        
-        let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let sandboxFileURL = dir.appendingPathComponent(selectedFileURL.lastPathComponent)
-        
-        
-        
-        
-        
-//        check file exisist
-        
-        if FileManager.default.fileExists(atPath: sandboxFileURL.path) {
-            onNavigate?(.errorFormat(msg: "Already exists! Do nothing"))
+        StorageManager.create(selectedFileURL) { [weak self] success in
+            self?.onNavigate?(.errorFormat(msg: success.getDescription()))
         }
-            
-            
-        else {
-
-            do {
-                
-
-                //        check file exisist create new element
-                try FileManager.default.copyItem(at: selectedFileURL, to: sandboxFileURL)
-                
-                onNavigate?(.errorFormat(msg: "Copied file!"))
-            }
-            catch {
-                onNavigate?(.errorFormat(msg: "Error: \(error)"))
-            }
-        }
-
+        
     }
 }
 
@@ -81,6 +52,11 @@ class SelectCloudVM: SelectCloudVMType {
 //MARK: - SelectCloudDelegate select item from Cloud type
 
 extension SelectCloudVM: SelectCloudDelegate {
+    func openSupportedFormats() {
+//        self.onNavigate()
+        
+    }
+    
     func didSelectItemAt(_ item: SelectCloudModel) {
         switch item.type {
             
