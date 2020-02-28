@@ -22,7 +22,6 @@ protocol ProjectsViewModelType {
     var collectionView: ProjectsCollectionView { get }
     var plusButton: UIButton { get }
     var delegate: ProjectsViewModelDelegate? { get set }
-    
 }
 
 
@@ -70,21 +69,17 @@ class ProjectsViewModel: ProjectsViewModelType {
             print(#function)
         }))
         
-        
-        
         actionSheet.view.tintColor = UIColor.Primary.primary
         actionSheet.dismiss(animated: false, completion: nil)
         
         return actionSheet
     }()
     
-    
-    
     var collectionView: ProjectsCollectionView
     
     init() {
-        collectionView = ProjectsCollectionView()
-        collectionView.collectionDelegate = self
+        self.collectionView = ProjectsCollectionView()
+        self.collectionView.collectionDelegate = self
     }
     
     
@@ -99,7 +94,6 @@ class ProjectsViewModel: ProjectsViewModelType {
         if let image = UIImage(named: type.getIconName()) {
             result.setValue(image, forKey: "image")
         }
-//        result.setValue(CATextLayerAlignmentMode.natural, forKey: "titleTextAlignment")
         return result
     }
     
@@ -107,8 +101,14 @@ class ProjectsViewModel: ProjectsViewModelType {
 
 
 
+
+//MARK: - ProjectsCollectionViewDelegate
 extension ProjectsViewModel: ProjectsCollectionViewDelegate {
-    func didSelectItemAt(appleSong: AppleSong) {
+    func didSelectMore() {
+        delegate?.onEvents(type: .more)
+    }
+    
+    func didSelectItemAt() {
         delegate?.onEvents(type: .didSelectItemAt)
     }
 }

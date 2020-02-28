@@ -10,6 +10,7 @@ import Foundation
 
 
 enum ProjectsViewAction {
+    case more
     case plus
     case didSelectItemAt
 }

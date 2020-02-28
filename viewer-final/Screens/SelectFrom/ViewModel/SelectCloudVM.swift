@@ -40,18 +40,31 @@ class SelectCloudVM: SelectCloudVMType {
     func didPickDocumentsAt(urls: [URL]) {
         
         guard let selectedFileURL = urls.first else { return }
+        
+        
+        
+        
+        
         let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let sandboxFileURL = dir.appendingPathComponent(selectedFileURL.lastPathComponent)
         
         
         
         
+        
+//        check file exisist
+        
         if FileManager.default.fileExists(atPath: sandboxFileURL.path) {
             onNavigate?(.errorFormat(msg: "Already exists! Do nothing"))
         }
+            
+            
         else {
 
             do {
+                
+
+                //        check file exisist create new element
                 try FileManager.default.copyItem(at: selectedFileURL, to: sandboxFileURL)
                 
                 onNavigate?(.errorFormat(msg: "Copied file!"))

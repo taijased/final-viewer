@@ -30,21 +30,6 @@ final class SelectCloudViewController: UIViewController {
         
         view.addSubview(viewModel.tableView)
         viewModel.tableView.fillSuperview()
-        
-        
-        
-//        let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-//
-//        do {
-//            let fileURLs = try FileManager.default.contentsOfDirectory(at: dir, includingPropertiesForKeys: nil)
-//            print(fileURLs)
-//            // process files
-//        } catch {
-//            print("Error while enumerating files \(dir.path): \(error.localizedDescription)")
-//        }
-
-//        print(FileManager.default.urls(for: .documentDirectory, in: nil) ?? "none")
-        print(FileManager.default.contentsOfDirectoryURLs(for: .documentDirectory) ?? "none")
     }
     
     

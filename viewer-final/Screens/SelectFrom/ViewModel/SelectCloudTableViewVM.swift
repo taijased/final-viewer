@@ -34,11 +34,11 @@ class SelectCloudTableViewVM: SelectCloudTableViewVMType {
     init() {
         
         cells = [
-            SelectCloudModel(type: .dropboxs),
-            SelectCloudModel(type: .yadisk),
-            SelectCloudModel(type: .onedrive),
-            SelectCloudModel(type: .googledisk),
-            SelectCloudModel(type: .icloud),
+//            SelectCloudModel(type: .dropboxs),
+//            SelectCloudModel(type: .yadisk),
+//            SelectCloudModel(type: .onedrive),
+//            SelectCloudModel(type: .googledisk),
+//            SelectCloudModel(type: .icloud),
             SelectCloudModel(type: .systemFiles),
         ]
     }

@@ -44,19 +44,17 @@ final class ProjectsViewController: UIViewController {
         
         
         
-        //        view.backgroundColor = .random()r
         title = "Projects"
         
-        let searchController = UISearchController(searchResultsController: nil)
-        //        searchController.searchResultsUpdater = self.viewModel
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search"
-        self.navigationItem.searchController = searchController
-        self.definesPresentationContext = true
-        
-        
+//        let searchController = UISearchController(searchResultsController: nil)
+//        //        searchController.searchResultsUpdater = self.viewModel
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        searchController.searchBar.placeholder = "Search"
+//        self.navigationItem.searchController = searchController
+//        self.definesPresentationContext = true
+//
+//
         navigationController?.navigationBar.hideBottomHairline()
-        
     }
     
     // MARK: settings Navigation bar
@@ -73,18 +71,23 @@ final class ProjectsViewController: UIViewController {
         //        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-}
+    fileprivate func navigation(_ type: ProjectsNavigationType) {
+        switch type {
 
-
-
-
-
-//MARK: extension for ActionSheet
-extension ProjectsViewController {
-    fileprivate func showActionSheet() {
-        guard let viewModel = viewModel else { return }
-        self.present(viewModel.optionMenu, animated: true, completion: nil)
+        case .actionSheet:
+            guard let viewModel = viewModel else { return }
+            self.present(viewModel.optionMenu, animated: true, completion: nil)
+        case .selectCloud:
+            let viewController = SelectCloudViewController()
+            let navigationController = UINavigationController(rootViewController: viewController)
+            self.present(navigationController, animated: true, completion: nil)
+        case .openProject:
+            print(viewModel?.collectionView.viewModel?.viewModelForSelectedRow())
+        case .dismiss:
+            self.dismiss(animated: true, completion: nil)
+        }
     }
+    
 }
 
 
@@ -95,11 +98,12 @@ extension ProjectsViewController: ProjectsViewModelDelegate {
     func onEvents(type: ProjectsViewAction) {
         switch type {
         case .plus:
-            print(type)
+            self.navigation(.selectCloud)
         case .didSelectItemAt:
-            self.showActionSheet()
+            self.navigation(.openProject)
+        case .more:
+            self.navigation(.actionSheet)
         }
-        
     }
 }
     

@@ -4,7 +4,8 @@ import UIKit
 
 
 protocol ProjectsCollectionViewDelegate: class {
-    func didSelectItemAt(appleSong: AppleSong)
+    func didSelectItemAt()
+    func didSelectMore()
 }
 
 
@@ -68,6 +69,7 @@ extension ProjectsCollectionView: UICollectionViewDelegate, UICollectionViewData
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
         
         collectionViewCell.viewModel = cellViewModel
+        collectionViewCell.delegate = self
         
         return collectionViewCell
     }
@@ -77,10 +79,7 @@ extension ProjectsCollectionView: UICollectionViewDelegate, UICollectionViewData
         guard let viewModel = viewModel else { return }
         viewModel.selectItem(atIndexPath: indexPath)
         guard let appleSong = viewModel.viewModelForSelectedRow() else { return }
-        collectionDelegate?.didSelectItemAt(appleSong: appleSong)
-        
-        
-        
+        collectionDelegate?.didSelectItemAt()
     }
 }
 
@@ -109,7 +108,7 @@ extension ProjectsCollectionView: UICollectionViewDelegateFlowLayout {
 }
 
 
-////MARK: - ProjectsContextViewMenu
+//MARK: - ProjectsContextViewMenu
 
 extension ProjectsCollectionView: ProjectsContextViewMenu {
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
@@ -122,3 +121,15 @@ extension ProjectsCollectionView: ProjectsContextViewMenu {
         }
     }
 }
+
+
+//MARK: - ProjectsCollectionViewCellDelegate
+
+extension ProjectsCollectionView: ProjectsCollectionViewCellDelegate {
+    func moreTapped() {
+        collectionDelegate?.didSelectMore()
+    }
+}
+
+
+

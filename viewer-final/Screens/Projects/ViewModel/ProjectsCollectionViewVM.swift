@@ -8,7 +8,7 @@
 
 
 import UIKit
-
+import RealmSwift
 
 protocol ProjectsCollectionViewVMType {
     
@@ -17,7 +17,7 @@ protocol ProjectsCollectionViewVMType {
     func sizeForItemAt() -> CGSize
     func numberOfRows() -> Int
     func cellViewModel(forIndexPath indexPath: IndexPath) -> ProjectsCollectionViewCellVMType?
-    func viewModelForSelectedRow() -> AppleSong?
+    func viewModelForSelectedRow() -> ProjectFileModel?
     func selectItem(atIndexPath indexPath: IndexPath)
     var onReloadData: (() -> Void)? { get set }
 }
@@ -35,14 +35,31 @@ class ProjectsCollectionViewVM: ProjectsCollectionViewVMType {
     var minimumInteritemSpacingForSectionAt: CGFloat = 20.0
     var minimumLineSpacingForSectionAt: CGFloat = 40.0
     
-    var cells: [AppleSong]?
+    //    var cells: [ProjectFileModel]?
+    
+    var cells: Results<ProjectFileModel>?
+    
+    let fileFetcher = LocalFileFetcher()
+    
     
     init() {
-        self.dataFetcherService.fetchRSSAppleMusic { [weak self ](feed) in
-            self?.cells = feed?.feed.results ?? nil
-            self?.onReloadData?()
-        }
+        fetchFromRealm()
     }
+    
+    fileprivate func fetchFromRealm() {
+        
+        self.fileFetcher.fetchLocalData { urls in
+            guard let urls = urls else { return }
+            for item in urls {
+                StorageManager.create(item) {
+                    print("success")
+                }
+            }
+            self.cells = realm.objects(ProjectFileModel.self)
+        }
+      
+    }
+    
     
     
     func sizeForItemAt() -> CGSize {
@@ -64,7 +81,7 @@ class ProjectsCollectionViewVM: ProjectsCollectionViewVMType {
         return ProjectsCollectionViewCellVM(cell: cell)
     }
     
-    func viewModelForSelectedRow() -> AppleSong? {
+    func viewModelForSelectedRow() -> ProjectFileModel? {
         guard let selectedIndexPath = selectedIndexPath, let cells = cells else { return nil }
         return cells[selectedIndexPath.row]
     }

@@ -10,15 +10,23 @@
 
 import UIKit
 
+
+protocol ProjectsCollectionViewCellDelegate: class {
+    func moreTapped()
+}
+
 class ProjectsCollectionViewCell: UICollectionViewCell {
     
     
+    
+    weak var delegate: ProjectsCollectionViewCellDelegate?
     static let reuseId = "ProjectsCollectionViewCell"
     
     weak var viewModel: ProjectsCollectionViewCellVMType? {
         willSet(viewModel) {
+            moreButton.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
             guard let viewModel = viewModel else { return }
-            myImageView.set(imageURL: viewModel.imageURL)
+//            myImageView.set(imageURL: viewModel.imageURL)
             label.text = viewModel.label
         }
     }
@@ -33,7 +41,6 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
         view.layer.shadowOffset = CGSize(width: 0, height: 2)
         view.layer.cornerRadius = 10
         view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
-
         view.layer.position = view.center
         return view
     }()
@@ -41,18 +48,28 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
     let myImageView: WebImageView = {
         let imageView = WebImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = #colorLiteral(red: 0.8882605433, green: 0.8981810212, blue: 0.9109882712, alpha: 1)
+        imageView.contentMode = .center
+        imageView.backgroundColor = .white
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 10
+//        imageView.image = UIImage(named: "viewer_36x36")
         return imageView
     }()
+    
+    let defaultImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .center
+        imageView.image = UIImage(named: "viewer_36x36")
+        return imageView
+    }()
+    
+    
     
     let label: UILabel = {
         let label = UILabel.H3.medium
         return label
     }()
-    
     
     let labelView: UIView = {
         let view = UIView()
@@ -60,6 +77,21 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    
+    lazy var moreButton: UIButton = {
+        var button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "more"), for: .normal)
+        return button
+    }()
+    
+    
+    
+    @objc func moreButtonTapped(_ sender: UIButton) {
+        delegate?.moreTapped()
+    }
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -104,6 +136,26 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
         label.leadingAnchor.constraint(equalTo: labelView.leadingAnchor, constant: 10).isActive = true
         label.trailingAnchor.constraint(equalTo: labelView.trailingAnchor).isActive = true
         label.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        
+        
+        myImageView.addSubview(defaultImageView)
+        defaultImageView.topAnchor.constraint(equalTo: myImageView.topAnchor).isActive = true
+        defaultImageView.leadingAnchor.constraint(equalTo: myImageView.leadingAnchor, constant: 10).isActive = true
+        defaultImageView.trailingAnchor.constraint(equalTo: myImageView.trailingAnchor).isActive = true
+        defaultImageView.bottomAnchor.constraint(equalTo: label.topAnchor).isActive = true
+        
+        
+        
+        
+        
+        
+        
+        
+        addSubview(moreButton)
+        moreButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
+        moreButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
+        moreButton.heightAnchor.constraint(equalToConstant: 16).isActive = true
+        moreButton.widthAnchor.constraint(equalToConstant: 16).isActive = true
         
         
     }

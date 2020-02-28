@@ -12,24 +12,29 @@ import UIKit
 protocol ProjectsCollectionViewCellVMType: class {
     var label: String { get }
     var imageURL: String { get }
+    var path: String { get }
 }
 
 
 
 class ProjectsCollectionViewCellVM: ProjectsCollectionViewCellVMType {
     
-    private var profile: AppleSong
+    private var file: ProjectFileModel
 
     var label: String {
-        return profile.name
+        return file.name ?? ""
+    }
+    
+    var path: String {
+        return file.path ?? ""
     }
 
     var imageURL: String {
-        return profile.artworkUrl100
+        return file.imagePath ?? ""
     }
     
     
-    init(cell: AppleSong) {
-        self.profile = cell
+    init(cell: ProjectFileModel) {
+        self.file = cell
     }
 }
