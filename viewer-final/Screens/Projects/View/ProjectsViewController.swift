@@ -9,36 +9,52 @@
 import UIKit
 
 final class ProjectsViewController: UIViewController {
-
+    
+    
     fileprivate var viewModel: ProjectsViewModelType?
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewModel = ProjectsViewModel()
         setupUI()
-
+        
         
     }
     
     fileprivate func setupUI() {
         
+        
+        viewModel?.delegate = self
         guard let viewModel = viewModel else { return }
+       
         view.addSubview(viewModel.collectionView)
         viewModel.collectionView.fillSuperview()
         
         
         
-//        view.backgroundColor = .random()
+        viewModel.plusButton.isUserInteractionEnabled = true
+        view.addSubview(viewModel.plusButton)
+        viewModel.plusButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        viewModel.plusButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22).isActive = true
+        viewModel.plusButton.widthAnchor.constraint(equalToConstant: 56).isActive = true
+        viewModel.plusButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        
+        
+        
+        //        view.backgroundColor = .random()r
         title = "Projects"
         
         let searchController = UISearchController(searchResultsController: nil)
-//        searchController.searchResultsUpdater = self.viewModel
+        //        searchController.searchResultsUpdater = self.viewModel
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
         self.navigationItem.searchController = searchController
         self.definesPresentationContext = true
         
-
+        
         navigationController?.navigationBar.hideBottomHairline()
         
     }
@@ -47,14 +63,43 @@ final class ProjectsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        navigationController?.setNavigationBarHidden(false, animated: animated)
+        //        navigationController?.setNavigationBarHidden(false, animated: animated)
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        navigationController?.setNavigationBarHidden(false, animated: animated)
+        //        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
 }
+
+
+
+
+
+//MARK: extension for ActionSheet
+extension ProjectsViewController {
+    fileprivate func showActionSheet() {
+        guard let viewModel = viewModel else { return }
+        self.present(viewModel.optionMenu, animated: true, completion: nil)
+    }
+}
+
+
+
+//MARK: - ProjectsViewModelDelegate
+
+extension ProjectsViewController: ProjectsViewModelDelegate {
+    func onEvents(type: ProjectsViewAction) {
+        switch type {
+        case .plus:
+            print(type)
+        case .didSelectItemAt:
+            self.showActionSheet()
+        }
+        
+    }
+}
+    

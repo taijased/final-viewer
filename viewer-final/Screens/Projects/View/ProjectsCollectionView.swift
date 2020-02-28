@@ -78,6 +78,9 @@ extension ProjectsCollectionView: UICollectionViewDelegate, UICollectionViewData
         viewModel.selectItem(atIndexPath: indexPath)
         guard let appleSong = viewModel.viewModelForSelectedRow() else { return }
         collectionDelegate?.didSelectItemAt(appleSong: appleSong)
+        
+        
+        
     }
 }
 

@@ -104,6 +104,9 @@
 		13BAE82B24052D78008A44E0 /* CloudViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE82A24052D78008A44E0 /* CloudViewModel.swift */; };
 		13BAE82D24052D91008A44E0 /* CloudModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE82C24052D91008A44E0 /* CloudModel.swift */; };
 		13BAE83524054033008A44E0 /* UIImage + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE83424054033008A44E0 /* UIImage + UIView.swift */; };
+		13D5BB0C2408FE1000A65256 /* ProjectsViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D5BB0B2408FE1000A65256 /* ProjectsViewAction.swift */; };
+		13D5BB0E2409209E00A65256 /* CustomAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D5BB0D2409209E00A65256 /* CustomAlertAction.swift */; };
+		13D5BB1024092B9600A65256 /* UIAlertAction + setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D5BB0F24092B9600A65256 /* UIAlertAction + setup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -206,6 +209,9 @@
 		13BAE82A24052D78008A44E0 /* CloudViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudViewModel.swift; sourceTree = "<group>"; };
 		13BAE82C24052D91008A44E0 /* CloudModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudModel.swift; sourceTree = "<group>"; };
 		13BAE83424054033008A44E0 /* UIImage + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + UIView.swift"; sourceTree = "<group>"; };
+		13D5BB0B2408FE1000A65256 /* ProjectsViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewAction.swift; sourceTree = "<group>"; };
+		13D5BB0D2409209E00A65256 /* CustomAlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertAction.swift; sourceTree = "<group>"; };
+		13D5BB0F24092B9600A65256 /* UIAlertAction + setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertAction + setup.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +248,7 @@
 				130B981E23FD645900DE6C60 /* Model */,
 				130B981D23FD645700DE6C60 /* View */,
 				130B981C23FD645400DE6C60 /* ViewModel */,
+				13D5BB0F24092B9600A65256 /* UIAlertAction + setup.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -271,6 +278,8 @@
 			isa = PBXGroup;
 			children = (
 				130B982523FD688000DE6C60 /* AppleMusicModel.swift */,
+				13D5BB0B2408FE1000A65256 /* ProjectsViewAction.swift */,
+				13D5BB0D2409209E00A65256 /* CustomAlertAction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -753,6 +762,7 @@
 				130B982A23FD695300DE6C60 /* ProjectsCollectionViewCellVM.swift in Sources */,
 				137ADD1723FC09A300237368 /* NetworkDataFetcher.swift in Sources */,
 				137ADD0D23FC092400237368 /* UIButton + Custom.swift in Sources */,
+				13D5BB0E2409209E00A65256 /* CustomAlertAction.swift in Sources */,
 				13BAE81724041569008A44E0 /* FormatListVM.swift in Sources */,
 				137ADD1C23FC09F600237368 /* StoryboardInitializable.swift in Sources */,
 				137ADD5C23FC371000237368 /* AuthData.swift in Sources */,
@@ -801,6 +811,7 @@
 				137ADCE123FC04F700237368 /* AppDelegate.swift in Sources */,
 				13BAE83524054033008A44E0 /* UIImage + UIView.swift in Sources */,
 				130ADC102407C3BE00E6EAE3 /* CPopUpTableView.swift in Sources */,
+				13D5BB1024092B9600A65256 /* UIAlertAction + setup.swift in Sources */,
 				133A5973240559ED00BAC954 /* FilesTableViewCellVM.swift in Sources */,
 				137ADCFA23FC077700237368 /* WebImageView.swift in Sources */,
 				137ADD5723FC36C600237368 /* AuthViewController.swift in Sources */,
@@ -822,6 +833,7 @@
 				130ADC182407C3F400E6EAE3 /* CPopUpTableViewVM.swift in Sources */,
 				130ADC0E2407C33C00E6EAE3 /* CloudPopUpViewController.swift in Sources */,
 				13BAE7FC24040327008A44E0 /* SelectCloudTableViewCell.swift in Sources */,
+				13D5BB0C2408FE1000A65256 /* ProjectsViewAction.swift in Sources */,
 				13BAE802240404F9008A44E0 /* SelectCloudHeaderView.swift in Sources */,
 				137ADD4923FC296300237368 /* UILabel + lineSpacing.swift in Sources */,
 				137ADD4223FC147800237368 /* SplashViewController.swift in Sources */,
