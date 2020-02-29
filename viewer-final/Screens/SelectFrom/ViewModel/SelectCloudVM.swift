@@ -24,6 +24,9 @@ class SelectCloudVM: SelectCloudVMType {
     
     lazy var documentPicker: UIDocumentPickerViewController = {
         let picker =  UIDocumentPickerViewController(documentTypes: ["public.data"], in: .import)
+        
+        
+        
         picker.allowsMultipleSelection = false
         return picker
     }()
@@ -36,6 +39,8 @@ class SelectCloudVM: SelectCloudVMType {
         tableView = SelectCloudTableView()
         tableView.selectDelegate = self
     }
+    
+
     
     func didPickDocumentsAt(urls: [URL]) {
         
@@ -53,8 +58,7 @@ class SelectCloudVM: SelectCloudVMType {
 
 extension SelectCloudVM: SelectCloudDelegate {
     func openSupportedFormats() {
-//        self.onNavigate()
-        
+        self.onNavigate?(.supportedFormats)
     }
     
     func didSelectItemAt(_ item: SelectCloudModel) {

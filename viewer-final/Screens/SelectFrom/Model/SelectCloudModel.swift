@@ -22,6 +22,7 @@ struct SelectCloudModel {
 
 
 enum SelectCloudNavigation {
+    case supportedFormats
     case documentPicker
     case errorFormat(msg: String)
     case dismiss

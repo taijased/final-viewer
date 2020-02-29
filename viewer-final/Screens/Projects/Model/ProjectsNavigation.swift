@@ -12,5 +12,7 @@ enum ProjectsNavigationType {
     case actionSheet
     case selectCloud
     case openProject
+    case renameAlert
     case dismiss
+    
 }

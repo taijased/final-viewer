@@ -10,7 +10,6 @@
 		048651FEE50247D9B114B320 /* Pods_viewer_final.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CB4FC396E21FD3D16F776BB /* Pods_viewer_final.framework */; };
 		130ADBF82406837C00E6EAE3 /* FileManager + contentsOfDirectoryURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130ADBF72406837C00E6EAE3 /* FileManager + contentsOfDirectoryURLs.swift */; };
 		130ADBFA240692AD00E6EAE3 /* viewer-file.png in Resources */ = {isa = PBXBuildFile; fileRef = 130ADBF9240692AD00E6EAE3 /* viewer-file.png */; };
-		130ADBFC240694DE00E6EAE3 /* FormatSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 130ADBFB240694DE00E6EAE3 /* FormatSettings.plist */; };
 		130ADC012406B12C00E6EAE3 /* ToastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130ADC002406B12C00E6EAE3 /* ToastViewController.swift */; };
 		130ADC032406B13E00E6EAE3 /* ToastPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130ADC022406B13E00E6EAE3 /* ToastPresentationController.swift */; };
 		130ADC062406B1C600E6EAE3 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130ADC052406B1C600E6EAE3 /* PresentationController.swift */; };
@@ -118,7 +117,6 @@
 /* Begin PBXFileReference section */
 		130ADBF72406837C00E6EAE3 /* FileManager + contentsOfDirectoryURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager + contentsOfDirectoryURLs.swift"; sourceTree = "<group>"; };
 		130ADBF9240692AD00E6EAE3 /* viewer-file.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "viewer-file.png"; sourceTree = "<group>"; };
-		130ADBFB240694DE00E6EAE3 /* FormatSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FormatSettings.plist; sourceTree = "<group>"; };
 		130ADC002406B12C00E6EAE3 /* ToastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewController.swift; sourceTree = "<group>"; };
 		130ADC022406B13E00E6EAE3 /* ToastPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPresentationController.swift; sourceTree = "<group>"; };
 		130ADC052406B1C600E6EAE3 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
@@ -333,7 +331,6 @@
 				137ADCFB23FC07A600237368 /* Design System */,
 				137ADCF623FC074200237368 /* Helpers */,
 				137ADCF423FC064700237368 /* Supporting Files */,
-				130ADBFB240694DE00E6EAE3 /* FormatSettings.plist */,
 			);
 			path = "viewer-final";
 			sourceTree = "<group>";
@@ -800,7 +797,6 @@
 				130ADBFA240692AD00E6EAE3 /* viewer-file.png in Resources */,
 				137ADCEA23FC04F900237368 /* Assets.xcassets in Resources */,
 				137ADD3423FC0B0500237368 /* TTNorms-MediumItalic.ttf in Resources */,
-				130ADBFC240694DE00E6EAE3 /* FormatSettings.plist in Resources */,
 				137ADD3923FC0B0500237368 /* TTNorms-HeavyItalic.ttf in Resources */,
 				137ADD3A23FC0B0500237368 /* TTNorms-ExtraBoldItalic.ttf in Resources */,
 				137ADD3323FC0B0500237368 /* TTNorms-Regular.ttf in Resources */,

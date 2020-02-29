@@ -11,7 +11,7 @@ import UIKit
 final class SplashViewController: UIViewController {
     
     
-    var finishedSplashScreen: (() -> Void)?
+    var deinitViewController: (() -> Void)?
     
     fileprivate let logoView: ARQIconView = {
         let view = ARQIconView()
@@ -32,26 +32,36 @@ final class SplashViewController: UIViewController {
         logoView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         logoView.heightAnchor.constraint(equalToConstant: 160).isActive = true
         logoView.widthAnchor.constraint(equalToConstant: 220).isActive = true
-        
-
-        
-       setupAnimation()
+        setupAnimation()
     }
     
     //Animation: - Bounce
     func setupAnimation() {
         
-       UIView.animate(withDuration: 1.75, animations: {
-           self.logoView.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
-       }) { _ in
-           UIView.animate(withDuration: 0.25, animations: {
-               self.logoView.transform = CGAffineTransform(scaleX: 1, y: 1)
-               self.view.alpha = 0
-           }) { _ in
-               self.finishedSplashScreen?()
-           }
-       }
+        UIView.animate(withDuration: 1.75, animations: {
+            self.logoView.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        }) { _ in
+            UIView.animate(withDuration: 0.25, animations: {
+                self.logoView.transform = CGAffineTransform(scaleX: 1, y: 1)
+                self.view.alpha = 0
+            }) { _ in
+                self.checkRoute()
+            }
+        }
     }
+    
+    fileprivate func checkRoute() {
+        if realm.isEmpty {
+           let viewController = WelcomeViewController()
+            viewController.delegate = self
+            let navigationController = UINavigationController(rootViewController: viewController)
+            self.present(navigationController, animated: true, completion: nil)
+        } else {
+            self.deinitViewController?()
+        }
+    }
+    
+    
     
     
     // MARK: settings Navigation bar
@@ -67,7 +77,16 @@ final class SplashViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+    
+    
 }
 
 
 
+//MARK: - implementation of the delegate from WelcomeViewControllerDelegate
+
+extension SplashViewController: WelcomeViewControllerDelegate {
+    func deinitController() {
+        self.deinitViewController?()
+    }
+}

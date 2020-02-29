@@ -9,7 +9,17 @@
 import UIKit
 
 
+protocol SelectFilesDescriptionViewDelegate: class {
+    func buttonTappedHere()
+}
+
+
+
+
 final class SelectFilesDescriptionView: UIView {
+    
+    
+    weak var delegate: SelectFilesDescriptionViewDelegate?
     
     let label: UILabel = {
         let label = UILabel.H5.regular
@@ -66,8 +76,7 @@ final class SelectFilesDescriptionView: UIView {
         let index = label.indexOfAttributedTextCharacterAtPoint(point: tapLocation)
         
         if checkRange(termRange, contain: index) == true {
-            
-            print("term")
+            delegate?.buttonTappedHere()
             return
         }
         

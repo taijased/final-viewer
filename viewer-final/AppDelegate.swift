@@ -17,13 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.backgroundColor = .white
+//        window?.backgroundColor = .white
         let viewController = SplashViewController()
-        viewController.finishedSplashScreen = {
+        viewController.deinitViewController = { [weak self] in
             let viewController = ProjectsViewController()
             viewController.modalTransitionStyle = .crossDissolve
             let navigationController = UINavigationController(rootViewController: viewController)
-            self.window?.rootViewController = navigationController
+            self?.window?.rootViewController = navigationController
         }
         
         window?.rootViewController = viewController

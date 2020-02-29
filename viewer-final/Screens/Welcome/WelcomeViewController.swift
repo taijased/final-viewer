@@ -1,10 +1,29 @@
 
 import UIKit
 
+
+
+
+//MARK: - WelcomeModel
+
+enum WelcomeModel {
+    case chooseCloud
+    case dismiss
+}
+
+
+
+
+
+protocol WelcomeViewControllerDelegate: class {
+    func deinitController()
+}
+
+
+
 final class WelcomeViewController: UIViewController {
     
-    
-    
+    weak var delegate: WelcomeViewControllerDelegate?
     
     fileprivate let bgView: UIView = {
         let view = UIImageView()
@@ -105,10 +124,8 @@ final class WelcomeViewController: UIViewController {
         switch type {
         case .chooseCloud:
             let viewController = SelectCloudViewController()
-//            let viewController = CloudViewController()
-          
+            viewController.delegate = self
             let navigationController = UINavigationController(rootViewController: viewController)
-//            navigationController.modalPresentationStyle = .currentContext
             self.present(navigationController, animated: true, completion: nil)
         case .dismiss:
             self.dismiss(animated: true, completion: nil)
@@ -132,15 +149,19 @@ final class WelcomeViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        delegate?.deinitController()
+    }
+    
+    deinit {
+        delegate?.deinitController()
     }
 }
 
 
+//MARK: - implementation of the delegate from  SelectCloudViewController
 
-//MARK: - WelcomeModel
-
-enum WelcomeModel {
-    case chooseCloud
-    case dismiss
+extension  WelcomeViewController: SelectCloudViewControllerDelegate {
+    func deinitController() {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
-

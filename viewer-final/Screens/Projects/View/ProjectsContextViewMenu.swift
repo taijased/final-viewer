@@ -7,46 +7,78 @@
 //
 
 
-import Foundation
 import UIKit
 
-enum ProjectsContextViewMenuEnum {
-    case delete
-    case open
-    case share
-    case settings
-}
+//enum ProjectsContextViewMenuEnum {
+//    case delete
+//    case open
+//    case share
+//    case settings
+//}
 
 protocol ProjectsContextViewMenu {
     
 }
 
+
+
 extension ProjectsContextViewMenu {
-    func makeDefaultDemoMenu(completion: @escaping (ProjectsContextViewMenuEnum) -> Void) -> UIMenu {
-
-        
-        let open = UIAction(title: "Open", image: UIImage(systemName: "square.and.arrow.up"), attributes: .init()) { action in
-            completion(.open)
-        }
+    func makeDefaultDemoMenu(completion: @escaping (CustomAlertAction) -> Void) -> UIMenu {
         
         
-        let share = UIAction(title: "Share", image: UIImage(systemName: "icloud.fill"), attributes: .init()) { action in
+        var menuItems = [UIMenuElement]()
+        
+        
+        menuItems.append(
+            UIMenu(title: "Open", options: .displayInline, children: [self.setupCustomAction(.open, someHandler: { (action) in
+                completion(.open)
+            })])
+        )
+        menuItems.append(self.setupCustomAction(.share, someHandler: { (action) in
             completion(.share)
-        }
+        }))
         
-        let settings = UIAction(title: "Settings", image: UIImage(systemName: "square.and.pencil"), attributes: .init()) { action in
-            completion(.settings)
-        }
+        menuItems.append(self.setupCustomAction(.rename, someHandler: { (action) in
+            completion(.rename)
+        }))
         
-        let delete = UIAction(title: "Delete from cashe", image: UIImage(systemName: "trash"), attributes: .destructive) { action in
+        menuItems.append(self.setupCustomAction(.delete, someHandler: { (action) in
             completion(.delete)
+        }))
+        
+        return UIMenu(title: "", children: menuItems)
+    }
+    
+    
+    fileprivate func setupCustomAction(_ type: CustomAlertAction, someHandler: @escaping ((UIAction) -> Void)) -> UIAction {
+        
+        let result = UIAction(title: type.getTitleName(), handler: someHandler)
+        switch type {
+        case .open:
+            result.attributes = .init()
+        case .rename:
+            result.attributes = .init()
+        case .share:
+            result.attributes = .init()
+        case .delete:
+            result.attributes = .destructive
+        case .cancel:
+            result.attributes = .hidden
         }
         
         
-        let testOpen = UIMenu(title: "Open", options: .displayInline, children: [open])
-
+        if let image = UIImage(named: type.getIconName()) {
+            result.setValue(image, forKey: "image")
+        }
         
-        return UIMenu(title: "", children: [testOpen, share, settings, delete])
-
+        
+        
+        return result
+        
     }
+    
+    
 }
+
+
+

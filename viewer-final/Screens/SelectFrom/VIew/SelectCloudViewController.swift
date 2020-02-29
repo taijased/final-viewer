@@ -52,6 +52,10 @@ final class SelectCloudViewController: UIViewController {
             self.showToast(msg)
         case .dismiss:
             self.dismiss(animated: true, completion: nil)
+        case .supportedFormats:
+            
+            let viewController = FormatListViewController()
+            self.present(viewController, animated: true, completion: nil)
         }
     }
     
@@ -77,6 +81,9 @@ final class SelectCloudViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    deinit {
         delegate?.deinitController()
     }
     

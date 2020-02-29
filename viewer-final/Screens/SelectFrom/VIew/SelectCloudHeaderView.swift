@@ -14,6 +14,8 @@ final class SelectCloudHeaderView: UIView {
     
     
     
+    let privacyPolicyView = SelectFilesDescriptionView()
+    
     
     fileprivate let titleLabel: UILabel = {
         let label = UILabel.H1.bold
@@ -52,7 +54,7 @@ final class SelectCloudHeaderView: UIView {
         
         
         
-        let privacyPolicyView = SelectFilesDescriptionView()
+      
         
         addSubview(privacyPolicyView)
         privacyPolicyView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32).isActive = true
@@ -63,3 +65,4 @@ final class SelectCloudHeaderView: UIView {
     }
     
 }
+

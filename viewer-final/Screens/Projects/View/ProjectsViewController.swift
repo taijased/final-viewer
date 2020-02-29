@@ -83,9 +83,14 @@ final class ProjectsViewController: UIViewController {
             let navigationController = UINavigationController(rootViewController: viewController)
             self.present(navigationController, animated: true, completion: nil)
         case .openProject:
-            print(viewModel?.collectionView.viewModel?.viewModelForSelectedRow())
+            print(#function)
+//            print(viewModel?.collectionView.viewModel?.viewModelForSelectedRow())
+        case .renameAlert:
+            guard let viewModel = viewModel else { return }
+            self.present(viewModel.renameAlert, animated: true, completion: nil)
         case .dismiss:
             self.dismiss(animated: true, completion: nil)
+      
         }
     }
     
@@ -104,6 +109,19 @@ extension ProjectsViewController: ProjectsViewModelDelegate {
             self.navigation(.openProject)
         case .more:
             self.navigation(.actionSheet)
+        case .longTappedItem(let type, let item):
+            switch type {
+            case .open:
+                 print(#function)
+                print(item)
+            case .rename:
+                self.navigation(.renameAlert)
+            case .share:
+                print(#function)
+            default: break
+            }
+        case .renameAlert:
+            self.navigation(.renameAlert)
         }
     }
 }

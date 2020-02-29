@@ -13,4 +13,6 @@ enum ProjectsViewAction {
     case more
     case plus
     case didSelectItemAt
+    case longTappedItem(type: CustomAlertAction, item: ProjectsCollectionViewCellVMType)
+    case renameAlert
 }

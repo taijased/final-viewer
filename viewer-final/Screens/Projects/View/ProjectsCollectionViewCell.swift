@@ -12,7 +12,7 @@ import UIKit
 
 
 protocol ProjectsCollectionViewCellDelegate: class {
-    func moreTapped()
+    func moreTapped(_ item: ProjectsCollectionViewCellVMType)
 }
 
 class ProjectsCollectionViewCell: UICollectionViewCell {
@@ -22,10 +22,12 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
     weak var delegate: ProjectsCollectionViewCellDelegate?
     static let reuseId = "ProjectsCollectionViewCell"
     
-    weak var viewModel: ProjectsCollectionViewCellVMType? {
+    var viewModel: ProjectsCollectionViewCellVMType? {
         willSet(viewModel) {
-            moreButton.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
+           
             guard let viewModel = viewModel else { return }
+           
+            moreButton.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
 //            myImageView.set(imageURL: viewModel.imageURL)
             label.text = viewModel.label
         }
@@ -89,7 +91,8 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
     
     
     @objc func moreButtonTapped(_ sender: UIButton) {
-        delegate?.moreTapped()
+        guard let viewModel = self.viewModel else { return }
+        delegate?.moreTapped(viewModel)
     }
     
     

@@ -5,7 +5,8 @@ import UIKit
 
 protocol ProjectsCollectionViewDelegate: class {
     func didSelectItemAt()
-    func didSelectMore()
+    func didSelectMore(_ item: ProjectsCollectionViewCellVMType)
+    func didLongTapped(_ item: ProjectsCollectionViewCellVMType, _ type: CustomAlertAction)
 }
 
 
@@ -51,7 +52,7 @@ class ProjectsCollectionView: UICollectionView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
 }
 
 // MARK: UICollectionViewDelegate, UICollectionViewDataSource
@@ -67,7 +68,6 @@ extension ProjectsCollectionView: UICollectionViewDelegate, UICollectionViewData
         guard let collectionViewCell = cell, let viewModel = viewModel else { return UICollectionViewCell() }
         
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
-        
         collectionViewCell.viewModel = cellViewModel
         collectionViewCell.delegate = self
         
@@ -78,7 +78,7 @@ extension ProjectsCollectionView: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let viewModel = viewModel else { return }
         viewModel.selectItem(atIndexPath: indexPath)
-        guard let appleSong = viewModel.viewModelForSelectedRow() else { return }
+//        guard viewModel.viewModelForSelectedRow() != nil else { return }
         collectionDelegate?.didSelectItemAt()
     }
 }
@@ -114,9 +114,9 @@ extension ProjectsCollectionView: ProjectsContextViewMenu {
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
 
         return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { suggestedActions in
-            return self.makeDefaultDemoMenu { type in
-//                let cell = collectionView.cellForItem(at: indexPath) as! ProjectsCollectionViewCell
-                print(type)
+            return self.makeDefaultDemoMenu { [weak self] type in
+                guard let viewModel = (collectionView.cellForItem(at: indexPath) as? ProjectsCollectionViewCell)?.viewModel else { return }
+                self?.collectionDelegate?.didLongTapped(viewModel, type)
             }
         }
     }
@@ -126,8 +126,8 @@ extension ProjectsCollectionView: ProjectsContextViewMenu {
 //MARK: - ProjectsCollectionViewCellDelegate
 
 extension ProjectsCollectionView: ProjectsCollectionViewCellDelegate {
-    func moreTapped() {
-        collectionDelegate?.didSelectMore()
+    func moreTapped(_ item: ProjectsCollectionViewCellVMType) {
+        collectionDelegate?.didSelectMore(item)
     }
 }
 

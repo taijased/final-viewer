@@ -8,11 +8,13 @@
 
 import UIKit
 
+
+
 enum CustomAlertAction {
     case open
     case rename
     case share
-    case deleteFile
+    case delete
     case cancel
     
     func getIconName() -> String {
@@ -24,7 +26,7 @@ enum CustomAlertAction {
             result = "rename-as"
         case .share:
             result = "share-as"
-        case .deleteFile:
+        case .delete:
             result = "delete-as"
         case .cancel:
             result = ""
@@ -41,7 +43,7 @@ enum CustomAlertAction {
             result = "Rename"
         case .share:
             result = "Share"
-        case .deleteFile:
+        case .delete:
             result = "Delete file"
         case .cancel:
             result = "Cancel"
@@ -59,7 +61,7 @@ enum CustomAlertAction {
                 return .default
             case .share:
                 return .default
-            case .deleteFile:
+            case .delete:
                 return .destructive
             case .cancel:
                 return .cancel
@@ -69,4 +71,7 @@ enum CustomAlertAction {
         return result
     }
 }
+
+
+
 

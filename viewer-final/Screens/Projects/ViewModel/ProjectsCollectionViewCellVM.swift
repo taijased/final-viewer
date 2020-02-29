@@ -13,6 +13,7 @@ protocol ProjectsCollectionViewCellVMType: class {
     var label: String { get }
     var imageURL: String { get }
     var path: String { get }
+    var id: String { get }
 }
 
 
@@ -21,6 +22,10 @@ class ProjectsCollectionViewCellVM: ProjectsCollectionViewCellVMType {
     
     private var file: ProjectFileModel
 
+    var id: String {
+        return file.id ?? ""
+    }
+    
     var label: String {
         return file.name ?? ""
     }

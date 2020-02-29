@@ -48,8 +48,9 @@ class SelectCloudTableView: UITableView {
         tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 0))
         contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         
-        tableHeaderView = SelectCloudHeaderView(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: 179))
-        
+        let header =  SelectCloudHeaderView(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: 179))
+        header.privacyPolicyView.delegate = self
+        tableHeaderView = header
     }
     
     
@@ -87,7 +88,7 @@ extension SelectCloudTableView: UITableViewDelegate, UITableViewDataSource {
         guard let viewCell = cell, let viewModel = viewModel else { return UITableViewCell() }
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
         viewCell.viewModel = cellViewModel
-        viewCell.delegate = self
+//        viewCell.delegate = self
         return viewCell
         
     }
@@ -108,12 +109,22 @@ extension SelectCloudTableView: UITableViewDelegate, UITableViewDataSource {
 
 
 
+//
+////MARK: Binding SelectCloudTableViewCell
+//
+//extension SelectCloudTableView: SelectCloudTableViewCellDelegate {
+//    func clickLink() {
+//        print("click link")
+//        self.selectDelegate?.openSupportedFormats()
+//    }
+//}
 
-//MARK: Binding SelectCloudTableViewCell
 
-extension SelectCloudTableView: SelectCloudTableViewCellDelegate {
-    func clickLink() {
+extension SelectCloudTableView: SelectFilesDescriptionViewDelegate {
+    func buttonTappedHere() {
         self.selectDelegate?.openSupportedFormats()
     }
 }
+
+
 
