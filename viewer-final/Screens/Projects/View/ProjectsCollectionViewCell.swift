@@ -148,12 +148,6 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
         defaultImageView.bottomAnchor.constraint(equalTo: label.topAnchor).isActive = true
         
         
-        
-        
-        
-        
-        
-        
         addSubview(moreButton)
         moreButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
         moreButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
@@ -174,5 +168,9 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        self.viewModel = nil
     }
 }

@@ -83,8 +83,7 @@ final class ProjectsViewController: UIViewController {
             let navigationController = UINavigationController(rootViewController: viewController)
             self.present(navigationController, animated: true, completion: nil)
         case .openProject:
-            print(#function)
-//            print(viewModel?.collectionView.viewModel?.viewModelForSelectedRow())
+            print(viewModel?.collectionView.viewModel?.viewModelForSelectedRow())
         case .renameAlert:
             guard let viewModel = viewModel else { return }
             self.present(viewModel.renameAlert, animated: true, completion: nil)

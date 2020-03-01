@@ -141,13 +141,14 @@ class ProjectsViewModel: ProjectsViewModelType {
     fileprivate func renameItem(_ newValue: String) {
         guard let project = self.projectItem else { return }
 
-        StorageManager.update(object: ProjectFileModel(id: project.id, name: newValue, path: project.path)) {
-            print("Sussess")
+        StorageManager.update(object: ProjectFileModel(id: project.id, name: newValue, path: project.path)) { [weak self] in
+            self?.collectionView.reloadData()
         }
         
         
-        
     }
+    
+    
     
     fileprivate func shareItem() {
         guard let project = self.projectItem else { return }
