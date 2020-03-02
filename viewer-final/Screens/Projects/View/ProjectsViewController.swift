@@ -91,6 +91,7 @@ final class ProjectsViewController: UIViewController {
             
             guard let object = viewModel?.collectionView.viewModel?.viewModelForSelectedRow() else { return }
 
+            
             //example use update RPS
 
 //            StorageManager.update(object: ProjectFileModel(objectRPS: "new Value RPS", object: object)) {

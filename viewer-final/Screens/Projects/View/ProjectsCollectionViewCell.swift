@@ -38,12 +38,13 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.shadowRadius = 7
-        view.layer.shadowOpacity = 1
-        view.layer.shadowOffset = CGSize(width: 0, height: 2)
-        view.layer.cornerRadius = 10
-        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
-        view.layer.position = view.center
+//        view.layer.shadowRadius = 7
+//        view.layer.shadowOpacity = 1
+//        view.layer.shadowOffset = CGSize(width: 0, height: 2)
+//        view.layer.cornerRadius = 10
+//        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+//        view.layer.shadowPath = UIBezierPath(ovalIn: view.frame).cgPath
+//        view.layer.position = view.center
         return view
     }()
     
@@ -100,6 +101,7 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         setupUI()
     }
+    
     
     
     
@@ -168,6 +170,7 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+
     }
     
     required init?(coder aDecoder: NSCoder) {
