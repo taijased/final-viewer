@@ -24,12 +24,12 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
     
     var viewModel: ProjectsCollectionViewCellVMType? {
         willSet(viewModel) {
-           
+            
             guard let viewModel = viewModel else { return }
-           
+            
             moreButton.addTarget(self, action: #selector(moreButtonTapped), for: .touchUpInside)
-//            myImageView.set(imageURL: viewModel.imageURL)
-            label.text = viewModel.label
+            //            myImageView.set(imageURL: viewModel.imageURL)
+            label.text = viewModel.object.name
         }
     }
     
@@ -54,7 +54,7 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
         imageView.backgroundColor = .white
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 10
-//        imageView.image = UIImage(named: "viewer_36x36")
+        //        imageView.image = UIImage(named: "viewer_36x36")
         return imageView
     }()
     
@@ -106,7 +106,7 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
     fileprivate func setupUI() {
         
         
-           
+        
         
         
         layer.cornerRadius = 10
@@ -117,23 +117,23 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
         cardView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         cardView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         
-
+        
         cardView.addSubview(myImageView)
         myImageView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor).isActive = true
         myImageView.topAnchor.constraint(equalTo: cardView.topAnchor).isActive = true
         myImageView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor).isActive = true
         myImageView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor).isActive = true
-
-
-
+        
+        
+        
         myImageView.addSubview(labelView)
         labelView.bottomAnchor.constraint(equalTo: cardView.bottomAnchor).isActive = true
         labelView.leadingAnchor.constraint(equalTo: cardView.leadingAnchor).isActive = true
         labelView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor).isActive = true
         labelView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-
-
-
+        
+        
+        
         labelView.addSubview(label)
         label.centerYAnchor.constraint(equalTo: labelView.centerYAnchor).isActive = true
         label.leadingAnchor.constraint(equalTo: labelView.leadingAnchor, constant: 10).isActive = true
@@ -148,11 +148,15 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
         defaultImageView.bottomAnchor.constraint(equalTo: label.topAnchor).isActive = true
         
         
-        addSubview(moreButton)
-        moreButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
-        moreButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
-        moreButton.heightAnchor.constraint(equalToConstant: 16).isActive = true
-        moreButton.widthAnchor.constraint(equalToConstant: 16).isActive = true
+        
+        if UIDevice.current.model == "iPhone" {
+            addSubview(moreButton)
+            moreButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
+            moreButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
+            moreButton.heightAnchor.constraint(equalToConstant: 16).isActive = true
+            moreButton.widthAnchor.constraint(equalToConstant: 16).isActive = true
+        }
+        
         
         
     }

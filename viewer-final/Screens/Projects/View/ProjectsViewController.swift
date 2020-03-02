@@ -55,6 +55,10 @@ final class ProjectsViewController: UIViewController {
 //
 //
         navigationController?.navigationBar.hideBottomHairline()
+        
+        
+
+        
     }
     
     // MARK: settings Navigation bar
@@ -75,18 +79,31 @@ final class ProjectsViewController: UIViewController {
         switch type {
 
         case .actionSheet:
-            guard let viewModel = viewModel else { return }
-            self.present(viewModel.optionMenu, animated: true, completion: nil)
+            guard let optionMenu = viewModel?.optionMenu else { return }
+            self.present(optionMenu, animated: true, completion: nil)
         case .selectCloud:
             let viewController = SelectCloudViewController()
             viewController.delegate = self
             let navigationController = UINavigationController(rootViewController: viewController)
             self.present(navigationController, animated: true, completion: nil)
         case .openProject:
-            print(viewModel?.collectionView.viewModel?.viewModelForSelectedRow())
+            
+            
+            guard let object = viewModel?.collectionView.viewModel?.viewModelForSelectedRow() else { return }
+
+            //example use update RPS
+
+//            StorageManager.update(object: ProjectFileModel(objectRPS: "new Value RPS", object: object)) {
+//                print(object)
+//            }
+            
+            
+            
+            
+            
         case .renameAlert:
-            guard let viewModel = viewModel else { return }
-            self.present(viewModel.renameAlert, animated: true, completion: nil)
+            guard let renameAlert = viewModel?.renameAlert else { return }
+            self.present(renameAlert, animated: true, completion: nil)
         case .dismiss:
             self.dismiss(animated: true, completion: nil)
       
@@ -111,7 +128,6 @@ extension ProjectsViewController: ProjectsViewModelDelegate {
         case .longTappedItem(let type, let item):
             switch type {
             case .open:
-                 print(#function)
                 print(item)
             case .rename:
                 self.navigation(.renameAlert)

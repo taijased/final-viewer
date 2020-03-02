@@ -29,34 +29,11 @@ protocol RealmGRUDProtocol {
 
 
 
-
-
-
-
-enum StorageManagerNotify {
-    case fileExist
-    case success
-    case error
-    func getDescription() -> String {
-        switch self {
-        case .fileExist:
-            return "Already exists! Do nothing"
-        case .success:
-            return "Copied file!"
-        case .error:
-            return "Error"
-        }
-    }
-}
-
-
-
 class StorageManager {
     
-    static func create(_ url: URL, completion: @escaping (StorageManagerNotify) -> Void) {
-        guard  TrueFormats().isSupportedFormats(url.pathExtension) else { return }
+    static func create(id: String, _ url: URL, completion: @escaping () -> Void) {
         
-        let item = ProjectFileModel(id: UUID().uuidString, name: url.lastPathComponent, path: url.absoluteString)
+        let item = ProjectFileModel(id: id, path: url)
         let exist = realm.object(ofType: ProjectFileModel.self, forPrimaryKey: item.id) == nil
         let comperePath = realm.objects(ProjectFileModel.self).filter { $0.path == item.path }.first == nil
         
@@ -64,13 +41,13 @@ class StorageManager {
         if exist && comperePath {
             try! realm.write {
                 realm.add(item)
-                completion(.success)
+                completion()
             }
         } else {
-            completion(.fileExist)
+            completion()
         }
         
-        completion(.fileExist)
+        completion()
     }
     
     
@@ -83,7 +60,9 @@ class StorageManager {
     
     
     static func update(object: ProjectFileModel, completion: @escaping () -> Void) {
+        
         guard realm.object(ofType: ProjectFileModel.self, forPrimaryKey: object.id) != nil else { return }
+        
         try! realm.write {
             realm.add(object, update: .modified)
             completion()
@@ -101,10 +80,6 @@ class StorageManager {
             completion()
         }
     }
-    
-    
-    
-    
     
     
     

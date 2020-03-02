@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
 //        window?.backgroundColor = .white
         let viewController = SplashViewController()
+        
         viewController.deinitViewController = { [weak self] in
             let viewController = ProjectsViewController()
             viewController.modalTransitionStyle = .crossDissolve
