@@ -29,6 +29,7 @@ final class WelcomeViewController: UIViewController {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.image = UIImage(named: "artwork")
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
@@ -93,8 +94,8 @@ final class WelcomeViewController: UIViewController {
             view.addSubview(enterButton)
             enterButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
             enterButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
-            enterButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
-            enterButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
+            enterButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
+            enterButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
             
             view.addSubview(descriptionLabel)
             descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
@@ -109,10 +110,10 @@ final class WelcomeViewController: UIViewController {
             titleLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
             
             view.addSubview(bgView)
-            bgView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 45).isActive = true
-            bgView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -45).isActive = true
-            bgView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -50).isActive = true
-            bgView.heightAnchor.constraint(equalToConstant: 380).isActive = true
+            bgView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+            bgView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+            bgView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor).isActive = true
+            bgView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         } else {
             view.addSubview(enterButton)
             enterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true

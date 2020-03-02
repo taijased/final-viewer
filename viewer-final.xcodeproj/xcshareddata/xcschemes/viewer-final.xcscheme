@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "137ADCDC23FC04F700237368"
-               BuildableName = "viewer-final.app"
+               BuildableName = "ARQ Viewer.app"
                BlueprintName = "viewer-final"
                ReferencedContainer = "container:viewer-final.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "137ADCDC23FC04F700237368"
-            BuildableName = "viewer-final.app"
+            BuildableName = "ARQ Viewer.app"
             BlueprintName = "viewer-final"
             ReferencedContainer = "container:viewer-final.xcodeproj">
          </BuildableReference>
@@ -69,7 +69,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "137ADCDC23FC04F700237368"
-            BuildableName = "viewer-final.app"
+            BuildableName = "ARQ Viewer.app"
             BlueprintName = "viewer-final"
             ReferencedContainer = "container:viewer-final.xcodeproj">
          </BuildableReference>
