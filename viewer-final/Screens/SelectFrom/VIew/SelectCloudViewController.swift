@@ -45,9 +45,9 @@ final class SelectCloudViewController: UIViewController {
     fileprivate func navigation(_ nav: SelectCloudNavigation) {
         switch nav {
         case .documentPicker:
-            guard let viewModel = viewModel else { return }
-            viewModel.documentPicker.delegate = self
-            self.present(viewModel.documentPicker, animated: true, completion: nil)
+            guard let documentPicker = viewModel?.documentPicker else { return }
+            documentPicker.delegate = self
+            self.present(documentPicker, animated: true, completion: nil)
         case .errorFormat(let msg):
             self.showToast(msg)
         case .dismiss:

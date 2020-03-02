@@ -25,7 +25,7 @@ final class WelcomeViewController: UIViewController {
     
     weak var delegate: WelcomeViewControllerDelegate?
     
-    fileprivate let bgView: UIView = {
+    fileprivate let bgView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.image = UIImage(named: "artwork")
@@ -78,38 +78,69 @@ final class WelcomeViewController: UIViewController {
     
     fileprivate func setupUI() {
         
-               
+        
         self.view.alpha = 0
         view.backgroundColor = .white
         
         
         
         
-        view.addSubview(enterButton)
-        enterButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
-        enterButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
-        enterButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
-        enterButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
-        
-        view.addSubview(descriptionLabel)
-        descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
-        descriptionLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
-        descriptionLabel.bottomAnchor.constraint(equalTo: enterButton.topAnchor, constant: -33).isActive = true
-        descriptionLabel.heightAnchor.constraint(equalToConstant: 120).isActive = true
-        
-        view.addSubview(titleLabel)
-        titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
-        titleLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -10).isActive = true
-        titleLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
         
         
         
-        view.addSubview(bgView)
-        bgView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 45).isActive = true
-        bgView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -45).isActive = true
-        bgView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -50).isActive = true
-        bgView.heightAnchor.constraint(equalToConstant: 380).isActive = true
+        
+        if UIDevice.current.model == "iPhone" {
+            view.addSubview(enterButton)
+            enterButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
+            enterButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
+            enterButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+            enterButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
+            
+            view.addSubview(descriptionLabel)
+            descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
+            descriptionLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
+            descriptionLabel.bottomAnchor.constraint(equalTo: enterButton.topAnchor, constant: -33).isActive = true
+            descriptionLabel.heightAnchor.constraint(equalToConstant: 120).isActive = true
+            
+            view.addSubview(titleLabel)
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
+            titleLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
+            titleLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -10).isActive = true
+            titleLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
+            
+            view.addSubview(bgView)
+            bgView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 45).isActive = true
+            bgView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -45).isActive = true
+            bgView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -50).isActive = true
+            bgView.heightAnchor.constraint(equalToConstant: 380).isActive = true
+        } else {
+            view.addSubview(enterButton)
+            enterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            enterButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+            enterButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
+            enterButton.widthAnchor.constraint(equalToConstant: 343).isActive = true
+            
+            view.addSubview(descriptionLabel)
+            descriptionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            descriptionLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
+            descriptionLabel.bottomAnchor.constraint(equalTo: enterButton.topAnchor, constant: -33).isActive = true
+            descriptionLabel.heightAnchor.constraint(equalToConstant: 120).isActive = true
+            
+            view.addSubview(titleLabel)
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            titleLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
+            titleLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -10).isActive = true
+            titleLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
+            
+            
+            bgView.image = UIImage(named: "artwork-ipad")
+            view.addSubview(bgView)
+            bgView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            bgView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor).isActive = true
+            bgView.heightAnchor.constraint(equalToConstant: 420).isActive = true
+            bgView.widthAnchor.constraint(equalToConstant: 1194).isActive = true
+        }
+        
         
         
         
@@ -117,6 +148,13 @@ final class WelcomeViewController: UIViewController {
         UIView.animate(withDuration: 0.25) {
             self.view.alpha = 1
         }
+        
+        
+        
+        
+        
+        
+        
     }
     
     
@@ -132,9 +170,6 @@ final class WelcomeViewController: UIViewController {
             
         }
     }
-    
-    
-    
     
     
     // MARK: settings Navigation bar

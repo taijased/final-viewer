@@ -8,36 +8,46 @@
 
 import RealmSwift
 
-
-
-
 class ProjectFileModel: Object {
     @objc dynamic var id: String?
     @objc dynamic var name: String?
     @objc dynamic var path: String?
     @objc dynamic var imagePath: String?
-    @objc dynamic var typeFrom: String?
+    @objc dynamic var lastPathComponent: String?
+    @objc dynamic var objectRPS: String?
     
     
-    convenience init(id: String, name: String, path: String, imagePath: String, typeFrom: String) {
+    convenience init(id: String, path: URL) {
         self.init()
         self.id = id
-        self.name = name
-        self.path = path
-        self.imagePath = imagePath
-        self.typeFrom = typeFrom
-    }
-    
-    convenience init(id: String, name: String, path: String) {
-        self.init()
-        self.id = id
-        self.name = name
-        self.path = path
+        self.name = path.lastPathComponent
+        self.path = "\(id)/\(path.lastPathComponent)"
         self.imagePath = nil
-        self.typeFrom = nil
+        self.lastPathComponent = path.lastPathComponent
+        self.objectRPS = ""
     }
     
-
+    
+    convenience init(newValue: String, object: ProjectFileModel) {
+        self.init()
+        self.id = object.id
+        self.name = newValue
+        self.path = object.path
+        self.imagePath = object.imagePath
+        self.lastPathComponent = object.lastPathComponent
+        self.lastPathComponent = object.lastPathComponent
+        self.objectRPS = object.objectRPS
+    }
+    
+    convenience init(objectRPS: String, object: ProjectFileModel) {
+        self.init()
+        self.id = object.id
+        self.name = object.name
+        self.path = object.path
+        self.imagePath = object.imagePath
+        self.lastPathComponent = object.lastPathComponent
+        self.objectRPS = objectRPS
+    }
     
     override class func primaryKey() -> String? {
         return "id"

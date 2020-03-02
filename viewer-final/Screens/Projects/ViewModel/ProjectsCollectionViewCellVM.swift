@@ -10,36 +10,18 @@
 import UIKit
 
 protocol ProjectsCollectionViewCellVMType: class {
-    var label: String { get }
-    var imageURL: String { get }
-    var path: String { get }
-    var id: String { get }
+    var indexPath: IndexPath { get }
+    var object: ProjectFileModel { get }
 }
 
 
 
 class ProjectsCollectionViewCellVM: ProjectsCollectionViewCellVMType {
+    var indexPath: IndexPath
+    let object: ProjectFileModel
     
-    private var file: ProjectFileModel
-
-    var id: String {
-        return file.id ?? ""
-    }
-    
-    var label: String {
-        return file.name ?? ""
-    }
-    
-    var path: String {
-        return file.path ?? ""
-    }
-
-    var imageURL: String {
-        return file.imagePath ?? ""
-    }
-    
-    
-    init(cell: ProjectFileModel) {
-        self.file = cell
+    init(cell: ProjectFileModel, indexPath: IndexPath) {
+        self.object = cell
+        self.indexPath = indexPath
     }
 }

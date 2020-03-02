@@ -33,7 +33,7 @@ class ProjectsCollectionViewVM: ProjectsCollectionViewVMType {
     private var selectedIndexPath: IndexPath?
     
     var minimumInteritemSpacingForSectionAt: CGFloat = 20.0
-    var minimumLineSpacingForSectionAt: CGFloat = 40.0
+    var minimumLineSpacingForSectionAt: CGFloat = 20.0
     
     //    var cells: [ProjectFileModel]?
     
@@ -51,12 +51,17 @@ class ProjectsCollectionViewVM: ProjectsCollectionViewVMType {
     }
     
     
-    
     func sizeForItemAt() -> CGSize {
-        let width: CGFloat = (UIScreen.main.bounds.width - 60) * 0.5
-        let height: CGFloat = 160
-        
-        return CGSize(width: width, height: height)
+
+        if UIDevice.current.model == "iPhone" {
+            let width: CGFloat = (UIScreen.main.bounds.width - 60) * 0.5
+            let height: CGFloat = 160
+            return CGSize(width: width, height: height)
+        } else {
+            let width: CGFloat = (UIScreen.main.bounds.width - 120) * 0.25
+            let height: CGFloat = 180
+            return CGSize(width: width, height: height)
+        }
     }
     
     
@@ -68,7 +73,7 @@ class ProjectsCollectionViewVM: ProjectsCollectionViewVMType {
     func cellViewModel(forIndexPath indexPath: IndexPath) -> ProjectsCollectionViewCellVMType? {
         guard let cells = cells else { return nil }
         let cell = cells[indexPath.row]
-        return ProjectsCollectionViewCellVM(cell: cell)
+        return ProjectsCollectionViewCellVM(cell: cell, indexPath: indexPath)
     }
     
     func viewModelForSelectedRow() -> ProjectFileModel? {

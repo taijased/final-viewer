@@ -52,10 +52,21 @@ final class SplashViewController: UIViewController {
     
     fileprivate func checkRoute() {
         if realm.isEmpty {
-           let viewController = WelcomeViewController()
+            
+            let viewController = WelcomeViewController()
             viewController.delegate = self
-            let navigationController = UINavigationController(rootViewController: viewController)
-            self.present(navigationController, animated: true, completion: nil)
+            if UIDevice.current.model == "iPad" {
+                viewController.modalPresentationStyle = .fullScreen
+                self.present(viewController, animated: true, completion: nil)
+            } else {
+        
+                let navigationController = UINavigationController(rootViewController: viewController)
+                self.present(navigationController, animated: true, completion: nil)
+            }
+           
+         
+            
+            
         } else {
             self.deinitViewController?()
         }

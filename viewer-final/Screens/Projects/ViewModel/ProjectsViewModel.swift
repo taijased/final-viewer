@@ -34,6 +34,7 @@ class ProjectsViewModel: ProjectsViewModelType {
     private var projectItem: ProjectsCollectionViewCellVMType?
     
     weak var delegate: ProjectsViewModelDelegate?
+    fileprivate let localFileFetcher: LocalFileFetcher = LocalFileFetcher()
     
     
     lazy var plusButton: UIButton = {
@@ -87,7 +88,6 @@ class ProjectsViewModel: ProjectsViewModelType {
         actionSheet.addAction(setupAlertAction(.cancel, someHandler: nil))
         
         actionSheet.view.tintColor = UIColor.Primary.primary
-        actionSheet.dismiss(animated: false, completion: nil)
         
         return actionSheet
     }()
@@ -126,10 +126,30 @@ class ProjectsViewModel: ProjectsViewModelType {
     
     
     fileprivate func deleteItem() {
-        guard let id = self.projectItem?.id else { return }
-            StorageManager.delete(id: id) {
-            self.collectionView.reloadData()
+        
+        guard let guid = self.projectItem?.object.id else { return }
+        
+
+        localFileFetcher.removeFolder(guid)
+        
+        
+//        self.collectionView.deleteItems(at: [item.indexPath])
+//        print(item.indexPath)
+        
+        
+//        localFileFetcher.
+        
+        StorageManager.delete(id: guid) { [weak self] in
+            self?.collectionView.reloadData()
+//            UIView.animate(withDuration: 0.1, animations: {
+//                self?.collectionView.deleteItems(at: [item.indexPath])
+//            }) { _ in
+//
+//            }
         }
+        
+        
+        
     }
     
     
@@ -139,13 +159,13 @@ class ProjectsViewModel: ProjectsViewModelType {
     }
     
     fileprivate func renameItem(_ newValue: String) {
-        guard let project = self.projectItem else { return }
-
-        StorageManager.update(object: ProjectFileModel(id: project.id, name: newValue, path: project.path)) { [weak self] in
+        guard let object = self.projectItem?.object else { return }
+        
+        
+        StorageManager.update(object: ProjectFileModel(newValue: newValue, object: object)) { [weak self] in
             self?.collectionView.reloadData()
         }
-        
-        
+
     }
     
     

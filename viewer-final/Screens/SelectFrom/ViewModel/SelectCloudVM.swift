@@ -24,9 +24,6 @@ class SelectCloudVM: SelectCloudVMType {
     
     lazy var documentPicker: UIDocumentPickerViewController = {
         let picker =  UIDocumentPickerViewController(documentTypes: ["public.data"], in: .import)
-        
-        
-        
         picker.allowsMultipleSelection = false
         return picker
     }()
@@ -35,22 +32,27 @@ class SelectCloudVM: SelectCloudVMType {
     var tableView: SelectCloudTableView
     
     
+    
+    fileprivate let localFileFetcher: LocalFileFetcher = LocalFileFetcher()
+    
+    
     init() {
         tableView = SelectCloudTableView()
         tableView.selectDelegate = self
+        
     }
     
-
+    
     
     func didPickDocumentsAt(urls: [URL]) {
         
-        guard let selectedFileURL = urls.first else { return }
-        
-        StorageManager.create(selectedFileURL) { [weak self] success in
-            self?.onNavigate?(.errorFormat(msg: success.getDescription()))
+        localFileFetcher.copyFile(urls.first) { [weak self] notify in
+            self?.onNavigate?(.errorFormat(msg: notify.getDescription()))
         }
         
     }
+    
+    
 }
 
 
@@ -76,6 +78,38 @@ extension SelectCloudVM: SelectCloudDelegate {
             print(item.type)
         case .systemFiles:
             self.onNavigate?(.documentPicker)
+        }
+    }
+}
+
+
+
+extension URL {
+    enum Filestatus {
+        case isFile
+        case isDir
+        case isNot
+    }
+    
+    var filestatus: Filestatus {
+        get {
+            let filestatus: Filestatus
+            var isDir: ObjCBool = false
+            if FileManager.default.fileExists(atPath: self.path, isDirectory: &isDir) {
+                if isDir.boolValue {
+                    // file exists and is a directory
+                    filestatus = .isDir
+                }
+                else {
+                    // file exists and is not a directory
+                    filestatus = .isFile
+                }
+            }
+            else {
+                // file does not exist
+                filestatus = .isNot
+            }
+            return filestatus
         }
     }
 }
