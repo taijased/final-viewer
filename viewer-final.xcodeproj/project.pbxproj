@@ -151,7 +151,7 @@
 		133A5970240559E000BAC954 /* FilesTableViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesTableViewVM.swift; sourceTree = "<group>"; };
 		133A5972240559ED00BAC954 /* FilesTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesTableViewCellVM.swift; sourceTree = "<group>"; };
 		133A5974240564D600BAC954 /* UITableView + escaping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + escaping.swift"; sourceTree = "<group>"; };
-		137ADCDD23FC04F700237368 /* viewer-final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "viewer-final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		137ADCDD23FC04F700237368 /* ARQ Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ARQ Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		137ADCE023FC04F700237368 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		137ADCE923FC04F900237368 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		137ADCEC23FC04F900237368 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -316,7 +316,7 @@
 		137ADCDE23FC04F700237368 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				137ADCDD23FC04F700237368 /* viewer-final.app */,
+				137ADCDD23FC04F700237368 /* ARQ Viewer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -742,7 +742,7 @@
 			);
 			name = "viewer-final";
 			productName = "swift-starter-kit";
-			productReference = 137ADCDD23FC04F700237368 /* viewer-final.app */;
+			productReference = 137ADCDD23FC04F700237368 /* ARQ Viewer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1083,8 +1083,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.taijased.viewer-final";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.taijased.viewer-finall";
+				PRODUCT_NAME = "ARQ Viewer";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1103,8 +1103,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.taijased.viewer-final";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.taijased.viewer-finall";
+				PRODUCT_NAME = "ARQ Viewer";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
