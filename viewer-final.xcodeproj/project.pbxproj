@@ -112,7 +112,33 @@
 		13D5BB2524094D2C00A65256 /* LocalFileFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D5BB2424094D2C00A65256 /* LocalFileFetcher.swift */; };
 		13D5BB29240950C000A65256 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D5BB28240950C000A65256 /* StorageManager.swift */; };
 		13D5BB3E2409698400A65256 /* TrueFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D5BB3D2409698400A65256 /* TrueFormats.swift */; };
+		18553601240CF6E800AEF928 /* UnityFrameworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185535F5240CF6E700AEF928 /* UnityFrameworkWrapper.swift */; };
+		18553602240CF6E800AEF928 /* TestListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185535F6240CF6E700AEF928 /* TestListener.swift */; };
+		18553603240CF6E800AEF928 /* TestNativeCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185535F7240CF6E700AEF928 /* TestNativeCalls.swift */; };
+		18553604240CF6E800AEF928 /* UNLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185535FA240CF6E800AEF928 /* UNLogic.swift */; };
+		18553605240CF6E800AEF928 /* UNProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185535FB240CF6E800AEF928 /* UNProxy.swift */; };
+		18553606240CF6E800AEF928 /* UNCommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185535FC240CF6E800AEF928 /* UNCommunicator.swift */; };
+		18553607240CF6E800AEF928 /* UNCommunicatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185535FD240CF6E800AEF928 /* UNCommunicatorProtocol.swift */; };
+		18553608240CF6E800AEF928 /* RequestMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185535FF240CF6E800AEF928 /* RequestMessage.swift */; };
+		18553609240CF6E800AEF928 /* ResponseMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18553600240CF6E800AEF928 /* ResponseMessage.swift */; };
+		1855360B240CF71400AEF928 /* UnityFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1855360A240CF71400AEF928 /* UnityFramework.framework */; };
+		1855360C240CF71400AEF928 /* UnityFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1855360A240CF71400AEF928 /* UnityFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		18553611240CF90600AEF928 /* UnityOverlappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18553610240CF90600AEF928 /* UnityOverlappingView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1855360D240CF71400AEF928 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1855360C240CF71400AEF928 /* UnityFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		130ADBF72406837C00E6EAE3 /* FileManager + contentsOfDirectoryURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager + contentsOfDirectoryURLs.swift"; sourceTree = "<group>"; };
@@ -226,6 +252,18 @@
 		13D5BB3724095D2900A65256 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D5BB3D2409698400A65256 /* TrueFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueFormats.swift; sourceTree = "<group>"; };
 		15B78AE3BE72EE7682A8D499 /* Pods-viewer-final.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viewer-final.release.xcconfig"; path = "Target Support Files/Pods-viewer-final/Pods-viewer-final.release.xcconfig"; sourceTree = "<group>"; };
+		185535F5240CF6E700AEF928 /* UnityFrameworkWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnityFrameworkWrapper.swift; sourceTree = "<group>"; };
+		185535F6240CF6E700AEF928 /* TestListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestListener.swift; sourceTree = "<group>"; };
+		185535F7240CF6E700AEF928 /* TestNativeCalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNativeCalls.swift; sourceTree = "<group>"; };
+		185535F8240CF6E700AEF928 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		185535FA240CF6E800AEF928 /* UNLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNLogic.swift; sourceTree = "<group>"; };
+		185535FB240CF6E800AEF928 /* UNProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNProxy.swift; sourceTree = "<group>"; };
+		185535FC240CF6E800AEF928 /* UNCommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNCommunicator.swift; sourceTree = "<group>"; };
+		185535FD240CF6E800AEF928 /* UNCommunicatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNCommunicatorProtocol.swift; sourceTree = "<group>"; };
+		185535FF240CF6E800AEF928 /* RequestMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMessage.swift; sourceTree = "<group>"; };
+		18553600240CF6E800AEF928 /* ResponseMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseMessage.swift; sourceTree = "<group>"; };
+		1855360A240CF71400AEF928 /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18553610240CF90600AEF928 /* UnityOverlappingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnityOverlappingView.swift; sourceTree = "<group>"; };
 		1CB4FC396E21FD3D16F776BB /* Pods_viewer_final.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_viewer_final.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D942D03D497D7DD5A3203887 /* Pods-viewer-final.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viewer-final.debug.xcconfig"; path = "Target Support Files/Pods-viewer-final/Pods-viewer-final.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -236,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				048651FEE50247D9B114B320 /* Pods_viewer_final.framework in Frameworks */,
+				1855360B240CF71400AEF928 /* UnityFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +362,8 @@
 		137ADCDF23FC04F700237368 /* viewer-final */ = {
 			isa = PBXGroup;
 			children = (
+				185535F9240CF6E800AEF928 /* UNC */,
+				185535F4240CF6E700AEF928 /* UnityFramework */,
 				130ADBF9240692AD00E6EAE3 /* viewer-file.png */,
 				137ADCE023FC04F700237368 /* AppDelegate.swift */,
 				137ADD1A23FC09E600237368 /* Library */,
@@ -348,6 +389,7 @@
 		137ADCF523FC073000237368 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				1855360E240CF89100AEF928 /* Unity */,
 				13BAE82424052B18008A44E0 /* Cloud */,
 				13BAE809240413B4008A44E0 /* FormatList */,
 				13BAE7EE2403FD86008A44E0 /* SelectFrom */,
@@ -700,9 +742,58 @@
 			path = FileManager;
 			sourceTree = "<group>";
 		};
+		185535F4240CF6E700AEF928 /* UnityFramework */ = {
+			isa = PBXGroup;
+			children = (
+				185535F5240CF6E700AEF928 /* UnityFrameworkWrapper.swift */,
+				185535F6240CF6E700AEF928 /* TestListener.swift */,
+				185535F7240CF6E700AEF928 /* TestNativeCalls.swift */,
+				185535F8240CF6E700AEF928 /* Bridging-Header.h */,
+			);
+			path = UnityFramework;
+			sourceTree = "<group>";
+		};
+		185535F9240CF6E800AEF928 /* UNC */ = {
+			isa = PBXGroup;
+			children = (
+				185535FA240CF6E800AEF928 /* UNLogic.swift */,
+				185535FB240CF6E800AEF928 /* UNProxy.swift */,
+				185535FC240CF6E800AEF928 /* UNCommunicator.swift */,
+				185535FD240CF6E800AEF928 /* UNCommunicatorProtocol.swift */,
+				185535FE240CF6E800AEF928 /* Entities */,
+			);
+			path = UNC;
+			sourceTree = "<group>";
+		};
+		185535FE240CF6E800AEF928 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				185535FF240CF6E800AEF928 /* RequestMessage.swift */,
+				18553600240CF6E800AEF928 /* ResponseMessage.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		1855360E240CF89100AEF928 /* Unity */ = {
+			isa = PBXGroup;
+			children = (
+				1855360F240CF8BF00AEF928 /* View */,
+			);
+			path = Unity;
+			sourceTree = "<group>";
+		};
+		1855360F240CF8BF00AEF928 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18553610240CF90600AEF928 /* UnityOverlappingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3A8DB4FDA48B643755DAA3AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1855360A240CF71400AEF928 /* UnityFramework.framework */,
 				13D5BB3624095D2900A65256 /* Realm.framework */,
 				13D5BB3724095D2900A65256 /* RealmSwift.framework */,
 				13D5BB2C24095C2500A65256 /* Realm.framework */,
@@ -733,6 +824,7 @@
 				137ADCDA23FC04F700237368 /* Frameworks */,
 				137ADCDB23FC04F700237368 /* Resources */,
 				9302466C85A4947E5D33BAAB /* [CP] Embed Pods Frameworks */,
+				1855360D240CF71400AEF928 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -854,6 +946,7 @@
 			files = (
 				130B982823FD690B00DE6C60 /* ProjectsCollectionViewVM.swift in Sources */,
 				13BAE81524041552008A44E0 /* FormatListViewController.swift in Sources */,
+				18553609240CF6E800AEF928 /* ResponseMessage.swift in Sources */,
 				130B982A23FD695300DE6C60 /* ProjectsCollectionViewCellVM.swift in Sources */,
 				13D5BB29240950C000A65256 /* StorageManager.swift in Sources */,
 				137ADD1723FC09A300237368 /* NetworkDataFetcher.swift in Sources */,
@@ -866,12 +959,15 @@
 				130ADC062406B1C600E6EAE3 /* PresentationController.swift in Sources */,
 				133A596F240559D200BAC954 /* FilesTableViewCell.swift in Sources */,
 				130ADBF82406837C00E6EAE3 /* FileManager + contentsOfDirectoryURLs.swift in Sources */,
+				18553603240CF6E800AEF928 /* TestNativeCalls.swift in Sources */,
 				13BAE7FE240403B2008A44E0 /* SelectCloudTableViewVM.swift in Sources */,
 				137ADD6123FC3E4600237368 /* UIView+Border.swift in Sources */,
+				18553607240CF6E800AEF928 /* UNCommunicatorProtocol.swift in Sources */,
 				133A5971240559E000BAC954 /* FilesTableViewVM.swift in Sources */,
 				130ADC162407C3E800E6EAE3 /* CPopUpTableViewCellVM.swift in Sources */,
 				13BAE82924052D1C008A44E0 /* CloudViewController.swift in Sources */,
 				137ADD0A23FC085700237368 /* UIButton + Theme.swift in Sources */,
+				18553605240CF6E800AEF928 /* UNProxy.swift in Sources */,
 				130ADC1C2407CB5800E6EAE3 /* CPopUpTableHeaderView.swift in Sources */,
 				130B982E23FD6EC100DE6C60 /* UINavigationBar + bottomLine.swift in Sources */,
 				133A595B24054CF800BAC954 /* CloudTableViewVM.swift in Sources */,
@@ -908,14 +1004,18 @@
 				137ADCE123FC04F700237368 /* AppDelegate.swift in Sources */,
 				13BAE83524054033008A44E0 /* UIImage + UIView.swift in Sources */,
 				13D5BB1B240944D200A65256 /* ProjectFileModel.swift in Sources */,
+				18553604240CF6E800AEF928 /* UNLogic.swift in Sources */,
 				13D5BB3E2409698400A65256 /* TrueFormats.swift in Sources */,
 				130ADC102407C3BE00E6EAE3 /* CPopUpTableView.swift in Sources */,
 				13D5BB1024092B9600A65256 /* UIAlertAction + setup.swift in Sources */,
 				133A5973240559ED00BAC954 /* FilesTableViewCellVM.swift in Sources */,
 				137ADCFA23FC077700237368 /* WebImageView.swift in Sources */,
+				18553606240CF6E800AEF928 /* UNCommunicator.swift in Sources */,
 				137ADD5723FC36C600237368 /* AuthViewController.swift in Sources */,
 				137ADD0823FC082A00237368 /* UIColor + hexValue.swift in Sources */,
+				18553611240CF90600AEF928 /* UnityOverlappingView.swift in Sources */,
 				130ADC1A2407C68400E6EAE3 /* CloudPopUpViewControllerVM.swift in Sources */,
+				18553602240CF6E800AEF928 /* TestListener.swift in Sources */,
 				13BAE7F82404026C008A44E0 /* SelectCloudTableView.swift in Sources */,
 				130ADC012406B12C00E6EAE3 /* ToastViewController.swift in Sources */,
 				13D5BB2524094D2C00A65256 /* LocalFileFetcher.swift in Sources */,
@@ -926,10 +1026,12 @@
 				137ADD1523FC099000237368 /* NetworkService.swift in Sources */,
 				130B984923FFC91600DE6C60 /* PasswordFieldViewModel.swift in Sources */,
 				137ADD5123FC328E00237368 /* ARQIconView.swift in Sources */,
+				18553601240CF6E800AEF928 /* UnityFrameworkWrapper.swift in Sources */,
 				137ADD5923FC36D300237368 /* AuthViewModel.swift in Sources */,
 				13BAE81924041583008A44E0 /* FormatListTableView.swift in Sources */,
 				137ADD0223FC07F500237368 /* UIColor + ThemeColors.swift in Sources */,
 				130ADC122407C3D000E6EAE3 /* CPopUpTableViewCell.swift in Sources */,
+				18553608240CF6E800AEF928 /* RequestMessage.swift in Sources */,
 				130ADC182407C3F400E6EAE3 /* CPopUpTableViewVM.swift in Sources */,
 				130ADC0E2407C33C00E6EAE3 /* CloudPopUpViewController.swift in Sources */,
 				13BAE7FC24040327008A44E0 /* SelectCloudTableViewCell.swift in Sources */,
@@ -1075,6 +1177,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4226M9N553;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "viewer-final/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1082,6 +1185,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.taijased.viewer-final";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$PROJECT_DIR/viewer-final/UnityFramework/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1094,6 +1198,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4226M9N553;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "viewer-final/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1101,6 +1206,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.taijased.viewer-final";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$PROJECT_DIR/viewer-final/UnityFramework/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
