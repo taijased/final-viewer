@@ -1,5 +1,5 @@
 PODS:
-  - Bartinter (0.0.5)
+  - AlignedCollectionViewFlowLayout (1.1.2)
   - Realm (4.3.2):
     - Realm/Headers (= 4.3.2)
   - Realm/Headers (4.3.2)
@@ -7,20 +7,20 @@ PODS:
     - Realm (= 4.3.2)
 
 DEPENDENCIES:
-  - Bartinter
+  - AlignedCollectionViewFlowLayout
   - RealmSwift
 
 SPEC REPOS:
   trunk:
-    - Bartinter
+    - AlignedCollectionViewFlowLayout
     - Realm
     - RealmSwift
 
 SPEC CHECKSUMS:
-  Bartinter: 3c1fc3bcb631b066fdd78f7e01f1635fbafffdea
+  AlignedCollectionViewFlowLayout: ee2ef451e741ec08f8e0967d828001e2f051c20a
   Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
   RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
 
-PODFILE CHECKSUM: 377b66fe1c2f62bce9bc3125a2468bb3d4a41e5d
+PODFILE CHECKSUM: b36962c6812a3ccc822396c4b221de1daf13431f
 
 COCOAPODS: 1.8.3

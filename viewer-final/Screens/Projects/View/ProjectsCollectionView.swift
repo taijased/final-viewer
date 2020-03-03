@@ -1,6 +1,7 @@
 
 
 import UIKit
+import AlignedCollectionViewFlowLayout
 
 
 protocol ProjectsCollectionViewDelegate: class {
@@ -21,9 +22,14 @@ class ProjectsCollectionView: UICollectionView {
     
     
     init() {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
+//        let layout = UICollectionViewFlowLayout()
+//        layout.scrollDirection = .vertical
+//        super.init(frame: .zero, collectionViewLayout: layout)
+        
+        let layout = AlignedCollectionViewFlowLayout(horizontalAlignment: .left, verticalAlignment: .top)
         super.init(frame: .zero, collectionViewLayout: layout)
+
+        
         
         
         viewModel = ProjectsCollectionViewVM()

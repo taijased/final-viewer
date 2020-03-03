@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Bartinter
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
