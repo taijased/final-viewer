@@ -43,8 +43,9 @@ final class SplashViewController: UIViewController {
         }) { _ in
             UIView.animate(withDuration: 0.25, animations: {
                 self.logoView.transform = CGAffineTransform(scaleX: 1, y: 1)
-                self.view.alpha = 0
+                self.view.alpha = 0.0
             }) { _ in
+              
                 self.checkRoute()
             }
         }
@@ -52,21 +53,10 @@ final class SplashViewController: UIViewController {
     
     fileprivate func checkRoute() {
         if realm.isEmpty {
-            
             let viewController = WelcomeViewController()
             viewController.delegate = self
-            if UIDevice.current.model == "iPad" {
-                viewController.modalPresentationStyle = .fullScreen
-                self.present(viewController, animated: true, completion: nil)
-            } else {
-        
-                let navigationController = UINavigationController(rootViewController: viewController)
-                self.present(navigationController, animated: true, completion: nil)
-            }
-           
-         
-            
-            
+            viewController.modalPresentationStyle = .fullScreen
+            self.present(viewController, animated: true, completion: nil)
         } else {
             self.deinitViewController?()
         }

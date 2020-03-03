@@ -20,6 +20,7 @@ protocol ProjectsCollectionViewVMType {
     func viewModelForSelectedRow() -> ProjectFileModel?
     func selectItem(atIndexPath indexPath: IndexPath)
     var onReloadData: (() -> Void)? { get set }
+    func isEmpty() -> Bool
 }
 
 
@@ -52,7 +53,7 @@ class ProjectsCollectionViewVM: ProjectsCollectionViewVMType {
     
     
     func sizeForItemAt() -> CGSize {
-
+        
         if UIDevice.current.model == "iPhone" {
             let width: CGFloat = (UIScreen.main.bounds.width - 60) * 0.5
             let height: CGFloat = 160
@@ -65,6 +66,9 @@ class ProjectsCollectionViewVM: ProjectsCollectionViewVMType {
     }
     
     
+    func isEmpty() -> Bool {
+        return cells?.isEmpty ?? true
+    }
     
     func numberOfRows() -> Int {
         return cells?.count ?? 0

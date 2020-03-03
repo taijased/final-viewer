@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Bartinter
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,11 +18,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.backgroundColor = .white
-        let viewController = SplashViewController()
         
+        
+        
+//        if window?.traitCollection.userInterfaceStyle == .light {
+//           
+//             window?.backgroundColor = .black
+//        } else {
+//             window?.backgroundColor = .white
+//        }
+//        
+        
+        
+        
+        let viewController = SplashViewController()
         viewController.deinitViewController = { [weak self] in
             let viewController = ProjectsViewController()
+            viewController.modalPresentationStyle = .fullScreen
             viewController.modalTransitionStyle = .crossDissolve
             let navigationController = UINavigationController(rootViewController: viewController)
             self?.window?.rootViewController = navigationController

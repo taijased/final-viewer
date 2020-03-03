@@ -66,6 +66,7 @@ class ProjectsViewModel: ProjectsViewModelType {
         }))
         
         actionSheet.addTextField { (textField) in  textField.text = "New Name" }
+        actionSheet.setTitlet(font: UIFont.getTTNormsFont(type: .medium, size: 14), color: nil)
         
         return actionSheet
     }()
@@ -83,11 +84,14 @@ class ProjectsViewModel: ProjectsViewModelType {
             self?.delegate?.onEvents(type: .renameAlert)
         }))
         
-        actionSheet.addAction(setupAlertAction(.share, someHandler: { [weak self] _ in self?.shareItem() }))
+//        actionSheet.addAction(setupAlertAction(.share, someHandler: { [weak self] _ in self?.shareItem() }))
         actionSheet.addAction(setupAlertAction(.delete, someHandler: { [weak self] _ in self?.deleteItem() }))
         actionSheet.addAction(setupAlertAction(.cancel, someHandler: nil))
         
-        actionSheet.view.tintColor = UIColor.Primary.primary
+//        actionSheet.view.tintColor = UIColor.Primary.primary
+        
+        actionSheet.setTitlet(font: UIFont.getTTNormsFont(type: .medium, size: 14), color: nil)
+
         
         return actionSheet
     }()
@@ -114,9 +118,17 @@ class ProjectsViewModel: ProjectsViewModelType {
     
     fileprivate func setupAlertAction(_ type: CustomAlertAction, someHandler: ((UIAlertAction) -> Void)?) -> UIAlertAction {
         let result = UIAlertAction(title: type.getTitleName(), style: type.getStyle(), handler: someHandler)
-        if let image = UIImage(named: type.getIconName()) {
-            result.setValue(image, forKey: "image")
-        }
+//        result.setValue(<#T##value: Any?##Any?#>, forKey: <#T##String#>)
+        
+        
+//        if let image = UIImage(named: type.getIconName()) {
+//            result.setValue(image, forKey: "image")
+//        }
+        
+//        if let image = UIImage(systemName: type.getIconName()) {
+//            result.setValue(image, forKey: "image")
+//        }
+//
         return result
     }
     
@@ -171,8 +183,9 @@ class ProjectsViewModel: ProjectsViewModelType {
     
     
     fileprivate func shareItem() {
-        guard let project = self.projectItem else { return }
-        delegate?.onEvents(type: .longTappedItem(type: .share, item: project))
+        print(#function)
+//        guard let project = self.projectItem else { return }
+//        delegate?.onEvents(type: .longTappedItem(type: .share, item: project))
     }
     
 }
@@ -190,8 +203,8 @@ extension ProjectsViewModel: ProjectsCollectionViewDelegate {
             self.openItem()
         case .rename:
             self.delegate?.onEvents(type: .longTappedItem(type: .rename, item: item))
-        case .share:
-            self.shareItem()
+//        case .share:
+//            self.shareItem()
         case .delete:
             self.deleteItem()
         case .cancel: break

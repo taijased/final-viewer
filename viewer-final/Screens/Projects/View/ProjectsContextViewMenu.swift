@@ -34,10 +34,10 @@ extension ProjectsContextViewMenu {
                 completion(.open)
             })])
         )
-        menuItems.append(self.setupCustomAction(.share, someHandler: { (action) in
-            completion(.share)
-        }))
-        
+        //        menuItems.append(self.setupCustomAction(.share, someHandler: { (action) in
+        //            completion(.share)
+        //        }))
+        //
         menuItems.append(self.setupCustomAction(.rename, someHandler: { (action) in
             completion(.rename)
         }))
@@ -45,6 +45,13 @@ extension ProjectsContextViewMenu {
         menuItems.append(self.setupCustomAction(.delete, someHandler: { (action) in
             completion(.delete)
         }))
+        
+        
+        
+    
+        
+        
+        
         
         return UIMenu(title: "", children: menuItems)
     }
@@ -58,8 +65,8 @@ extension ProjectsContextViewMenu {
             result.attributes = .init()
         case .rename:
             result.attributes = .init()
-        case .share:
-            result.attributes = .init()
+            //        case .share:
+        //            result.attributes = .init()
         case .delete:
             result.attributes = .destructive
         case .cancel:
@@ -67,9 +74,14 @@ extension ProjectsContextViewMenu {
         }
         
         
-        if let image = UIImage(named: type.getIconName()) {
+        //        if let image = UIImage(named: type.getIconName()) {
+        //            result.setValue(image, forKey: "image")
+        //        }
+        //
+        if let image = UIImage(systemName: type.getIconName()) {
             result.setValue(image, forKey: "image")
         }
+
         
         
         
@@ -80,5 +92,23 @@ extension ProjectsContextViewMenu {
     
 }
 
+
+extension UIMenuElement {
+    func setTitlet(font: UIFont?, color: UIColor?) {
+        let title = self.title
+        let attributeString = NSMutableAttributedString(string: title)//1
+        if let titleFont = font {
+            attributeString.addAttributes([NSAttributedString.Key.font : titleFont],//2
+                                          range: NSMakeRange(0, title.utf8.count))
+        }
+        
+        if let titleColor = color {
+            attributeString.addAttributes([NSAttributedString.Key.foregroundColor : titleColor],//3
+                                          range: NSMakeRange(0, title.utf8.count))
+        }
+        self.setValue(attributeString, forKey: "attributedTitle")//4
+    }
+
+}
 
 

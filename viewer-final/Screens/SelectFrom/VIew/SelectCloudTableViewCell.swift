@@ -106,6 +106,13 @@ class SelectCloudTableViewCell: UITableViewCell {
         super.layoutSubviews()
         
         selectionStyle = .none
+        if traitCollection.userInterfaceStyle == .light {
+            headerLabel.textColor = UIColor.Black.primary
+        } else {
+            headerLabel.textColor = .white
+        }
+        
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

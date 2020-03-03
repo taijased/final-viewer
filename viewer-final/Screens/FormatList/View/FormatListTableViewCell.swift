@@ -32,7 +32,7 @@ class FormatListTableViewCell: UITableViewCell {
         label.textAlignment = .left
         return label
     }()
-
+    
     
     
     
@@ -52,11 +52,15 @@ class FormatListTableViewCell: UITableViewCell {
     }
     
     
-    
-    
     override func layoutSubviews() {
         super.layoutSubviews()
+        if traitCollection.userInterfaceStyle == .light {
+            headerLabel.textColor = UIColor.Black.primary
+        } else {
+            headerLabel.textColor = .white
+        }
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

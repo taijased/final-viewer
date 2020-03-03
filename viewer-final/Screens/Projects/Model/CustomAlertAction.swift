@@ -13,27 +13,29 @@ import UIKit
 enum CustomAlertAction {
     case open
     case rename
-    case share
+//    case share
     case delete
     case cancel
     
-    func getIconName() -> String {
-        var result: String
-        switch self {
-        case .open:
-            result = "open-as"
-        case .rename:
-            result = "rename-as"
-        case .share:
-            result = "share-as"
-        case .delete:
-            result = "delete-as"
-        case .cancel:
-            result = ""
-        }
-        return result
-    }
+//    func getIconName() -> String {
+//        var result: String
+//        switch self {
+//        case .open:
+//            result = "open-as"
+//        case .rename:
+//            result = "rename-as"
+//        case .share:
+//            result = "share-as"
+//        case .delete:
+//            result = "delete-as"
+//        case .cancel:
+//            result = ""
+//        }
+//        return result
+//    }
     
+    
+    //custom icons
     func getTitleName() -> String {
         var result: String
         switch self {
@@ -41,8 +43,8 @@ enum CustomAlertAction {
             result = "Open"
         case .rename:
             result = "Rename"
-        case .share:
-            result = "Share"
+//        case .share:
+//            result = "Share"
         case .delete:
             result = "Delete file"
         case .cancel:
@@ -50,6 +52,27 @@ enum CustomAlertAction {
         }
         return result
     }
+    
+    //system icons
+    func getIconName() -> String {
+        var result: String
+        switch self {
+        case .open:
+            result = "arkit"
+        case .rename:
+            result = "pencil.tip"
+//        case .share:
+//            result = "share"
+        case .delete:
+            result = "trash"
+        case .cancel:
+            result = "multiply.circle.fill"
+        }
+        return result
+    }
+    
+    
+    
     
     func getStyle() -> UIAlertAction.Style {
         
@@ -59,8 +82,8 @@ enum CustomAlertAction {
                 return .default
             case .rename:
                 return .default
-            case .share:
-                return .default
+//            case .share:
+//                return .default
             case .delete:
                 return .destructive
             case .cancel:

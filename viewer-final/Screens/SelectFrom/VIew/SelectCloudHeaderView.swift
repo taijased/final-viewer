@@ -64,5 +64,17 @@ final class SelectCloudHeaderView: UIView {
         
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        if traitCollection.userInterfaceStyle == .light {
+            titleLabel.textColor = UIColor.Primary.primary
+        } else {
+            titleLabel.textColor = .white
+        }
+
+        
+    }
+    
 }
 

@@ -28,8 +28,8 @@ final class WelcomeViewController: UIViewController {
     fileprivate let bgView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.image = UIImage(named: "artwork")
         view.contentMode = .scaleAspectFit
+        view.image = UIImage(named: "artwork-white")
         return view
     }()
     
@@ -91,11 +91,18 @@ final class WelcomeViewController: UIViewController {
         
         
         if UIDevice.current.model == "iPhone" {
+//            view.addSubview(enterButton)
+//            enterButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
+//            enterButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
+//            enterButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
+//            enterButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
+//
+            
             view.addSubview(enterButton)
-            enterButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
-            enterButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
-            enterButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
-            enterButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+            enterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            enterButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+            enterButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
+            enterButton.widthAnchor.constraint(equalToConstant: 343).isActive = true
             
             view.addSubview(descriptionLabel)
             descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
@@ -109,11 +116,13 @@ final class WelcomeViewController: UIViewController {
             titleLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -10).isActive = true
             titleLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
             
+            
+            
             view.addSubview(bgView)
-            bgView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-            bgView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-            bgView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor).isActive = true
-            bgView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+            bgView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            bgView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
+            bgView.heightAnchor.constraint(equalToConstant: 420).isActive = true
+            bgView.widthAnchor.constraint(equalToConstant: 1194).isActive = true
         } else {
             view.addSubview(enterButton)
             enterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -134,7 +143,7 @@ final class WelcomeViewController: UIViewController {
             titleLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
             
             
-            bgView.image = UIImage(named: "artwork-ipad")
+            
             view.addSubview(bgView)
             bgView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             bgView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor).isActive = true
@@ -153,9 +162,6 @@ final class WelcomeViewController: UIViewController {
         
         
         
-        
-        
-        
     }
     
     
@@ -170,6 +176,26 @@ final class WelcomeViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
             
         }
+    }
+    
+    
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        if traitCollection.userInterfaceStyle == .light {
+            bgView.image = UIImage(named: "artwork-white")
+            view.backgroundColor = .white
+            titleLabel.textColor = UIColor.Primary.primary
+            descriptionLabel.textColor = UIColor.Black.primary
+        } else {
+            bgView.image = UIImage(named: "artwork-black")
+            view.backgroundColor = UIColor.Black.light
+            titleLabel.textColor = .white
+            descriptionLabel.textColor = .white
+        }
+        
+        
     }
     
     
@@ -198,6 +224,8 @@ final class WelcomeViewController: UIViewController {
 
 extension  WelcomeViewController: SelectCloudViewControllerDelegate {
     func deinitController() {
-        self.dismiss(animated: true, completion: nil)
+        if !realm.isEmpty {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }

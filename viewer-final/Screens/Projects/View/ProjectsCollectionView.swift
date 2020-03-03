@@ -15,7 +15,11 @@ class ProjectsCollectionView: UICollectionView {
     
     var viewModel: ProjectsCollectionViewVMType?
     weak var collectionDelegate: ProjectsCollectionViewDelegate?
-
+    
+    
+  
+    
+    
     init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -25,6 +29,7 @@ class ProjectsCollectionView: UICollectionView {
         viewModel = ProjectsCollectionViewVM()
         
         viewModel?.onReloadData = { [weak self] in
+            self?.updateBackground()
             self?.reloadData()
         }
         
@@ -36,8 +41,11 @@ class ProjectsCollectionView: UICollectionView {
         setupCollectionSettings()
     }
     
+    
+    
     fileprivate func setupCollectionSettings() {
-        backgroundColor = .white
+        backgroundColor = .clear
+        
         delegate = self
         dataSource = self
         register(ProjectsCollectionViewCell.self, forCellWithReuseIdentifier: ProjectsCollectionViewCell.reuseId)
@@ -49,10 +57,31 @@ class ProjectsCollectionView: UICollectionView {
     
     
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if traitCollection.userInterfaceStyle == .light {
+            backgroundColor = .white
+            
+        } else {
+            backgroundColor = UIColor.Black.light
+        }
+        
+        
+       updateBackground()
+    }
+    
+    func updateBackground() {
+        if viewModel?.isEmpty() ?? true {
+            self.alpha = 0
+        } else {
+            self.alpha = 1
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
 }
 
 // MARK: UICollectionViewDelegate, UICollectionViewDataSource
@@ -78,7 +107,7 @@ extension ProjectsCollectionView: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let viewModel = viewModel else { return }
         viewModel.selectItem(atIndexPath: indexPath)
-//        guard viewModel.viewModelForSelectedRow() != nil else { return }
+        //        guard viewModel.viewModelForSelectedRow() != nil else { return }
         collectionDelegate?.didSelectItemAt()
     }
 }
@@ -112,7 +141,7 @@ extension ProjectsCollectionView: UICollectionViewDelegateFlowLayout {
 
 extension ProjectsCollectionView: ProjectsContextViewMenu {
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
-
+        
         return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { suggestedActions in
             return self.makeDefaultDemoMenu { [weak self] type in
                 guard let viewModel = (collectionView.cellForItem(at: indexPath) as? ProjectsCollectionViewCell)?.viewModel else { return }

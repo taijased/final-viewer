@@ -110,9 +110,10 @@ extension UIColor {
     enum Black: BlackColors {
         static let primary: UIColor = UIColor(hexValue: "#19191C", alpha: 1.0)!
         
-        static let gray: UIColor = UIColor(hexValue: "#88888C", alpha: 1.0)!
+        static let gray: UIColor = UIColor(hexValue: "#2C2C2E", alpha: 1.0)!
         
-        static let light: UIColor = UIColor(hexValue: "#BABABC", alpha: 1.0)!
+        static let light: UIColor = UIColor(hexValue: "#1C1C1E", alpha: 1.0)!
+        
     }
     
     enum Red: RedColors {

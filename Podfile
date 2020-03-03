@@ -7,6 +7,7 @@ target 'viewer-final' do
 
   # Pods for viewer-final
   pod 'RealmSwift'
+  pod 'Bartinter'
 
 
 end

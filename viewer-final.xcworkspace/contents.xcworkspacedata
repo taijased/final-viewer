@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../iosBuid/Unity-iPhone.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:viewer-final.xcodeproj">
    </FileRef>
    <FileRef

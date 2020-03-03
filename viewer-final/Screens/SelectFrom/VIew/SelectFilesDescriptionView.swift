@@ -30,6 +30,7 @@ final class SelectFilesDescriptionView: UIView {
         return label
     }()
     
+    
     fileprivate let termText: String = "ARQ Viewer supports more than 40 3D formats. A list of supported 3D models can be found here."
     fileprivate let term: String = "here"
     
@@ -38,6 +39,8 @@ final class SelectFilesDescriptionView: UIView {
         super.init(frame: frame)
         setupUI()
     }
+    
+    
     
     fileprivate func setupUI() {
         translatesAutoresizingMaskIntoConstraints = false
@@ -48,14 +51,12 @@ final class SelectFilesDescriptionView: UIView {
         label.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
         
-        let formattedText = String.format(strings: [term],
-                                          boldFont: UIFont.getTTNormsFont(type: .medium, size: 14),
-                                          boldColor: UIColor.Primary.primary,
-                                          inString: termText,
-                                          font: UIFont.getTTNormsFont(type: .medium, size: 14),
-                                          color: .black)
-        label.attributedText = formattedText
-        label.setLineSpacing(lineSpacing: 4.0)
+        
+        
+        
+        
+        
+        
         
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTermTapped))
@@ -83,9 +84,33 @@ final class SelectFilesDescriptionView: UIView {
     }
     
     
+    
     func checkRange(_ range: NSRange, contain index: Int) -> Bool {
         return index > range.location && index < range.location + range.length
     }
+    
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        var color: UIColor
+        if traitCollection.userInterfaceStyle == .light {
+            color = .black
+        } else {
+            color = .white
+        }
+        
+        let formattedText = String.format(strings: [term],
+                                          boldFont: UIFont.getTTNormsFont(type: .medium, size: 14),
+                                          boldColor: UIColor.Primary.primary,
+                                          inString: termText,
+                                          font: UIFont.getTTNormsFont(type: .medium, size: 14),
+                                          color: color)
+        label.attributedText = formattedText
+        label.setLineSpacing(lineSpacing: 4.0)
+    }
+    
+    
     
     
     required init?(coder: NSCoder) {
