@@ -64,6 +64,7 @@ final class ARViewControls: UIView {
             delegate?.controlsActions(.open3D)
         case 1:
             delegate?.controlsActions(.openAR)
+            
         default:
             break
         }
