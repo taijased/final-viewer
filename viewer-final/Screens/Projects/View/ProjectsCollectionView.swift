@@ -25,8 +25,8 @@ class ProjectsCollectionView: UICollectionView {
 //        let layout = UICollectionViewFlowLayout()
 //        layout.scrollDirection = .vertical
 //        super.init(frame: .zero, collectionViewLayout: layout)
-        
-        let layout = AlignedCollectionViewFlowLayout(horizontalAlignment: .left, verticalAlignment: .top)
+//
+        let layout = AlignedCollectionViewFlowLayout(horizontalAlignment: .justified, verticalAlignment: .center)
         super.init(frame: .zero, collectionViewLayout: layout)
 
         
@@ -59,12 +59,15 @@ class ProjectsCollectionView: UICollectionView {
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
         contentInset = UIEdgeInsets(top: 20, left:  20, bottom: 0, right:  20)
+        
     }
+    
     
     
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         if traitCollection.userInterfaceStyle == .light {
             backgroundColor = .white
             
@@ -72,9 +75,21 @@ class ProjectsCollectionView: UICollectionView {
             backgroundColor = UIColor.Black.light
         }
         
+//
+//
+//        if UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown {
+//            print("portrait")
+//            print(viewModel?.sizeForItemAt())
+//        } else {
+//            print("landscape")
+//            print(viewModel?.sizeForItemAt())
+//        }
         
        updateBackground()
     }
+    
+    
+    
     
     func updateBackground() {
         if viewModel?.isEmpty() ?? true {
@@ -87,6 +102,8 @@ class ProjectsCollectionView: UICollectionView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
     
 }
 

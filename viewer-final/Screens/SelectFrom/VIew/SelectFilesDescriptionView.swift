@@ -21,13 +21,21 @@ final class SelectFilesDescriptionView: UIView {
     
     weak var delegate: SelectFilesDescriptionViewDelegate?
     
-    let label: UILabel = {
+    fileprivate let label: UILabel = {
         let label = UILabel.H5.regular
         label.translatesAutoresizingMaskIntoConstraints = false
         label.isUserInteractionEnabled = true
         label.textAlignment = .left
         label.numberOfLines = 0
+
         return label
+    }()
+    
+    fileprivate let tapArea: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
+        return view
     }()
     
     
@@ -52,35 +60,21 @@ final class SelectFilesDescriptionView: UIView {
         
         
         
-        
-        
-        
-        
-        
+        addSubview(tapArea)
+        tapArea.leadingAnchor.constraint(equalTo: label.leadingAnchor, constant: 50).isActive = true
+        tapArea.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 15).isActive = true
+        tapArea.heightAnchor.constraint(equalToConstant: 55).isActive = true
+        tapArea.widthAnchor.constraint(equalToConstant: 105).isActive = true
         
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTermTapped))
-        label.addGestureRecognizer(tap)
-        
-        
+        tapArea.addGestureRecognizer(tap)
         
         
     }
     
     @objc func handleTermTapped(gesture: UITapGestureRecognizer) {
-        
-        let termString = termText as NSString
-        let termRange = termString.range(of: term)
-        
-        
-        let tapLocation = gesture.location(in: label)
-        let index = label.indexOfAttributedTextCharacterAtPoint(point: tapLocation)
-        
-        if checkRange(termRange, contain: index) == true {
-            delegate?.buttonTappedHere()
-            return
-        }
-        
+        delegate?.buttonTappedHere()
     }
     
     
@@ -107,7 +101,7 @@ final class SelectFilesDescriptionView: UIView {
                                           font: UIFont.getTTNormsFont(type: .medium, size: 14),
                                           color: color)
         label.attributedText = formattedText
-        label.setLineSpacing(lineSpacing: 4.0)
+        label.setLineSpacing(lineSpacing: 10.0)
     }
     
     

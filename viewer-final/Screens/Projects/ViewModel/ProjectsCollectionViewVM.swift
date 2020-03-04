@@ -59,9 +59,18 @@ class ProjectsCollectionViewVM: ProjectsCollectionViewVMType {
             let height: CGFloat = 160
             return CGSize(width: width, height: height)
         } else {
-            let width: CGFloat = (UIScreen.main.bounds.width - 120) * 0.25
-            let height: CGFloat = 180
-            return CGSize(width: width, height: height)
+            if UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown {
+//                let width: CGFloat = (UIScreen.main.bounds.width - 120) / 4
+                let height: CGFloat = 160
+                return CGSize(width: 180, height: height)
+            } else {
+//                let width: CGFloat = (UIScreen.main.bounds.width - 160) / 6
+                let height: CGFloat = 160
+                return CGSize(width: 188, height: height)
+            }
+            
+            
+            
         }
     }
     

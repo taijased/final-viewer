@@ -26,6 +26,10 @@ final class SelectCloudViewController: UIViewController {
     }
     
     fileprivate func setupUI() {
+        
+        
+        
+        
         view.backgroundColor = .random()
         
         viewModel?.onNavigate = { [weak self] navigation in
@@ -39,6 +43,12 @@ final class SelectCloudViewController: UIViewController {
     }
     
     
+//    override func viewWillLayoutSubviews() {
+//        super.viewWillLayoutSubviews()
+//        
+//    }
+//    
+//    
     
     
     

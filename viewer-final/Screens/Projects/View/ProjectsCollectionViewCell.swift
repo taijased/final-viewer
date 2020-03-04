@@ -38,12 +38,14 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.shadowRadius = 7
-        view.layer.shadowOpacity = 1
-        view.layer.shadowOffset = CGSize(width: 0, height: 2)
+//        view.layer.shadowRadius = 7
+//        view.layer.shadowOpacity = 1
+//        view.layer.shadowOffset = CGSize(width: 0, height: 2)
         view.layer.cornerRadius = 10
-        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
-        view.layer.position = view.center
+//        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+//        view.layer.position = view.center
+        view.layer.borderWidth = 1
+        
         return view
     }()
     
@@ -83,7 +85,6 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
     lazy var moreButton: UIButton = {
         var button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-     
         return button
     }()
     
@@ -170,6 +171,7 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
         
         if traitCollection.userInterfaceStyle == .light {
             cardView.backgroundColor = .white
+            cardView.layer.borderColor = UIColor(hexValue: "#F0F0F0", alpha: 0.9)?.cgColor
             labelView.backgroundColor = UIColor(hexValue: "#F0F0F0", alpha: 0.9)
             label.textColor = UIColor.Black.primary
             moreButton.setImage(UIImage(named: "more"), for: .normal)
@@ -177,6 +179,7 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
             
         } else {
             cardView.backgroundColor = UIColor.Black.gray
+            cardView.layer.borderColor = UIColor(hexValue: "#4F4F53", alpha: 0.9)?.cgColor
             labelView.backgroundColor = UIColor(hexValue: "#4F4F53", alpha: 0.8)
             label.textColor = .white
             moreButton.setImage(UIImage(named: "more-white"), for: .normal)

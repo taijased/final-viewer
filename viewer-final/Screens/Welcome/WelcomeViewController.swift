@@ -54,7 +54,7 @@ final class WelcomeViewController: UIViewController {
         label.font = UIFont.getTTNormsFont(type: .medium, size: 14)
         label.textAlignment = .left
         label.numberOfLines = 0
-        label.setLineSpacing(lineSpacing: 4.0)
+        label.setLineSpacing(lineSpacing: 3.0, lineHeightMultiple: 1.45)
         return label
     }()
     
@@ -106,13 +106,13 @@ final class WelcomeViewController: UIViewController {
             
             view.addSubview(descriptionLabel)
             descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
-            descriptionLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
-            descriptionLabel.bottomAnchor.constraint(equalTo: enterButton.topAnchor, constant: -33).isActive = true
+            descriptionLabel.widthAnchor.constraint(equalToConstant: 260).isActive = true
+            descriptionLabel.bottomAnchor.constraint(equalTo: enterButton.topAnchor, constant: -25).isActive = true
             descriptionLabel.heightAnchor.constraint(equalToConstant: 120).isActive = true
             
             view.addSubview(titleLabel)
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
-            titleLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
+            titleLabel.widthAnchor.constraint(equalToConstant: 260).isActive = true
             titleLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -10).isActive = true
             titleLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
             
@@ -146,7 +146,8 @@ final class WelcomeViewController: UIViewController {
             
             view.addSubview(bgView)
             bgView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            bgView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor).isActive = true
+            bgView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -45).isActive = true
+//            bgView.topAnchor.constraint(equalTo: view.topAnchor, constant: 5).isActive = true
             bgView.heightAnchor.constraint(equalToConstant: 420).isActive = true
             bgView.widthAnchor.constraint(equalToConstant: 1194).isActive = true
         }
@@ -195,6 +196,21 @@ final class WelcomeViewController: UIViewController {
             descriptionLabel.textColor = .white
         }
         
+        
+//        if UIDevice.current.model == "iPad" {
+//            if UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown {
+//                 print("portrait")
+//                bgView.image = UIImage(named: "artwork-portrait")
+//                bgView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+//                bgView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+//                bgView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -45).isActive = true
+//                bgView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+//       
+//            } else {
+//                print("lanscape")
+//                bgView.contentMode = .scaleAspectFit
+//            }
+//        }
         
     }
     

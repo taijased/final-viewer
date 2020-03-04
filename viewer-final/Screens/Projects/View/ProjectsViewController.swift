@@ -57,22 +57,25 @@ final class ProjectsViewController: UIViewController {
         viewModel.plusButton.isUserInteractionEnabled = true
         view.addSubview(viewModel.plusButton)
         viewModel.plusButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
-        viewModel.plusButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22).isActive = true
         viewModel.plusButton.widthAnchor.constraint(equalToConstant: 56).isActive = true
         viewModel.plusButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
         
-        
+        if UIDevice.current.model == "iPad" {
+            viewModel.plusButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        } else {
+            viewModel.plusButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22).isActive = true
+        }
         
         title = "Projects"
         
-        //        let searchController = UISearchController(searchResultsController: nil)
-        //        //        searchController.searchResultsUpdater = self.viewModel
-        //        searchController.obscuresBackgroundDuringPresentation = false
-        //        searchController.searchBar.placeholder = "Search"
-        //        self.navigationItem.searchController = searchController
-        //        self.definesPresentationContext = true
-        //
-        //
+        
+        
+        
+        
+        
+        //        self.navigationItem.searchController = viewModel.searchController
+        
+        self.definesPresentationContext = true
         navigationController?.navigationBar.hideBottomHairline()
         
     }
