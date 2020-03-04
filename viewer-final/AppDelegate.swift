@@ -26,18 +26,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        } else {
 //             window?.backgroundColor = .white
 //        }
+         
+        
+        
+        let viewController = TestViewController()
+        
+//        let viewController = SplashViewController()
 //        
-        
-        
-        
-        let viewController = SplashViewController()
-        viewController.deinitViewController = { [weak self] in
-            let viewController = ProjectsViewController()
-            viewController.modalPresentationStyle = .fullScreen
-            viewController.modalTransitionStyle = .crossDissolve
-            let navigationController = UINavigationController(rootViewController: viewController)
-            self?.window?.rootViewController = navigationController
-        }
+//        viewController.deinitViewController = { [weak self] in
+//            let viewController = ProjectsViewController()
+//            viewController.modalPresentationStyle = .fullScreen
+//            viewController.modalTransitionStyle = .crossDissolve
+//            let navigationController = UINavigationController(rootViewController: viewController)
+//            self?.window?.rootViewController = navigationController
+//        }
         
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()

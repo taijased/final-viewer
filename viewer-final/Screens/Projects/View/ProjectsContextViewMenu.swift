@@ -28,16 +28,20 @@ extension ProjectsContextViewMenu {
         
         var menuItems = [UIMenuElement]()
         
+        let open =  UIMenu(title: "Open", options: .displayInline, children: [self.setupCustomAction(.open, someHandler: { (action) in
+                       completion(.open)
+                   })])
         
-        menuItems.append(
-            UIMenu(title: "Open", options: .displayInline, children: [self.setupCustomAction(.open, someHandler: { (action) in
-                completion(.open)
-            })])
-        )
+        
+        
+        
+        
+        menuItems.append(open)
         //        menuItems.append(self.setupCustomAction(.share, someHandler: { (action) in
         //            completion(.share)
         //        }))
         //
+        
         menuItems.append(self.setupCustomAction(.rename, someHandler: { (action) in
             completion(.rename)
         }))
@@ -59,7 +63,16 @@ extension ProjectsContextViewMenu {
     
     fileprivate func setupCustomAction(_ type: CustomAlertAction, someHandler: @escaping ((UIAction) -> Void)) -> UIAction {
         
+      
+        
+        
+//        let title = type.getTitleName()
+//
+//        let attributeString = NSMutableAttributedString(string: title)//1
+//        let titleFont = UIFont.getTTNormsFont(type: .extraBold, size: 14)
+//        attributeString.addAttributes([NSAttributedString.Key.font : titleFont], range: NSMakeRange(0, title.utf8.count))
         let result = UIAction(title: type.getTitleName(), handler: someHandler)
+        
         switch type {
         case .open:
             result.attributes = .init()
@@ -78,6 +91,8 @@ extension ProjectsContextViewMenu {
         //            result.setValue(image, forKey: "image")
         //        }
         //
+
+        
         if let image = UIImage(systemName: type.getIconName()) {
             result.setValue(image, forKey: "image")
         }

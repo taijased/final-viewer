@@ -34,6 +34,9 @@
 		130B984923FFC91600DE6C60 /* PasswordFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130B984823FFC91600DE6C60 /* PasswordFieldViewModel.swift */; };
 		130B984B23FFC92C00DE6C60 /* EmailFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130B984A23FFC92C00DE6C60 /* EmailFieldViewModel.swift */; };
 		133935C7240E79EF003B8BB5 /* UIAlertController + custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133935C6240E79EF003B8BB5 /* UIAlertController + custom.swift */; };
+		133935CD240FF4A6003B8BB5 /* UIFont + init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133935CC240FF4A6003B8BB5 /* UIFont + init.swift */; };
+		133935D0240FFEE4003B8BB5 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133935CF240FFEE4003B8BB5 /* TestViewController.swift */; };
+		133935D4241001CF003B8BB5 /* ARViewControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133935D3241001CF003B8BB5 /* ARViewControls.swift */; };
 		133A595324054C3700BAC954 /* CloudTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A595224054C3700BAC954 /* CloudTableView.swift */; };
 		133A595524054C4600BAC954 /* CloudTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A595424054C4600BAC954 /* CloudTableHeaderView.swift */; };
 		133A595724054C6200BAC954 /* CloudTableViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A595624054C6200BAC954 /* CloudTableViewSectionHeader.swift */; };
@@ -142,6 +145,9 @@
 		130B984823FFC91600DE6C60 /* PasswordFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFieldViewModel.swift; sourceTree = "<group>"; };
 		130B984A23FFC92C00DE6C60 /* EmailFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFieldViewModel.swift; sourceTree = "<group>"; };
 		133935C6240E79EF003B8BB5 /* UIAlertController + custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController + custom.swift"; sourceTree = "<group>"; };
+		133935CC240FF4A6003B8BB5 /* UIFont + init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + init.swift"; sourceTree = "<group>"; };
+		133935CF240FFEE4003B8BB5 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		133935D3241001CF003B8BB5 /* ARViewControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewControls.swift; sourceTree = "<group>"; };
 		133A595224054C3700BAC954 /* CloudTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudTableView.swift; sourceTree = "<group>"; };
 		133A595424054C4600BAC954 /* CloudTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudTableHeaderView.swift; sourceTree = "<group>"; };
 		133A595624054C6200BAC954 /* CloudTableViewSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudTableViewSectionHeader.swift; sourceTree = "<group>"; };
@@ -313,6 +319,15 @@
 			path = UIAlert;
 			sourceTree = "<group>";
 		};
+		133935CE240FFEC7003B8BB5 /* LehaPosmotri */ = {
+			isa = PBXGroup;
+			children = (
+				133935CF240FFEE4003B8BB5 /* TestViewController.swift */,
+				133935D3241001CF003B8BB5 /* ARViewControls.swift */,
+			);
+			path = LehaPosmotri;
+			sourceTree = "<group>";
+		};
 		137ADCD423FC04F700237368 = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +374,7 @@
 		137ADCF523FC073000237368 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				133935CE240FFEC7003B8BB5 /* LehaPosmotri */,
 				13BAE82424052B18008A44E0 /* Cloud */,
 				13BAE809240413B4008A44E0 /* FormatList */,
 				13BAE7EE2403FD86008A44E0 /* SelectFrom */,
@@ -415,6 +431,7 @@
 			children = (
 				137ADD1F23FC0B0500237368 /* ttnorms */,
 				137ADD0923FC085700237368 /* UIButton + Theme.swift */,
+				133935CC240FF4A6003B8BB5 /* UIFont + init.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -867,6 +884,7 @@
 			files = (
 				130B982823FD690B00DE6C60 /* ProjectsCollectionViewVM.swift in Sources */,
 				13BAE81524041552008A44E0 /* FormatListViewController.swift in Sources */,
+				133935D0240FFEE4003B8BB5 /* TestViewController.swift in Sources */,
 				130B982A23FD695300DE6C60 /* ProjectsCollectionViewCellVM.swift in Sources */,
 				13D5BB29240950C000A65256 /* StorageManager.swift in Sources */,
 				137ADD1723FC09A300237368 /* NetworkDataFetcher.swift in Sources */,
@@ -890,6 +908,7 @@
 				133A595B24054CF800BAC954 /* CloudTableViewVM.swift in Sources */,
 				13D5BB122409396C00A65256 /* ProjectsNavigation.swift in Sources */,
 				13BAE82D24052D91008A44E0 /* CloudModel.swift in Sources */,
+				133935D4241001CF003B8BB5 /* ARViewControls.swift in Sources */,
 				130B982023FD647500DE6C60 /* ProjectsViewController.swift in Sources */,
 				13BAE81F240415AA008A44E0 /* FormatListTableViewVM.swift in Sources */,
 				130B984B23FFC92C00DE6C60 /* EmailFieldViewModel.swift in Sources */,
@@ -911,6 +930,7 @@
 				137ADD4C23FC303800237368 /* ARQLogo.swift in Sources */,
 				13BAE821240415B3008A44E0 /* FormatListTableViewCellVM.swift in Sources */,
 				130B982623FD688000DE6C60 /* AppleMusicModel.swift in Sources */,
+				133935CD240FF4A6003B8BB5 /* UIFont + init.swift in Sources */,
 				130B97FA23FD290700DE6C60 /* TextFieldView.swift in Sources */,
 				137ADD1923FC09B600237368 /* DataFetcherService.swift in Sources */,
 				133A595324054C3700BAC954 /* CloudTableView.swift in Sources */,
