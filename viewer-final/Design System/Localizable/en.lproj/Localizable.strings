@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  viewer-final
+
+  Created by Максим Спиридонов on 06.03.2020.
+  Copyright © 2020 Максим Спиридонов. All rights reserved.
+*/
+
+"Welcome.title" = "Welcome to ARQ Viewer";
+"Welcome.description" = "View and display your projects. Share them. See statistics and manage your account. To create the projects you need login ARQ Editor";

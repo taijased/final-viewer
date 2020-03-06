@@ -24,6 +24,8 @@ class NetworkService: Networking {
         task.resume()
     }
     
+    
+    
     private func createDataTask(from request: URLRequest, completion: @escaping (Data?, Error?) -> Void) -> URLSessionDataTask {
         return URLSession.shared.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {

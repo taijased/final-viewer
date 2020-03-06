@@ -5,22 +5,26 @@ PODS:
   - Realm/Headers (4.3.2)
   - RealmSwift (4.3.2):
     - Realm (= 4.3.2)
+  - SwiftGen (6.1.0)
 
 DEPENDENCIES:
   - AlignedCollectionViewFlowLayout
   - RealmSwift
+  - SwiftGen
 
 SPEC REPOS:
   trunk:
     - AlignedCollectionViewFlowLayout
     - Realm
     - RealmSwift
+    - SwiftGen
 
 SPEC CHECKSUMS:
   AlignedCollectionViewFlowLayout: ee2ef451e741ec08f8e0967d828001e2f051c20a
   Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
   RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
+  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
 
-PODFILE CHECKSUM: b36962c6812a3ccc822396c4b221de1daf13431f
+PODFILE CHECKSUM: 05202e425c1076f0c92e4b7c488541028efe3984
 
 COCOAPODS: 1.8.3

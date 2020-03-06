@@ -37,7 +37,7 @@ final class WelcomeViewController: UIViewController {
     
     fileprivate let titleLabel: UILabel = {
         let label = UILabel.H1.bold
-        label.text = "Welcome to ARQ Viewer"
+        label.text = "Welcome.title".localized
         label.textColor = UIColor.Primary.primary
         label.font = UIFont.getTTNormsFont(type: .bold, size: 32)
         label.textColor = UIColor.Primary.primary
@@ -49,7 +49,7 @@ final class WelcomeViewController: UIViewController {
     fileprivate let descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "View and display your projects. Share them. See statistics and manage your account. To create the projects you need login ARQ Editor"
+        label.text = "Welcome.description".localized
         label.textColor = UIColor.black
         label.font = UIFont.getTTNormsFont(type: .medium, size: 14)
         label.textAlignment = .left
@@ -114,7 +114,10 @@ final class WelcomeViewController: UIViewController {
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
             titleLabel.widthAnchor.constraint(equalToConstant: 260).isActive = true
             titleLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -10).isActive = true
-            titleLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
+            titleLabel.heightAnchor.constraint(equalToConstant: 120).isActive = true
+            
+            
+    
             
             
             

@@ -8,5 +8,6 @@ target 'viewer-final' do
   # Pods for viewer-final
   pod 'RealmSwift'
   pod 'AlignedCollectionViewFlowLayout'
+  pod 'SwiftGen'
 
 end
