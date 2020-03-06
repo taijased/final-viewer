@@ -121,7 +121,8 @@ final class WelcomeViewController: UIViewController {
             view.addSubview(bgView)
             bgView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             bgView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-            bgView.heightAnchor.constraint(equalToConstant: 420).isActive = true
+            bgView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -20).isActive = true
+//            bgView.heightAnchor.constraint(equalToConstant: 420).isActive = true
             bgView.widthAnchor.constraint(equalToConstant: 1194).isActive = true
         } else {
             view.addSubview(enterButton)
@@ -147,8 +148,7 @@ final class WelcomeViewController: UIViewController {
             view.addSubview(bgView)
             bgView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             bgView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -45).isActive = true
-//            bgView.topAnchor.constraint(equalTo: view.topAnchor, constant: 5).isActive = true
-            bgView.heightAnchor.constraint(equalToConstant: 420).isActive = true
+            bgView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
             bgView.widthAnchor.constraint(equalToConstant: 1194).isActive = true
         }
         
@@ -197,20 +197,15 @@ final class WelcomeViewController: UIViewController {
         }
         
         
-//        if UIDevice.current.model == "iPad" {
-//            if UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown {
-//                 print("portrait")
-//                bgView.image = UIImage(named: "artwork-portrait")
-//                bgView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-//                bgView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-//                bgView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -45).isActive = true
-//                bgView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-//       
-//            } else {
-//                print("lanscape")
-//                bgView.contentMode = .scaleAspectFit
-//            }
-//        }
+        if UIDevice.current.model == "iPad" {
+            if UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown {
+                bgView.transform = CGAffineTransform(scaleX: 1.35, y: 1.35)
+            } else {
+                print("lanscape")
+                bgView.transform = CGAffineTransform(scaleX: 1, y: 1)
+                bgView.contentMode = .scaleAspectFit
+            }
+        }
         
     }
     

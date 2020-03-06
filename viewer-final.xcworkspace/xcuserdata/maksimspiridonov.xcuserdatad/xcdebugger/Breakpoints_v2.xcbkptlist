@@ -14,9 +14,9 @@
             filePath = "viewer-final/Screens/Projects/View/ProjectsCollectionViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "moreButtonTapped(_:)"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "init(frame:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -30,8 +30,8 @@
             filePath = "viewer-final/Screens/Projects/View/ProjectsCollectionViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
             landmarkName = "setupUI()"
             landmarkType = "7">
          </BreakpointContent>

@@ -32,13 +32,16 @@ class SelectCloudTableViewCell: UITableViewCell {
     fileprivate let cloudLogoView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.shadowRadius = 4
-        view.layer.shadowOpacity = 1
-        view.layer.shadowOffset = CGSize(width: 0, height: 2)
-        view.layer.cornerRadius = 22.5
-        view.layer.position = view.center
-        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
-        view.backgroundColor = .white
+//        view.layer.shadowRadius = 4
+//        view.layer.shadowOpacity = 1
+//        view.layer.shadowOffset = CGSize(width: 0, height: 2)
+//        view.layer.cornerRadius = 22.5
+//        view.layer.position = view.center
+//        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        
+        view.layer.cornerRadius = 22
+        view.layer.borderWidth = 1
+        view.backgroundColor = .clear
         return view
     }()
     
@@ -108,10 +111,14 @@ class SelectCloudTableViewCell: UITableViewCell {
         selectionStyle = .none
         if traitCollection.userInterfaceStyle == .light {
             headerLabel.textColor = UIColor.Black.primary
+            cloudLogoView.layer.borderColor = UIColor(hexValue: "#F0F0F0", alpha: 0.9)?.cgColor
+
         } else {
             headerLabel.textColor = .white
+            cloudLogoView.layer.borderColor = UIColor.clear.cgColor
         }
         
+ 
         
     }
     

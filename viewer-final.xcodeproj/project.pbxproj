@@ -398,6 +398,7 @@
 		137ADCFB23FC07A600237368 /* Design System */ = {
 			isa = PBXGroup;
 			children = (
+				13D3AAF224127ECC004E902C /* Localizable */,
 				133935C5240E79DD003B8BB5 /* UIAlert */,
 				137ADD0023FC07E300237368 /* UIView */,
 				137ADCFF23FC07CF00237368 /* UIButtons */,
@@ -718,6 +719,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		13D3AAF224127ECC004E902C /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
 		13D5BB1324093CDB00A65256 /* FileManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -795,6 +803,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 137ADCD423FC04F700237368;
 			productRefGroup = 137ADCDE23FC04F700237368 /* Products */;

@@ -33,7 +33,7 @@ class ProjectsCollectionViewVM: ProjectsCollectionViewVMType {
     private var dataFetcherService = DataFetcherService()
     private var selectedIndexPath: IndexPath?
     
-    var minimumInteritemSpacingForSectionAt: CGFloat = 20.0
+    var minimumInteritemSpacingForSectionAt: CGFloat = 16.0
     var minimumLineSpacingForSectionAt: CGFloat = 20.0
     
     //    var cells: [ProjectFileModel]?
