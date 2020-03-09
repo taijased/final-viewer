@@ -61,7 +61,6 @@ final class SelectCloudHeaderView: UIView {
         privacyPolicyView.widthAnchor.constraint(equalToConstant: 260).isActive = true
         privacyPolicyView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15).isActive = true
         let descLabelHeight = UILabel.getLabelSize(text: "ChooseFile.desc".localized, fontSize: 12, fontName: "TTNorms-Regular")
-        print((descLabelHeight.width / 260) * 40)
         privacyPolicyView.heightAnchor.constraint(equalToConstant: (descLabelHeight.width / 260) * 40).isActive = true
         
     }

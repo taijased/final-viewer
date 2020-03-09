@@ -38,9 +38,6 @@ final class ProjectsViewController: UIViewController {
     
     fileprivate func setupUI() {
         
-        
-        
-        
         view.addSubview(emptyLabel)
         emptyLabel.fillSuperview()
         
@@ -70,7 +67,6 @@ final class ProjectsViewController: UIViewController {
         
         
         
-        
         //        self.navigationItem.searchController = viewModel.searchController
         
         self.definesPresentationContext = true
@@ -83,18 +79,12 @@ final class ProjectsViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         if traitCollection.userInterfaceStyle == .light {
-            
             view.backgroundColor = .white
             emptyLabel.textColor = UIColor.Black.primary
             
-            
-            
         } else {
             view.backgroundColor = UIColor.Black.light
-            
             emptyLabel.textColor = .white
-            
-            
         }
     }
     
@@ -115,10 +105,14 @@ final class ProjectsViewController: UIViewController {
     }
     
     
-    
-    
-    
-    
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isLandscape {
+            viewModel?.collectionView.reloadData()
+        } else {
+            viewModel?.collectionView.reloadData()
+        }
+    }
     
     
     fileprivate func navigation(_ type: ProjectsNavigationType) {

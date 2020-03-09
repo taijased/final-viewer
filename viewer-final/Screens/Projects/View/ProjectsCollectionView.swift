@@ -16,22 +16,23 @@ class ProjectsCollectionView: UICollectionView {
     
     var viewModel: ProjectsCollectionViewVMType?
     weak var collectionDelegate: ProjectsCollectionViewDelegate?
-    
-    
-  
+
     
     
     init() {
-//        let layout = UICollectionViewFlowLayout()
-//        layout.scrollDirection = .vertical
-//        super.init(frame: .zero, collectionViewLayout: layout)
-//
-        let layout = AlignedCollectionViewFlowLayout(horizontalAlignment: .justified, verticalAlignment: .center)
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        
+        //
+        //        let layout = AlignedCollectionViewFlowLayout(horizontalAlignment: .justified, verticalAlignment: .center)
+        //        super.init(frame: .zero, collectionViewLayout: layout)
+        
+        
         super.init(frame: .zero, collectionViewLayout: layout)
-
         
         
         
+        autoresizingMask = [.flexibleWidth, .flexibleHeight]
         viewModel = ProjectsCollectionViewVM()
         
         viewModel?.onReloadData = { [weak self] in
@@ -68,24 +69,8 @@ class ProjectsCollectionView: UICollectionView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        if traitCollection.userInterfaceStyle == .light {
-            backgroundColor = .white
-            
-        } else {
-            backgroundColor = UIColor.Black.light
-        }
-        
-//
-//
-//        if UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown {
-//            print("portrait")
-//            print(viewModel?.sizeForItemAt())
-//        } else {
-//            print("landscape")
-//            print(viewModel?.sizeForItemAt())
-//        }
-        
-       updateBackground()
+        backgroundColor = traitCollection.userInterfaceStyle == .light ? .white : UIColor.Black.light
+        updateBackground()
     }
     
     
@@ -137,21 +122,22 @@ extension ProjectsCollectionView: UICollectionViewDelegate, UICollectionViewData
 
 
 
-// MARK: - UICollectionViewDelegateFlowLayout
+//// MARK: - UICollectionViewDelegateFlowLayout
 extension ProjectsCollectionView: UICollectionViewDelegateFlowLayout {
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return viewModel?.sizeForItemAt() ?? CGSize.zero
+
+        return viewModel?.sizeForItemAt(collectionView.frame.size) ?? CGSize.zero
     }
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return viewModel?.minimumInteritemSpacingForSectionAt ?? 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout
         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -182,6 +168,4 @@ extension ProjectsCollectionView: ProjectsCollectionViewCellDelegate {
         collectionDelegate?.didSelectMore(item)
     }
 }
-
-
 

@@ -61,7 +61,7 @@ enum CustomAlertAction {
         case .open:
             result = "arkit"
         case .rename:
-            result = "pencil.tip"
+            result = "pencil"
 //        case .share:
 //            result = "share"
         case .delete:

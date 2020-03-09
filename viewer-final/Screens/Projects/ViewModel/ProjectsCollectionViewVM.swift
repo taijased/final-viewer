@@ -14,7 +14,7 @@ protocol ProjectsCollectionViewVMType {
     
     var minimumInteritemSpacingForSectionAt: CGFloat { get }
     var minimumLineSpacingForSectionAt: CGFloat { get }
-    func sizeForItemAt() -> CGSize
+    func sizeForItemAt(_ size: CGSize) -> CGSize
     func numberOfRows() -> Int
     func cellViewModel(forIndexPath indexPath: IndexPath) -> ProjectsCollectionViewCellVMType?
     func viewModelForSelectedRow() -> ProjectFileModel?
@@ -52,25 +52,24 @@ class ProjectsCollectionViewVM: ProjectsCollectionViewVMType {
     }
     
     
-    func sizeForItemAt() -> CGSize {
+    func sizeForItemAt(_ size: CGSize) -> CGSize {
         
         if UIDevice.current.model == "iPhone" {
             let width: CGFloat = (UIScreen.main.bounds.width - 60) * 0.5
             let height: CGFloat = 160
-            return CGSize(width: width, height: height)
+            let size = CGSize(width: width, height: height)
+            print(size)
+            return size
         } else {
             if UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown {
-//                let width: CGFloat = (UIScreen.main.bounds.width - 120) / 4
+                let width: CGFloat = (UIScreen.main.bounds.width - 16.0 * 5) / 4
                 let height: CGFloat = 160
-                return CGSize(width: 180, height: height)
+                return CGSize(width: width, height: height)
             } else {
-//                let width: CGFloat = (UIScreen.main.bounds.width - 160) / 6
+                let width: CGFloat = (UIScreen.main.bounds.width - 16.0 * 6) / 5
                 let height: CGFloat = 160
-                return CGSize(width: 188, height: height)
+                return CGSize(width: width, height: height)
             }
-            
-            
-            
         }
     }
     
