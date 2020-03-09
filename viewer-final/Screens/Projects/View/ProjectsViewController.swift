@@ -66,9 +66,7 @@ final class ProjectsViewController: UIViewController {
             viewModel.plusButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22).isActive = true
         }
         
-        title = "Projects"
-        
-        
+        title = "Projects.title".localized
         
         
         

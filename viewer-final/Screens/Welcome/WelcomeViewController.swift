@@ -108,18 +108,18 @@ final class WelcomeViewController: UIViewController {
             descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
             descriptionLabel.widthAnchor.constraint(equalToConstant: 260).isActive = true
             descriptionLabel.bottomAnchor.constraint(equalTo: enterButton.topAnchor, constant: -25).isActive = true
-            descriptionLabel.heightAnchor.constraint(equalToConstant: 120).isActive = true
+            let descLabelHeight = UILabel.getLabelSize(text: descriptionLabel.text!, fontSize: 14, fontName: "TTNorms-Medium")
+            descriptionLabel.heightAnchor.constraint(equalToConstant: (descLabelHeight.width / 260) * 40).isActive = true
             
             view.addSubview(titleLabel)
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
             titleLabel.widthAnchor.constraint(equalToConstant: 260).isActive = true
             titleLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -10).isActive = true
-            titleLabel.heightAnchor.constraint(equalToConstant: 120).isActive = true
             
+            let labelHeight = UILabel.getLabelSize(text: titleLabel.text!, fontSize: 32, fontName: "TTNorms-Bold")
+            titleLabel.heightAnchor.constraint(equalToConstant: (labelHeight.width / 260) * 60).isActive = true
             
-    
-            
-            
+        
             
             view.addSubview(bgView)
             bgView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -138,14 +138,16 @@ final class WelcomeViewController: UIViewController {
             descriptionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             descriptionLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
             descriptionLabel.bottomAnchor.constraint(equalTo: enterButton.topAnchor, constant: -33).isActive = true
-            descriptionLabel.heightAnchor.constraint(equalToConstant: 120).isActive = true
+            let descLabelHeight = UILabel.getLabelSize(text: descriptionLabel.text!, fontSize: 14, fontName: "TTNorms-Medium")
+            descriptionLabel.heightAnchor.constraint(equalToConstant: (descLabelHeight.width / 260) * 42).isActive = true
+        
             
             view.addSubview(titleLabel)
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             titleLabel.widthAnchor.constraint(equalToConstant: 220).isActive = true
             titleLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -10).isActive = true
-            titleLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
-            
+            let labelHeight = UILabel.getLabelSize(text: titleLabel.text!, fontSize: 32, fontName: "TTNorms-Bold")
+            titleLabel.heightAnchor.constraint(equalToConstant: (labelHeight.width / 260) * 62).isActive = true
             
             
             view.addSubview(bgView)
@@ -242,4 +244,17 @@ extension  WelcomeViewController: SelectCloudViewControllerDelegate {
             self.dismiss(animated: true, completion: nil)
         }
     }
+}
+
+
+
+extension UILabel {
+    func height(constraintedWidth width: CGFloat) -> CGFloat {
+        let label =  UILabel(frame: CGRect(x: 0, y: 0, width: width, height: .greatestFiniteMagnitude))
+        label.numberOfLines = 0
+        label.text = self.text
+        label.font = self.font
+        label.sizeToFit()
+        return label.frame.height
+     }
 }

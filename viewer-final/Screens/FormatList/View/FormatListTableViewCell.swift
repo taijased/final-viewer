@@ -30,6 +30,7 @@ class FormatListTableViewCell: UITableViewCell {
         label.text = "3DS"
         label.font = UIFont.getTTNormsFont(type: .medium, size: 16)
         label.textAlignment = .left
+        label.numberOfLines = 0
         return label
     }()
     

@@ -41,8 +41,8 @@ class FormatListTableViewVM: FormatListTableViewVMType {
     COB
     DAE/Collada
     DXF
-    ENFF
     FBX (FBX SDK 2012 fully supported, later versions are partially supported)
+    ENFF
     glTF 1.0 + GLB
     glTF 2.0
     IFC-STEP
@@ -104,6 +104,12 @@ class FormatListTableViewVM: FormatListTableViewVMType {
     }
     
     func heightForRowAt(indexPath: IndexPath) -> CGFloat {
+        
+        guard let cells = cells else { return 0 }
+        let size = UILabel.getLabelSize(text: cells[indexPath.row].label, fontSize: 16, fontName: "TTNorms-Medium")
+        if size.width > 300 {
+            return  (size.width / 300) * 25.0
+        }
         return 25.0
     }
     

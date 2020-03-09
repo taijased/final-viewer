@@ -112,10 +112,12 @@ class SelectCloudTableViewCell: UITableViewCell {
         if traitCollection.userInterfaceStyle == .light {
             headerLabel.textColor = UIColor.Black.primary
             cloudLogoView.layer.borderColor = UIColor(hexValue: "#F0F0F0", alpha: 0.9)?.cgColor
+            cloudLogoView.backgroundColor = .white
 
         } else {
             headerLabel.textColor = .white
             cloudLogoView.layer.borderColor = UIColor.clear.cgColor
+            cloudLogoView.backgroundColor = UIColor.Black.gray
         }
         
  

@@ -48,7 +48,12 @@ class SelectCloudTableView: UITableView {
         tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: 0))
         contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         
-        let header =  SelectCloudHeaderView(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: 179))
+
+        let headerHeight: CGFloat = Bundle.main.preferredLocalizations.first == "en" ? 179 : 200
+        
+        
+        let header =  SelectCloudHeaderView(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: headerHeight))
+        
         header.privacyPolicyView.delegate = self
         tableHeaderView = header
     }

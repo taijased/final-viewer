@@ -35,23 +35,24 @@ enum CustomAlertAction {
 //    }
     
     
-    //custom icons
+    
     func getTitleName() -> String {
         var result: String
         switch self {
         case .open:
-            result = "Open"
+            result = "Projects.open".localized
         case .rename:
-            result = "Rename"
+            result = "Projects.rename".localized
 //        case .share:
 //            result = "Share"
         case .delete:
-            result = "Delete file"
+            result = "Projects.delete".localized
         case .cancel:
-            result = "Cancel"
+            result = "Projects.cancel".localized
         }
         return result
     }
+    
     
     //system icons
     func getIconName() -> String {

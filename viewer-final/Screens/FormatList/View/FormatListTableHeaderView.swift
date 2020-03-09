@@ -15,7 +15,7 @@ final class FormatListTableHeaderView: UIView {
     
     fileprivate let titleLabel: UILabel = {
         let label = UILabel.H1.bold
-        label.text = "Supported formats"
+        label.text = "SupportedFormat.title".localized
         label.textColor = UIColor.Primary.primary
         label.font = UIFont.getTTNormsFont(type: .bold, size: 32)
         label.textColor = UIColor.Primary.primary
@@ -40,8 +40,13 @@ final class FormatListTableHeaderView: UIView {
     fileprivate func setupUI() {
         addSubview(titleLabel)
         titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32).isActive = true
         titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 32).isActive = true
-        titleLabel.heightAnchor.constraint(equalToConstant: 36).isActive = true
+
+        let titleLabelHeight: CGFloat = Bundle.main.preferredLocalizations.first == "en" ? 32 : 90
+        titleLabel.heightAnchor.constraint(equalToConstant: titleLabelHeight).isActive = true
+             
+
         
     }
     

@@ -20,16 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        if window?.traitCollection.userInterfaceStyle == .light {
-           
-             window?.backgroundColor = .black
-        } else {
-             window?.backgroundColor = .white
-        }
-         
-        
-        
-//        let viewController = TestViewController()
         
         let viewController = SplashViewController()
         

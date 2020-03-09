@@ -29,7 +29,7 @@ enum CloudModel {
         case .icloud:
             return "iCloud"
         case .systemFiles:
-            return  "Choose from file"
+            return  "ChooseFile.files".localized
         }
     }
     

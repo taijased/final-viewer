@@ -23,7 +23,7 @@ class SelectCloudVM: SelectCloudVMType {
     
     
     lazy var documentPicker: UIDocumentPickerViewController = {
-        let picker =  UIDocumentPickerViewController(documentTypes: ["public.data"], in: .import)
+        let picker =  UIDocumentPickerViewController(documentTypes: ["public.data", "public.item", "public.content", "public.source-code"], in: .import)
         picker.allowsMultipleSelection = false
         return picker
     }()

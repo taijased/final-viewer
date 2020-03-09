@@ -19,7 +19,7 @@ final class SelectCloudHeaderView: UIView {
     
     fileprivate let titleLabel: UILabel = {
         let label = UILabel.H1.bold
-        label.text = "Select files from"
+        label.text = "ChooseFile.title".localized
         label.textColor = UIColor.Primary.primary
         label.font = UIFont.getTTNormsFont(type: .bold, size: 32)
         label.textColor = UIColor.Primary.primary
@@ -60,7 +60,9 @@ final class SelectCloudHeaderView: UIView {
         privacyPolicyView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32).isActive = true
         privacyPolicyView.widthAnchor.constraint(equalToConstant: 260).isActive = true
         privacyPolicyView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15).isActive = true
-        privacyPolicyView.heightAnchor.constraint(equalToConstant: 72).isActive = true
+        let descLabelHeight = UILabel.getLabelSize(text: "ChooseFile.desc".localized, fontSize: 12, fontName: "TTNorms-Regular")
+        print((descLabelHeight.width / 260) * 40)
+        privacyPolicyView.heightAnchor.constraint(equalToConstant: (descLabelHeight.width / 260) * 40).isActive = true
         
     }
     

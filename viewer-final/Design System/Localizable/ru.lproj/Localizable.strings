@@ -6,8 +6,36 @@
   Copyright © 2020 Максим Спиридонов. All rights reserved.
 */
 
+
+// Welcome Screen
+
 "Welcome.title" = "Добро пожаловать в ARQ Viewer";
-"Welcome.description" = "View and display your projects. Share them. See statistics and manage your account. To create the projects you need login ARQ Editor";
+"Welcome.description" = "Загрузите, демонстрируйте и делитесь своими 3D проектами с использованием дополненной реальности. Просто загрузите ваши 3D модели откуда угодно.";
 
 
+
+
+// Choose file Screen
+
+
+"ChooseFile.desc" = "ARQ Viewer поддерживает более 40 3D форматов. Со списком поддерживаемых форматов можете ознакомться здесь.";
+"ChooseFile.term" = "здесь";
+"ChooseFile.title" = "Выберите файл из";
+"ChooseFile.files" = "Файлы";
+
+
+
+// Supported format Screen
+
+"SupportedFormat.title" = "Поддерживаемые форматы";
+
+
+// Projects Screen
+
+"Projects.title" = "Проекты";
+"Projects.open" = "Открыть";
+"Projects.rename" = "Переименовать";
+"Projects.rename.desc" = "Пожалуйста введите новое название";
+"Projects.delete" = "Удалить файл";
+"Projects.cancel" = "Отмена";
 

@@ -27,7 +27,6 @@ final class SelectFilesDescriptionView: UIView {
         label.isUserInteractionEnabled = true
         label.textAlignment = .left
         label.numberOfLines = 0
-
         return label
     }()
     
@@ -39,8 +38,8 @@ final class SelectFilesDescriptionView: UIView {
     }()
     
     
-    fileprivate let termText: String = "ARQ Viewer supports more than 40 3D formats. A list of supported 3D models can be found here."
-    fileprivate let term: String = "here"
+    fileprivate let termText: String = "ChooseFile.desc".localized
+    fileprivate let term: String = "ChooseFile.term".localized
     
     
     override init(frame: CGRect) {

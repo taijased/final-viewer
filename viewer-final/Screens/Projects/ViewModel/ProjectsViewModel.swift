@@ -51,7 +51,11 @@ class ProjectsViewModel: ProjectsViewModelType {
     
     
     lazy var renameAlert: UIAlertController = {
-        let actionSheet = UIAlertController(title: "Rename", message: "Please write new name", preferredStyle: .alert)
+        
+        
+//        "Projects.rename.desc" = "Please write new name";
+        
+        let actionSheet = UIAlertController(title: "", message: "Projects.rename.desc".localized, preferredStyle: .alert)
         
         
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in }))
@@ -62,7 +66,7 @@ class ProjectsViewModel: ProjectsViewModelType {
             }
         }))
         
-        actionSheet.addTextField { (textField) in  textField.text = "New Name" }
+        actionSheet.addTextField { (textField) in  textField.text = self.projectItem?.object.name }
         actionSheet.setTitlet(font: UIFont.getTTNormsFont(type: .medium, size: 14), color: nil)
         
         return actionSheet
