@@ -14,6 +14,7 @@ enum ARViewControlsEnum {
     case close
     case openAR
     case open3D
+    case refresh
 }
 
 protocol ARViewControlsDelegate: class {
@@ -23,8 +24,6 @@ protocol ARViewControlsDelegate: class {
 final class ARViewControls: UIView {
     
     weak var delegate: ARViewControlsDelegate?
-    
-    
     
     
     fileprivate let closeButton: UIButton = {
@@ -39,30 +38,34 @@ final class ARViewControls: UIView {
     }()
     
     
-    
+    fileprivate let refreshButton: UIButton = {
+        var button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = UIColor.Primary.primary
+        button.setImage(UIImage(named: "refresh"), for: .normal)
+        button.layer.cornerRadius = 22
+        button.layer.masksToBounds = false
+        button.addTarget(self, action: #selector(refreshButtonTapped), for: .touchUpInside)
+        return button
+    }()
     
     
     fileprivate let arViewControl: ARViewControlItem = {
-        
         let view = ARViewControlItem(frame: .zero, labelText: "AR", active: nil)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
-        view.layer.cornerRadius = 20
+        view.layer.cornerRadius = 22
         view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
-        
         return view
     }()
     
     
     fileprivate let threeDViewControl: ARViewControlItem = {
-        
-        
         let view = ARViewControlItem(frame: .zero, labelText: "3D", active: true)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
-        view.layer.cornerRadius = 20
+        view.layer.cornerRadius = 22
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
-        
         return view
     }()
     
@@ -77,17 +80,19 @@ final class ARViewControls: UIView {
         delegate?.controlsActions(.close)
     }
     
+    @objc fileprivate func refreshButtonTapped(_ sender: UIButton) {
+        sender.flash()
+        delegate?.controlsActions(.refresh)
+    }
+    
+    
     @objc fileprivate func arButtonTapped() {
-        print(#function)
         threeDViewControl.setupDefault()
         arViewControl.setupActive()
         delegate?.controlsActions(.openAR)
     }
     
     @objc fileprivate func threedButtonTapped() {
-        
-        print(#function)
-        
         threeDViewControl.setupActive()
         arViewControl.setupDefault()
         delegate?.controlsActions(.open3D)
@@ -109,6 +114,13 @@ final class ARViewControls: UIView {
         closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -22).isActive = true
         closeButton.widthAnchor.constraint(equalToConstant: 56).isActive = true
         closeButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        
+        
+        addSubview(refreshButton)
+        refreshButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        refreshButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22).isActive = true
+        refreshButton.widthAnchor.constraint(equalToConstant: 56).isActive = true
+        refreshButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
         
         
         

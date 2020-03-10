@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
+//        let viewController = TestViewController()
 
         let viewController = SplashViewController()
 
