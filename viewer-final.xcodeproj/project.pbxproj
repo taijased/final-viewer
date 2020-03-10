@@ -47,6 +47,7 @@
 		133A5971240559E000BAC954 /* FilesTableViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A5970240559E000BAC954 /* FilesTableViewVM.swift */; };
 		133A5973240559ED00BAC954 /* FilesTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A5972240559ED00BAC954 /* FilesTableViewCellVM.swift */; };
 		133A5975240564D600BAC954 /* UITableView + escaping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A5974240564D600BAC954 /* UITableView + escaping.swift */; };
+		13625ACC24178106004D59C3 /* ARViewControlItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13625ACB24178106004D59C3 /* ARViewControlItem.swift */; };
 		137ADCE123FC04F700237368 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADCE023FC04F700237368 /* AppDelegate.swift */; };
 		137ADCEA23FC04F900237368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 137ADCE923FC04F900237368 /* Assets.xcassets */; };
 		137ADCF823FC076200237368 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADCF723FC076200237368 /* Constraints.swift */; };
@@ -86,6 +87,7 @@
 		137ADD5C23FC371000237368 /* AuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD5B23FC371000237368 /* AuthData.swift */; };
 		137ADD6123FC3E4600237368 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD6023FC3E4600237368 /* UIView+Border.swift */; };
 		13848FC62412B18E008FE315 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 13848FC82412B18E008FE315 /* Localizable.strings */; };
+		138C66462416C21800E18551 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C66452416C21800E18551 /* TestViewController.swift */; };
 		13BAE7F42403FDDE008A44E0 /* SelectCloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE7F32403FDDE008A44E0 /* SelectCloudViewController.swift */; };
 		13BAE7F62403FDEC008A44E0 /* SelectCloudVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE7F52403FDEC008A44E0 /* SelectCloudVM.swift */; };
 		13BAE7F82404026C008A44E0 /* SelectCloudTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE7F72404026C008A44E0 /* SelectCloudTableView.swift */; };
@@ -158,6 +160,7 @@
 		133A5970240559E000BAC954 /* FilesTableViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesTableViewVM.swift; sourceTree = "<group>"; };
 		133A5972240559ED00BAC954 /* FilesTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesTableViewCellVM.swift; sourceTree = "<group>"; };
 		133A5974240564D600BAC954 /* UITableView + escaping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + escaping.swift"; sourceTree = "<group>"; };
+		13625ACB24178106004D59C3 /* ARViewControlItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewControlItem.swift; sourceTree = "<group>"; };
 		137ADCDD23FC04F700237368 /* ARQ Viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ARQ Viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		137ADCE023FC04F700237368 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		137ADCE923FC04F900237368 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -200,6 +203,7 @@
 		137ADD6023FC3E4600237368 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
 		13848FC72412B18E008FE315 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		13848FC92412B196008FE315 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		138C66452416C21800E18551 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		13BAE7F32403FDDE008A44E0 /* SelectCloudViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCloudViewController.swift; sourceTree = "<group>"; };
 		13BAE7F52403FDEC008A44E0 /* SelectCloudVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCloudVM.swift; sourceTree = "<group>"; };
 		13BAE7F72404026C008A44E0 /* SelectCloudTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCloudTableView.swift; sourceTree = "<group>"; };
@@ -324,6 +328,8 @@
 			isa = PBXGroup;
 			children = (
 				133935D3241001CF003B8BB5 /* ARViewControls.swift */,
+				138C66452416C21800E18551 /* TestViewController.swift */,
+				13625ACB24178106004D59C3 /* ARViewControlItem.swift */,
 			);
 			path = LehaPosmotri;
 			sourceTree = "<group>";
@@ -933,6 +939,7 @@
 				13BAE806240408ED008A44E0 /* SelectFilesDescriptionView.swift in Sources */,
 				130B982C23FD695F00DE6C60 /* ProjectsCollectionViewCell.swift in Sources */,
 				13BAE7F42403FDDE008A44E0 /* SelectCloudViewController.swift in Sources */,
+				13625ACC24178106004D59C3 /* ARViewControlItem.swift in Sources */,
 				130B983023FD6F8C00DE6C60 /* ProjectsContextViewMenu.swift in Sources */,
 				130B982223FD64C000DE6C60 /* ProjectsViewModel.swift in Sources */,
 				137ADD4C23FC303800237368 /* ARQLogo.swift in Sources */,
@@ -961,6 +968,7 @@
 				13D3AB0C24128A6C004E902C /* String + Localization.swift in Sources */,
 				130ADC012406B12C00E6EAE3 /* ToastViewController.swift in Sources */,
 				13D5BB2524094D2C00A65256 /* LocalFileFetcher.swift in Sources */,
+				138C66462416C21800E18551 /* TestViewController.swift in Sources */,
 				130B982423FD67A000DE6C60 /* ProjectsCollectionView.swift in Sources */,
 				137ADD0623FC081700237368 /* UILabel + Theme.swift in Sources */,
 				133A595524054C4600BAC954 /* CloudTableHeaderView.swift in Sources */,

@@ -24,6 +24,9 @@ final class ARViewControls: UIView {
     
     weak var delegate: ARViewControlsDelegate?
     
+    
+    
+    
     fileprivate let closeButton: UIButton = {
         var button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -36,18 +39,35 @@ final class ARViewControls: UIView {
     }()
     
     
-    fileprivate let segmentControl: UISegmentedControl = {
-        let segmentedControl = UISegmentedControl()
-        segmentedControl.insertSegment(withTitle: "3D", at: 0, animated: true)
-        segmentedControl.insertSegment(withTitle: "AR", at: 1, animated: true)
-        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        segmentedControl.selectedSegmentIndex = 0
-        segmentedControl.addTarget(self, action: #selector(segmentControlChenge(_:)), for: .valueChanged)
-        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-        segmentedControl.selectedSegmentTintColor = UIColor.Primary.primary
-        segmentedControl.layer.borderColor = UIColor.Primary.primary.cgColor
-        return segmentedControl
+    
+    
+    
+    fileprivate let arViewControl: ARViewControlItem = {
+        
+        let view = ARViewControlItem(frame: .zero, labelText: "AR", active: nil)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 20
+        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        
+        return view
     }()
+    
+    
+    fileprivate let threeDViewControl: ARViewControlItem = {
+        
+        
+        let view = ARViewControlItem(frame: .zero, labelText: "3D", active: true)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 20
+        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        
+        return view
+    }()
+    
+    
+    
     
     
     
@@ -57,21 +77,21 @@ final class ARViewControls: UIView {
         delegate?.controlsActions(.close)
     }
     
-    
-    @objc fileprivate func segmentControlChenge(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex{
-        case 0:
-            delegate?.controlsActions(.open3D)
-        case 1:
-            delegate?.controlsActions(.openAR)
-            
-        default:
-            break
-        }
+    @objc fileprivate func arButtonTapped() {
+        print(#function)
+        threeDViewControl.setupDefault()
+        arViewControl.setupActive()
+        delegate?.controlsActions(.openAR)
     }
     
-    
-    
+    @objc fileprivate func threedButtonTapped() {
+        
+        print(#function)
+        
+        threeDViewControl.setupActive()
+        arViewControl.setupDefault()
+        delegate?.controlsActions(.open3D)
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -90,11 +110,24 @@ final class ARViewControls: UIView {
         closeButton.widthAnchor.constraint(equalToConstant: 56).isActive = true
         closeButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
         
-        addSubview(segmentControl)
-        segmentControl.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        segmentControl.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        segmentControl.widthAnchor.constraint(equalToConstant: 141).isActive = true
-        segmentControl.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        
+        addSubview(arViewControl)
+        arViewControl.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        arViewControl.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 35.5).isActive = true
+        arViewControl.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        arViewControl.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        arViewControl.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(arButtonTapped)))
+        
+        
+        addSubview(threeDViewControl)
+        threeDViewControl.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        threeDViewControl.centerXAnchor.constraint(equalTo: centerXAnchor, constant: -35.5).isActive = true
+        threeDViewControl.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        threeDViewControl.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        threeDViewControl.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(threedButtonTapped)))
+        
+        
         
     }
     
