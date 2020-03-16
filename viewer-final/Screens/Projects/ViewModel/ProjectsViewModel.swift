@@ -50,6 +50,29 @@ class ProjectsViewModel: ProjectsViewModelType {
     }()
     
     
+    lazy var infoButton: UIButton = {
+        var button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "plus"), for: .normal)
+        button.backgroundColor = UIColor.Primary.primary
+        button.layer.cornerRadius = 22
+        button.layer.masksToBounds = false
+        button.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    
+    @objc func infoButtonTapped(_ sender: UIButton) {
+        sender.flash()
+        delegate?.onEvents(type: .info)
+    }
+    
+    
+    
+    
+    
+    
+    
     lazy var renameAlert: UIAlertController = {
         
         

@@ -140,7 +140,6 @@ extension URL    {
 
 
 
-
 enum FileManagerNotify {
     case fileExist
     case success
@@ -148,11 +147,11 @@ enum FileManagerNotify {
     func getDescription() -> String {
         switch self {
         case .fileExist:
-            return "Already exists! Do nothing"
+            return "FileManager.exist".localized
         case .success:
-            return "Copied file!"
+            return "FileManager.success".localized
         case .error:
-            return "Error"
+            return "FileManager.error".localized
         }
     }
 }

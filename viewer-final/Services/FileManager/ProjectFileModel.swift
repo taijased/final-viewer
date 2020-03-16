@@ -49,6 +49,16 @@ class ProjectFileModel: Object {
         self.objectRPS = objectRPS
     }
     
+    convenience init(object: ProjectFileModel, imagePath: String) {
+        self.init()
+        self.id = object.id
+        self.name = object.name
+        self.path = object.path
+        self.imagePath = imagePath
+        self.lastPathComponent = object.lastPathComponent
+        self.objectRPS = object.objectRPS
+    }
+    
     override class func primaryKey() -> String? {
         return "id"
     }

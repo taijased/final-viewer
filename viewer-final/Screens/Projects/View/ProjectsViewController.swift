@@ -24,6 +24,8 @@ final class ProjectsViewController: UIViewController {
     }()
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,7 +91,6 @@ final class ProjectsViewController: UIViewController {
     }
     
     
-    
     // MARK: settings Navigation bar
     
     override func viewWillAppear(_ animated: Bool) {
@@ -128,31 +129,9 @@ final class ProjectsViewController: UIViewController {
             self.present(navigationController, animated: true, completion: nil)
         case .openProject:
             
-            
             guard let object = viewModel?.collectionView.viewModel?.viewModelForSelectedRow()?.path else { return }
             
-            
-            
-            //            let documentsURL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-            //
-            //
-            //
-            ////            print(documentsURL.appendingPathComponent("arqprojects"))
-            //            let fileExist = documentsURL.appendingPathComponent("arqprojects").appendingPathComponent(path).checkFileExist()
-            //
-            //            print(se)
-            
-            //example use update RPS
-            
-            //            StorageManager.update(object: ProjectFileModel(objectRPS: "new Value RPS", object: object)) {
-            //                print(object)
-            //            }
-            
-            
-            
-            
-            
-            
+
             
             
         case .renameAlert:
@@ -161,6 +140,8 @@ final class ProjectsViewController: UIViewController {
         case .dismiss:
             self.dismiss(animated: true, completion: nil)
             
+        case .information:
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -191,6 +172,8 @@ extension ProjectsViewController: ProjectsViewModelDelegate {
             }
         case .renameAlert:
             self.navigation(.renameAlert)
+        case .info:
+            self.navigation(.information)
         }
     }
 }

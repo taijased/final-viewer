@@ -59,7 +59,9 @@ final class WelcomeViewController: UIViewController {
     }()
     
     fileprivate let enterButton: UIButton = {
-        let button  = UIButton.getCustomButton(label: "Import file")
+        
+        
+        let button  = UIButton.getCustomButton(label:"Welcome.btn".localized)
         button.titleLabel?.font = UIFont.getTTNormsFont(type: .medium, size: 16)
         button.addTarget(self, action: #selector(enterButtonTapped), for: .touchUpInside)
         return button

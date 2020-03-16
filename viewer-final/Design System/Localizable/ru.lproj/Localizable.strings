@@ -11,6 +11,7 @@
 
 "Welcome.title" = "Добро пожаловать в ARQ Viewer";
 "Welcome.description" = "Загрузите, демонстрируйте и делитесь своими 3D проектами с использованием дополненной реальности. Просто загрузите ваши 3D модели откуда угодно.";
+"Welcome.btn" = "Импортировать файл";
 
 
 
@@ -38,4 +39,13 @@
 "Projects.rename.desc" = "Пожалуйста введите новое название";
 "Projects.delete" = "Удалить файл";
 "Projects.cancel" = "Отмена";
+"Projects.empty" = "Выберите файл";
 
+
+
+//FileManagerNotify
+
+
+"FileManager.exist" = "Файл уже существует!";
+"FileManager.success" = "Файл скопирован!";
+"FileManager.error" = "Ошибка!";

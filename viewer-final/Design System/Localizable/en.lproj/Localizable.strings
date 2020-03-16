@@ -11,6 +11,7 @@
 // Welcome Screen
 "Welcome.title" = "Welcome to ARQ Viewer";
 "Welcome.description" = "View and display your projects. Share them. See statistics and manage your account. To create the projects you need login ARQ Editor";
+"Welcome.btn" = "Import file";
 
 
 // Choose file Screen
@@ -38,3 +39,13 @@
 "Projects.rename.desc" = "Please write new name";
 "Projects.delete" = "Delete file";
 "Projects.cancel" = "Cancel";
+"Projects.empty" = "Choose file";
+
+
+
+//FileManagerNotify
+
+
+"FileManager.exist" = "Already exists! Do nothing";
+"FileManager.success" = "Copied file!";
+"FileManager.error" = "Error";
