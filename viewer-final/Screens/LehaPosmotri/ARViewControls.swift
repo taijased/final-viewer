@@ -15,6 +15,7 @@ enum ARViewControlsEnum {
     case openAR
     case open3D
     case refresh
+    case takePhoto
 }
 
 protocol ARViewControlsDelegate: class {
@@ -97,6 +98,13 @@ final class ARViewControls: UIView {
         arViewControl.setupDefault()
         delegate?.controlsActions(.open3D)
     }
+    
+    func resetControls() {
+        threeDViewControl.setupActive()
+        arViewControl.setupDefault()
+    }
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)

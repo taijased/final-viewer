@@ -22,6 +22,7 @@ protocol ProjectsViewModelType {
     var renameAlert: UIAlertController { get }
     var collectionView: ProjectsCollectionView { get }
     var plusButton: UIButton { get }
+    var infoButton: UIButton { get }
     var delegate: ProjectsViewModelDelegate? { get set }
     var searchController: UISearchController { get }
     func update()

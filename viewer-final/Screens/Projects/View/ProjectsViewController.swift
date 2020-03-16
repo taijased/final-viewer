@@ -59,6 +59,17 @@ final class ProjectsViewController: UIViewController {
         viewModel.plusButton.widthAnchor.constraint(equalToConstant: 56).isActive = true
         viewModel.plusButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
         
+        
+        
+        
+        viewModel.infoButton.isUserInteractionEnabled = true
+        view.addSubview(viewModel.infoButton)
+        viewModel.infoButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        viewModel.infoButton.widthAnchor.constraint(equalToConstant: 56).isActive = true
+        viewModel.infoButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        viewModel.infoButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22).isActive = true
+        
+        
         if UIDevice.current.model == "iPad" {
             viewModel.plusButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         } else {
@@ -69,40 +80,27 @@ final class ProjectsViewController: UIViewController {
         
         
         
-        //        self.navigationItem.searchController = viewModel.searchController
+//        self.navigationItem.searchController = viewModel.searchController
         
         self.definesPresentationContext = true
         navigationController?.navigationBar.hideBottomHairline()
-        
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        
         if traitCollection.userInterfaceStyle == .light {
             view.backgroundColor = .white
             emptyLabel.textColor = UIColor.Black.primary
+            
             
         } else {
             view.backgroundColor = UIColor.Black.light
             emptyLabel.textColor = .white
         }
-    }
-    
-    
-    // MARK: settings Navigation bar
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //        navigationController?.setNavigationBarHidden(false, animated: animated)
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        //        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     
@@ -129,9 +127,7 @@ final class ProjectsViewController: UIViewController {
             self.present(navigationController, animated: true, completion: nil)
         case .openProject:
             
-            guard let object = viewModel?.collectionView.viewModel?.viewModelForSelectedRow()?.path else { return }
-            
-
+            guard let object = viewModel?.collectionView.viewModel?.viewModelForSelectedRow() else { return }
             
             
         case .renameAlert:
@@ -141,7 +137,10 @@ final class ProjectsViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
             
         case .information:
-            self.dismiss(animated: true, completion: nil)
+//            let viewController = InformationViewController()
+            let viewController = TestViewController()
+            
+            self.present(viewController, animated: true, completion: nil)
         }
     }
     

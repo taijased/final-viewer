@@ -94,7 +94,7 @@ extension UIColor {
     
     enum Gray: GrayColor {
         static let primary = UIColor(hexValue: "#EEEEF0", alpha: 1.0)!
-        static let primaryLight = UIColor(hexValue: "#F0F0F0", alpha: 1.0)!
+        static let primaryLight = UIColor(hexValue: "#F0F0F0", alpha: 0.9)!
         static let gray = UIColor(hexValue: "#4C4B5E", alpha: 1.0)!
         static let light = UIColor(hexValue: "#C7C7D4", alpha: 1.0)!
         static let extraLight = UIColor(hexValue: "#C7C7D4", alpha: 0.4)!

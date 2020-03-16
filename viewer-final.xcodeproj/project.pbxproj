@@ -88,6 +88,8 @@
 		137ADD6123FC3E4600237368 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD6023FC3E4600237368 /* UIView+Border.swift */; };
 		13848FC62412B18E008FE315 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 13848FC82412B18E008FE315 /* Localizable.strings */; };
 		138C66462416C21800E18551 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C66452416C21800E18551 /* TestViewController.swift */; };
+		13A6B871241FE50D00FF95AB /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A6B870241FE50D00FF95AB /* InformationViewController.swift */; };
+		13A6B873241FE51F00FF95AB /* InformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A6B872241FE51F00FF95AB /* InformationViewModel.swift */; };
 		13BAE7F42403FDDE008A44E0 /* SelectCloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE7F32403FDDE008A44E0 /* SelectCloudViewController.swift */; };
 		13BAE7F62403FDEC008A44E0 /* SelectCloudVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE7F52403FDEC008A44E0 /* SelectCloudVM.swift */; };
 		13BAE7F82404026C008A44E0 /* SelectCloudTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE7F72404026C008A44E0 /* SelectCloudTableView.swift */; };
@@ -204,6 +206,8 @@
 		13848FC72412B18E008FE315 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		13848FC92412B196008FE315 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		138C66452416C21800E18551 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		13A6B870241FE50D00FF95AB /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		13A6B872241FE51F00FF95AB /* InformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModel.swift; sourceTree = "<group>"; };
 		13BAE7F32403FDDE008A44E0 /* SelectCloudViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCloudViewController.swift; sourceTree = "<group>"; };
 		13BAE7F52403FDEC008A44E0 /* SelectCloudVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCloudVM.swift; sourceTree = "<group>"; };
 		13BAE7F72404026C008A44E0 /* SelectCloudTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCloudTableView.swift; sourceTree = "<group>"; };
@@ -380,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				133935CE240FFEC7003B8BB5 /* LehaPosmotri */,
+				13A6B86C241FE2EF00FF95AB /* Info */,
 				13BAE82424052B18008A44E0 /* Cloud */,
 				13BAE809240413B4008A44E0 /* FormatList */,
 				13BAE7EE2403FD86008A44E0 /* SelectFrom */,
@@ -588,6 +593,39 @@
 			isa = PBXGroup;
 			children = (
 				137ADD5B23FC371000237368 /* AuthData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		13A6B86C241FE2EF00FF95AB /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				13A6B86F241FE31900FF95AB /* Model */,
+				13A6B86E241FE31600FF95AB /* View */,
+				13A6B86D241FE31400FF95AB /* ViewModel */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		13A6B86D241FE31400FF95AB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				13A6B872241FE51F00FF95AB /* InformationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		13A6B86E241FE31600FF95AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13A6B870241FE50D00FF95AB /* InformationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13A6B86F241FE31900FF95AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -920,6 +958,7 @@
 				130ADC1C2407CB5800E6EAE3 /* CPopUpTableHeaderView.swift in Sources */,
 				130B982E23FD6EC100DE6C60 /* UINavigationBar + bottomLine.swift in Sources */,
 				133A595B24054CF800BAC954 /* CloudTableViewVM.swift in Sources */,
+				13A6B871241FE50D00FF95AB /* InformationViewController.swift in Sources */,
 				13D5BB122409396C00A65256 /* ProjectsNavigation.swift in Sources */,
 				13BAE82D24052D91008A44E0 /* CloudModel.swift in Sources */,
 				133935D4241001CF003B8BB5 /* ARViewControls.swift in Sources */,
@@ -939,6 +978,7 @@
 				13BAE806240408ED008A44E0 /* SelectFilesDescriptionView.swift in Sources */,
 				130B982C23FD695F00DE6C60 /* ProjectsCollectionViewCell.swift in Sources */,
 				13BAE7F42403FDDE008A44E0 /* SelectCloudViewController.swift in Sources */,
+				13A6B873241FE51F00FF95AB /* InformationViewModel.swift in Sources */,
 				13625ACC24178106004D59C3 /* ARViewControlItem.swift in Sources */,
 				130B983023FD6F8C00DE6C60 /* ProjectsContextViewMenu.swift in Sources */,
 				130B982223FD64C000DE6C60 /* ProjectsViewModel.swift in Sources */,

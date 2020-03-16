@@ -167,8 +167,8 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
         DispatchQueue.main.async {
             if self.traitCollection.userInterfaceStyle == .light {
                 self.cardView.backgroundColor = .white
-                self.cardView.layer.borderColor = UIColor(hexValue: "#F0F0F0", alpha: 0.9)?.cgColor
-                self.labelView.backgroundColor = UIColor(hexValue: "#F0F0F0", alpha: 0.9)
+                self.cardView.layer.borderColor = UIColor.Gray.primaryLight.cgColor
+                self.labelView.backgroundColor = UIColor.Gray.primaryLight
                 self.label.textColor = UIColor.Black.primary
                 self.moreButton.setImage(UIImage(named: "more"), for: .normal)
                 self.defaultImageView.image = UIImage(named: "viewer_36x36")
@@ -183,7 +183,6 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
                 
             }
         }
-        
         
         updateImageView()
         

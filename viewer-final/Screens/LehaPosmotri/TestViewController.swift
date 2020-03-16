@@ -19,6 +19,20 @@ class TestViewController: UIViewController {
         return view
     }()
     
+    fileprivate let takePhotoButton: UIButton = {
+        var button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 28
+        button.layer.masksToBounds = false
+        button.addTarget(self, action: #selector(takePhotoButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc fileprivate func takePhotoButtonTapped(_ sender: UIButton) {
+        sender.flash()
+        print(#function)
+    }
     
     
     let controls = ARViewControls()
@@ -26,13 +40,22 @@ class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(webImage)
-        webImage.fillSuperview()
+        
+        view.backgroundColor = .random()
         
         view.addSubview(controls)
         controls.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         controls.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         controls.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive = true
         controls.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        
+        
+        
+        view.addSubview(takePhotoButton)
+        takePhotoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        takePhotoButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60).isActive = true
+        takePhotoButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        takePhotoButton.widthAnchor.constraint(equalToConstant: 56).isActive = true
+        
     }
 }
