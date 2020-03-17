@@ -44,6 +44,7 @@ protocol GrayColor {
     static var gray: UIColor { get }
     static var light: UIColor { get }
     static var extraLight: UIColor { get }
+    static var darkLight: UIColor { get }
 }
 
 
@@ -98,6 +99,8 @@ extension UIColor {
         static let gray = UIColor(hexValue: "#4C4B5E", alpha: 1.0)!
         static let light = UIColor(hexValue: "#C7C7D4", alpha: 1.0)!
         static let extraLight = UIColor(hexValue: "#C7C7D4", alpha: 0.4)!
+        static let darkLight = UIColor(hexValue: "#4F4F53", alpha: 0.8)!
+    
     }
     
     

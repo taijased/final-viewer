@@ -49,3 +49,20 @@
 "FileManager.exist" = "Файл уже существует!";
 "FileManager.success" = "Файл скопирован!";
 "FileManager.error" = "Ошибка!";
+
+
+
+// Information
+
+
+"Info.label-first" = "Управление камерой";
+"Info.label-second" = "Управление моделью";
+"Info.3d.move" = "Орбита камеры";
+"Info.ar.move" = "Перемещение по плоскости";
+"Info.moveUp" = "Высота от плоскости";
+"Info.moveCamera" = "Перемещение камеры";
+"Info.3d.zoom" = "Приближение камеры";
+"Info.ar.zoom" = "Масштаб модели";
+"Info.selected" = "Выделить";
+"Info.rotation" = "Поворот модели";
+"Info.logo" = "Для поворота модели вокруг своей оси, выделите объект и перемещайте орбиту камеры";

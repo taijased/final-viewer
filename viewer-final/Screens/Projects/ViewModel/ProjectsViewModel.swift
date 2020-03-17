@@ -54,7 +54,7 @@ class ProjectsViewModel: ProjectsViewModelType {
     lazy var infoButton: UIButton = {
         var button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "plus"), for: .normal)
+        button.setImage(UIImage(named: "question"), for: .normal)
         button.backgroundColor = UIColor.Primary.primary
         button.layer.cornerRadius = 22
         button.layer.masksToBounds = false

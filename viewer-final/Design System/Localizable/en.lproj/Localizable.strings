@@ -49,3 +49,18 @@
 "FileManager.exist" = "Already exists! Do nothing";
 "FileManager.success" = "Copied file!";
 "FileManager.error" = "Error";
+
+
+
+
+"Info.label-first" = "Camera control";
+"Info.label-second" = "Model control";
+"Info.3d.move" = "Change camera orbit";
+"Info.ar.move" = "Transition on plane";
+"Info.moveUp" = "Change height";
+"Info.moveCamera" = "Move camera";
+"Info.3d.zoom" = "Camera zoom";
+"Info.ar.zoom" = "Scale model";
+"Info.selected" = "Select";
+"Info.rotation" = "Rotate model";
+"Info.logo" = "To rotate the model around it’s axis, select the object and move the camera's orbit";

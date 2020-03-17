@@ -176,7 +176,7 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
             } else {
                 self.cardView.backgroundColor = UIColor.Black.gray
                 self.cardView.layer.borderColor = UIColor.clear.cgColor
-                self.labelView.backgroundColor = UIColor(hexValue: "#4F4F53", alpha: 0.8)
+                self.labelView.backgroundColor = UIColor.Gray.darkLight
                 self.label.textColor = .white
                 self.moreButton.setImage(UIImage(named: "more-white"), for: .normal)
                 self.defaultImageView.image = UIImage(named: "viewer-file-white")

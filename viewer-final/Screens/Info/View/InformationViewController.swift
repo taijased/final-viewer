@@ -11,63 +11,68 @@ import UIKit
 final class InformationViewController: UIViewController {
     
     
+    var viewModel: InformationViewModelType?
     
-    fileprivate let segmentControl: UISegmentedControl = {
-        let segmentedControl = UISegmentedControl()
-        segmentedControl.insertSegment(withTitle: "3D", at: 0, animated: true)
-        segmentedControl.insertSegment(withTitle: "AR", at: 1, animated: true)
-        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        segmentedControl.selectedSegmentIndex = 0
-        segmentedControl.addTarget(self, action: #selector(segmentControlChenge(_:)), for: .valueChanged)
-        segmentedControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-        segmentedControl.selectedSegmentTintColor = UIColor.Primary.primary
-        segmentedControl.layer.borderColor = UIColor.Primary.primary.cgColor
-        return segmentedControl
+    
+    let visualEffectView: UIVisualEffectView = {
+        let view = UIVisualEffectView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     
-    @objc fileprivate func segmentControlChenge(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex{
-        case 0:
-            print(#function)
-        case 1:
-            print(#function)
-        default:
-            break
-        }
-    }
-    
-    var viewModel: InformationViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        viewModel = InformationViewModel()
         setupUI()
     }
     
-    
     fileprivate func setupUI() {
         
-//        view.backgroundColor = .random()
         
-        view.addSubview(segmentControl)
         
-        segmentControl.topAnchor.constraint(equalTo: view.topAnchor, constant: 22).isActive = true
-        segmentControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        segmentControl.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        segmentControl.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        guard let viewModel = viewModel else { return }
+        
+       
+        
+        
+        
+        view.addSubview(viewModel.sectionCollectionView)
+        viewModel.sectionCollectionView.fillSuperview()
+        
+        
+        view.addSubview(visualEffectView)
+        visualEffectView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        visualEffectView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        visualEffectView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        visualEffectView.heightAnchor.constraint(equalToConstant: 96).isActive = true
+        
+        view.addSubview(viewModel.segmentControl)
+        viewModel.segmentControl.topAnchor.constraint(equalTo: view.topAnchor, constant: 32).isActive = true
+        viewModel.segmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22).isActive = true
+        viewModel.segmentControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22).isActive = true
+        viewModel.segmentControl.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        
+        
+        
     }
+    
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
         if traitCollection.userInterfaceStyle == .light {
             view.backgroundColor = .white
+            visualEffectView.effect = UIBlurEffect(style: .extraLight)
             
         } else {
             view.backgroundColor = UIColor.Black.light
+            visualEffectView.effect = UIBlurEffect(style: .dark)
         }
     }
+    
     
     
 }

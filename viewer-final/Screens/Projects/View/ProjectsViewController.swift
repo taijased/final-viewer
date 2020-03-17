@@ -92,14 +92,20 @@ final class ProjectsViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-        if traitCollection.userInterfaceStyle == .light {
-            view.backgroundColor = .white
-            emptyLabel.textColor = UIColor.Black.primary
-            
-            
-        } else {
-            view.backgroundColor = UIColor.Black.light
-            emptyLabel.textColor = .white
+        
+        DispatchQueue.main.async {
+            if self.traitCollection.userInterfaceStyle == .light {
+                self.view.backgroundColor = .white
+                self.emptyLabel.textColor = UIColor.Black.primary
+                self.viewModel?.infoButton.backgroundColor = UIColor.Gray.primaryLight
+                self.viewModel?.infoButton.setImage(UIImage(named: "question-light"), for: .normal)
+                
+            } else {
+                self.view.backgroundColor = UIColor.Black.light
+                self.emptyLabel.textColor = .white
+                self.viewModel?.infoButton.backgroundColor = UIColor.Gray.darkLight
+                self.viewModel?.infoButton.setImage(UIImage(named: "question-dark"), for: .normal)
+            }
         }
     }
     
@@ -126,9 +132,7 @@ final class ProjectsViewController: UIViewController {
             let navigationController = UINavigationController(rootViewController: viewController)
             self.present(navigationController, animated: true, completion: nil)
         case .openProject:
-            
             guard let object = viewModel?.collectionView.viewModel?.viewModelForSelectedRow() else { return }
-            
             
         case .renameAlert:
             guard let renameAlert = viewModel?.renameAlert else { return }
@@ -137,9 +141,8 @@ final class ProjectsViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
             
         case .information:
-//            let viewController = InformationViewController()
-            let viewController = TestViewController()
-            
+            let viewController = InformationViewController()
+//            let viewController = TestViewController()
             self.present(viewController, animated: true, completion: nil)
         }
     }
