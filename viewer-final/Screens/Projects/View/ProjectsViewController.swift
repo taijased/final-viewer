@@ -24,6 +24,24 @@ final class ProjectsViewController: UIViewController {
     }()
     
     
+    fileprivate let headerView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
+        return view
+    }()
+    
+    
+    lazy fileprivate var headerLabel: UILabel = {
+        let label = UILabel.H1.bold
+        label.textColor = UIColor.Black.primary
+        label.text = "Projects.title".localized
+        label.font = UIFont.getTTNormsFont(type: .bold, size: 32)
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        return label
+    }()
+    
     
     
     override func viewDidLoad() {
@@ -31,8 +49,6 @@ final class ProjectsViewController: UIViewController {
         
         viewModel = ProjectsViewModel()
         setupUI()
-        
-        
     }
     
     
@@ -76,16 +92,51 @@ final class ProjectsViewController: UIViewController {
             viewModel.plusButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22).isActive = true
         }
         
-        title = "Projects.title".localized
         
-        
-        
-//        self.navigationItem.searchController = viewModel.searchController
         
         self.definesPresentationContext = true
+        
+        
+        
+        
+        
+        
+        view.addSubview(headerView)
+        headerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        headerView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        
+    
+        headerView.addSubview(headerLabel)
+        headerLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -10).isActive = true
+        headerLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 19).isActive = true
+        headerLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: 20).isActive = true
+        
+
+        
+        
         navigationController?.navigationBar.hideBottomHairline()
-        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        
     }
+    
+    
+    
+    
+    // MARK: settings Navigation bar
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     
     
     
@@ -99,18 +150,20 @@ final class ProjectsViewController: UIViewController {
                 self.emptyLabel.textColor = UIColor.Black.primary
                 self.viewModel?.infoButton.backgroundColor = UIColor.Gray.primaryLight
                 self.viewModel?.infoButton.setImage(UIImage(named: "question-light"), for: .normal)
+                self.headerLabel.textColor = UIColor.Black.primary
                 
             } else {
                 self.view.backgroundColor = UIColor.Black.light
                 self.emptyLabel.textColor = .white
                 self.viewModel?.infoButton.backgroundColor = UIColor.Gray.darkLight
                 self.viewModel?.infoButton.setImage(UIImage(named: "question-dark"), for: .normal)
+                self.headerLabel.textColor = .white
             }
         }
     }
     
     
-
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape {
             viewModel?.collectionView.reloadData()
@@ -142,7 +195,7 @@ final class ProjectsViewController: UIViewController {
             
         case .information:
             let viewController = InformationViewController()
-//            let viewController = TestViewController()
+            //            let viewController = TestViewController()
             self.present(viewController, animated: true, completion: nil)
         }
     }
@@ -154,6 +207,15 @@ final class ProjectsViewController: UIViewController {
 //MARK: - ProjectsViewModelDelegate
 
 extension ProjectsViewController: ProjectsViewModelDelegate {
+    
+    func updateHeaderHeight(_ height: CGFloat) {
+        self.headerView.constraints.forEach { constraint in
+            if constraint.firstAttribute == .height {
+                constraint.constant = height
+            }
+        }
+    }
+    
     func onEvents(type: ProjectsViewAction) {
         switch type {
         case .plus:

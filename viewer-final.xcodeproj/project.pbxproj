@@ -118,6 +118,9 @@
 		13BAE82B24052D78008A44E0 /* CloudViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE82A24052D78008A44E0 /* CloudViewModel.swift */; };
 		13BAE82D24052D91008A44E0 /* CloudModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE82C24052D91008A44E0 /* CloudModel.swift */; };
 		13BAE83524054033008A44E0 /* UIImage + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE83424054033008A44E0 /* UIImage + UIView.swift */; };
+		13C426E12422919C00BC5B1E /* StatueVenus.FBX in Resources */ = {isa = PBXBuildFile; fileRef = 13C426E02422919C00BC5B1E /* StatueVenus.FBX */; };
+		13C426E3242291A900BC5B1E /* Hexapus_viewer_2.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 13C426E2242291A900BC5B1E /* Hexapus_viewer_2.fbx */; };
+		13C426E524229D4100BC5B1E /* ProjectsCollectionHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C426E424229D4100BC5B1E /* ProjectsCollectionHeaderViewCell.swift */; };
 		13D3AB0C24128A6C004E902C /* String + Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D3AB0B24128A6C004E902C /* String + Localization.swift */; };
 		13D5BB0C2408FE1000A65256 /* ProjectsViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D5BB0B2408FE1000A65256 /* ProjectsViewAction.swift */; };
 		13D5BB0E2409209E00A65256 /* CustomAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D5BB0D2409209E00A65256 /* CustomAlertAction.swift */; };
@@ -243,6 +246,9 @@
 		13BAE82A24052D78008A44E0 /* CloudViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudViewModel.swift; sourceTree = "<group>"; };
 		13BAE82C24052D91008A44E0 /* CloudModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudModel.swift; sourceTree = "<group>"; };
 		13BAE83424054033008A44E0 /* UIImage + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + UIView.swift"; sourceTree = "<group>"; };
+		13C426E02422919C00BC5B1E /* StatueVenus.FBX */ = {isa = PBXFileReference; lastKnownFileType = file; path = StatueVenus.FBX; sourceTree = "<group>"; };
+		13C426E2242291A900BC5B1E /* Hexapus_viewer_2.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hexapus_viewer_2.fbx; sourceTree = "<group>"; };
+		13C426E424229D4100BC5B1E /* ProjectsCollectionHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionHeaderViewCell.swift; sourceTree = "<group>"; };
 		13D3AB0B24128A6C004E902C /* String + Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Localization.swift"; sourceTree = "<group>"; };
 		13D5BB0B2408FE1000A65256 /* ProjectsViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewAction.swift; sourceTree = "<group>"; };
 		13D5BB0D2409209E00A65256 /* CustomAlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertAction.swift; sourceTree = "<group>"; };
@@ -317,6 +323,7 @@
 			children = (
 				130B981F23FD647500DE6C60 /* ProjectsViewController.swift */,
 				130B982323FD67A000DE6C60 /* ProjectsCollectionView.swift */,
+				13C426E424229D4100BC5B1E /* ProjectsCollectionHeaderViewCell.swift */,
 				130B982B23FD695F00DE6C60 /* ProjectsCollectionViewCell.swift */,
 				130B982F23FD6F8C00DE6C60 /* ProjectsContextViewMenu.swift */,
 			);
@@ -379,6 +386,7 @@
 				137ADCF523FC073000237368 /* Screens */,
 				137ADD1223FC097300237368 /* Services */,
 				137ADCFB23FC07A600237368 /* Design System */,
+				13C426DF2422916100BC5B1E /* DefaultModels */,
 				137ADCF623FC074200237368 /* Helpers */,
 				137ADCF423FC064700237368 /* Supporting Files */,
 			);
@@ -783,6 +791,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		13C426DF2422916100BC5B1E /* DefaultModels */ = {
+			isa = PBXGroup;
+			children = (
+				13C426E2242291A900BC5B1E /* Hexapus_viewer_2.fbx */,
+				13C426E02422919C00BC5B1E /* StatueVenus.FBX */,
+			);
+			path = DefaultModels;
+			sourceTree = "<group>";
+		};
 		13D3AAF224127ECC004E902C /* Localizable */ = {
 			isa = PBXGroup;
 			children = (
@@ -890,9 +907,11 @@
 				137ADD3223FC0B0500237368 /* TTNorms-Bold.ttf in Resources */,
 				137ADD3E23FC0B0500237368 /* TTNorms-Heavy.ttf in Resources */,
 				137ADD3523FC0B0500237368 /* TTNorms-ExtraLight.ttf in Resources */,
+				13C426E3242291A900BC5B1E /* Hexapus_viewer_2.fbx in Resources */,
 				137ADD3823FC0B0500237368 /* TTNorms-LightItalic.ttf in Resources */,
 				137ADD3B23FC0B0500237368 /* TTNorms-ExtraBold.ttf in Resources */,
 				137ADD3723FC0B0500237368 /* TTNorms-Medium.ttf in Resources */,
+				13C426E12422919C00BC5B1E /* StatueVenus.FBX in Resources */,
 				137ADD3123FC0B0500237368 /* TTNorms-BoldItalic.ttf in Resources */,
 				137ADD3623FC0B0500237368 /* TTNorms-ThinItalic.ttf in Resources */,
 				137ADD3D23FC0B0500237368 /* TTNorms-Light.ttf in Resources */,
@@ -962,6 +981,7 @@
 				130B982A23FD695300DE6C60 /* ProjectsCollectionViewCellVM.swift in Sources */,
 				13D5BB29240950C000A65256 /* StorageManager.swift in Sources */,
 				137ADD1723FC09A300237368 /* NetworkDataFetcher.swift in Sources */,
+				13C426E524229D4100BC5B1E /* ProjectsCollectionHeaderViewCell.swift in Sources */,
 				137ADD0D23FC092400237368 /* UIButton + Custom.swift in Sources */,
 				13D5BB0E2409209E00A65256 /* CustomAlertAction.swift in Sources */,
 				13BAE81724041569008A44E0 /* FormatListVM.swift in Sources */,

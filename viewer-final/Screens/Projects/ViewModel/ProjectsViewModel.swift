@@ -13,6 +13,7 @@ import UIKit
 
 protocol ProjectsViewModelDelegate: class {
     func onEvents(type: ProjectsViewAction)
+    func updateHeaderHeight(_ height: CGFloat)
 }
 
 
@@ -77,7 +78,7 @@ class ProjectsViewModel: ProjectsViewModelType {
     lazy var renameAlert: UIAlertController = {
         
         
-//        "Projects.rename.desc" = "Please write new name";
+        //        "Projects.rename.desc" = "Please write new name";
         
         let actionSheet = UIAlertController(title: "", message: "Projects.rename.desc".localized, preferredStyle: .alert)
         
@@ -239,6 +240,13 @@ class ProjectsViewModel: ProjectsViewModelType {
 
 //MARK: - ProjectsCollectionViewDelegate
 extension ProjectsViewModel: ProjectsCollectionViewDelegate {
+    // hueta polneyshaya
+    func scrollCellBegin(_ scrollView: UIScrollView) {
+        let y = 120 - (scrollView.contentOffset.y + 120)
+        let height = min(max(y, 0), 120)
+        delegate?.updateHeaderHeight(height)
+    }
+    
     
     func didLongTapped(_ item: ProjectsCollectionViewCellVMType, _ type: CustomAlertAction) {
         self.projectItem = item

@@ -30,6 +30,8 @@ class InfoTableView: UITableView {
         allowsSelection = false
         translatesAutoresizingMaskIntoConstraints = false
         registerCells()
+        showsHorizontalScrollIndicator = false
+        showsVerticalScrollIndicator = false
     }
     
     fileprivate func registerCells() {

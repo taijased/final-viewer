@@ -8,6 +8,7 @@ protocol ProjectsCollectionViewDelegate: class {
     func didSelectItemAt()
     func didSelectMore(_ item: ProjectsCollectionViewCellVMType)
     func didLongTapped(_ item: ProjectsCollectionViewCellVMType, _ type: CustomAlertAction)
+    func scrollCellBegin(_ scrollView: UIScrollView)
 }
 
 
@@ -56,14 +57,12 @@ class ProjectsCollectionView: UICollectionView {
         delegate = self
         dataSource = self
         register(ProjectsCollectionViewCell.self, forCellWithReuseIdentifier: ProjectsCollectionViewCell.reuseId)
+//        register(ProjectsCollectionHeaderViewCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: ProjectsCollectionHeaderViewCell.reuseId)
         translatesAutoresizingMaskIntoConstraints = false
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
-        contentInset = UIEdgeInsets(top: 20, left:  20, bottom: 0, right:  20)
-        
+        contentInset = UIEdgeInsets(top: 80, left:  20, bottom: 100, right: 20)
     }
-    
-    
     
     
     override func layoutSubviews() {
@@ -143,6 +142,28 @@ extension ProjectsCollectionView: UICollectionViewDelegateFlowLayout {
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return viewModel?.minimumLineSpacingForSectionAt ?? 0
     }
+    
+    
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        collectionDelegate?.scrollCellBegin(scrollView)
+    }
+    
+    
+    
+    // MARK: - Add HomeHeaderViewCell
+    
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ProjectsCollectionHeaderViewCell.reuseId, for: indexPath)
+//            as? ProjectsCollectionHeaderViewCell
+//        guard let headerViewCell = cell else { return UICollectionViewCell() }
+//
+//        return headerViewCell
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//        return CGSize(width: UIScreen.main.bounds.width, height: 80)
+//    }
 }
 
 

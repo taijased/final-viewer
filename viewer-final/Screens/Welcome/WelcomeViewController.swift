@@ -59,13 +59,24 @@ final class WelcomeViewController: UIViewController {
     }()
     
     fileprivate let enterButton: UIButton = {
-        
-        
         let button  = UIButton.getCustomButton(label:"Welcome.btn".localized)
         button.titleLabel?.font = UIFont.getTTNormsFont(type: .medium, size: 16)
         button.addTarget(self, action: #selector(enterButtonTapped), for: .touchUpInside)
         return button
     }()
+    
+    
+    fileprivate let openProjectsButton: UIButton = {
+        let button  = UIButton.getCustomButton(label:"Welcome.projects".localized)
+        button.titleLabel?.font = UIFont.getTTNormsFont(type: .medium, size: 16)
+        button.addTarget(self, action: #selector(openProjectsButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    
+    @objc func openProjectsButtonTapped(_ sender: UIButton) {
+        navigation(.chooseCloud)
+    }
     
     @objc func enterButtonTapped(_ sender: UIButton) {
         navigation(.chooseCloud)
@@ -93,12 +104,12 @@ final class WelcomeViewController: UIViewController {
         
         
         if UIDevice.current.model == "iPhone" {
-//            view.addSubview(enterButton)
-//            enterButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
-//            enterButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
-//            enterButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
-//            enterButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
-//
+            //            view.addSubview(enterButton)
+            //            enterButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32).isActive = true
+            //            enterButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
+            //            enterButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
+            //            enterButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
+            //
             
             view.addSubview(enterButton)
             enterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -121,13 +132,13 @@ final class WelcomeViewController: UIViewController {
             let labelHeight = UILabel.getLabelSize(text: titleLabel.text!, fontSize: 32, fontName: "TTNorms-Bold")
             titleLabel.heightAnchor.constraint(equalToConstant: (labelHeight.width / 260) * 60).isActive = true
             
-        
+            
             
             view.addSubview(bgView)
             bgView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             bgView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
             bgView.bottomAnchor.constraint(equalTo: titleLabel.topAnchor, constant: -20).isActive = true
-//            bgView.heightAnchor.constraint(equalToConstant: 420).isActive = true
+            //            bgView.heightAnchor.constraint(equalToConstant: 420).isActive = true
             bgView.widthAnchor.constraint(equalToConstant: 1194).isActive = true
         } else {
             view.addSubview(enterButton)
@@ -142,7 +153,7 @@ final class WelcomeViewController: UIViewController {
             descriptionLabel.bottomAnchor.constraint(equalTo: enterButton.topAnchor, constant: -33).isActive = true
             let descLabelHeight = UILabel.getLabelSize(text: descriptionLabel.text!, fontSize: 14, fontName: "TTNorms-Medium")
             descriptionLabel.heightAnchor.constraint(equalToConstant: (descLabelHeight.width / 260) * 42).isActive = true
-        
+            
             
             view.addSubview(titleLabel)
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -182,7 +193,6 @@ final class WelcomeViewController: UIViewController {
             self.present(navigationController, animated: true, completion: nil)
         case .dismiss:
             self.dismiss(animated: true, completion: nil)
-            
         }
     }
     
@@ -242,9 +252,7 @@ final class WelcomeViewController: UIViewController {
 
 extension  WelcomeViewController: SelectCloudViewControllerDelegate {
     func deinitController() {
-        if !realm.isEmpty {
-            self.dismiss(animated: true, completion: nil)
-        }
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -258,5 +266,5 @@ extension UILabel {
         label.font = self.font
         label.sizeToFit()
         return label.frame.height
-     }
+    }
 }

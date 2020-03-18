@@ -12,6 +12,7 @@
 "Welcome.title" = "Welcome to ARQ Viewer";
 "Welcome.description" = "View and display your projects. Share them. See statistics and manage your account. To create the projects you need login ARQ Editor";
 "Welcome.btn" = "Import file";
+"Welcome.projects" = "Use ARQ sample file";
 
 
 // Choose file Screen

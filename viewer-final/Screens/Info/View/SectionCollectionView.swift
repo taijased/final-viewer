@@ -61,6 +61,8 @@ class SectionCollectionView: UICollectionView {
         isPagingEnabled = true
         
         isScrollEnabled = false
+        showsHorizontalScrollIndicator = false
+        showsVerticalScrollIndicator = false
     }
     
     override func layoutSubviews() {
