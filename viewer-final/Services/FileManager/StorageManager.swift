@@ -31,6 +31,15 @@ protocol RealmGRUDProtocol {
 
 class StorageManager {
     
+    
+    static func firstTimeLauncher(completion: @escaping () -> Void) {
+        let item = FirstTimeLauncher(id: UUID().uuidString)
+        try! realm.write {
+            realm.add(item)
+            completion()
+        }
+    }
+    
     static func create(id: String, _ url: URL, completion: @escaping () -> Void) {
         
         let item = ProjectFileModel(id: id, path: url)

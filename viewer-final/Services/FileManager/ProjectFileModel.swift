@@ -8,6 +8,22 @@
 
 import RealmSwift
 
+
+class FirstTimeLauncher: Object {
+    @objc dynamic var id: String?
+    
+    convenience init(id: String) {
+        self.init()
+        self.id = id
+    }
+    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
+}
+
+
+
 class ProjectFileModel: Object {
     @objc dynamic var id: String?
     @objc dynamic var name: String?

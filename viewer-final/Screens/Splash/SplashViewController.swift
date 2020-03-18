@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class SplashViewController: UIViewController {
     
@@ -41,18 +42,20 @@ final class SplashViewController: UIViewController {
         UIView.animate(withDuration: 1.75, animations: {
             self.logoView.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         }) { _ in
-            UIView.animate(withDuration: 0.25, animations: {
+            UIView.animate(withDuration: 0.35, animations: {
                 self.logoView.transform = CGAffineTransform(scaleX: 1, y: 1)
                 self.view.alpha = 0.0
             }) { _ in
-              
+                
                 self.checkRoute()
             }
         }
     }
     
     fileprivate func checkRoute() {
-        if realm.isEmpty {
+        
+        if realm.objects(FirstTimeLauncher.self).count == 0 {
+            
             let viewController = WelcomeViewController()
             viewController.delegate = self
             viewController.modalPresentationStyle = .fullScreen

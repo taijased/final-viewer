@@ -119,8 +119,9 @@
 		13BAE82D24052D91008A44E0 /* CloudModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE82C24052D91008A44E0 /* CloudModel.swift */; };
 		13BAE83524054033008A44E0 /* UIImage + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE83424054033008A44E0 /* UIImage + UIView.swift */; };
 		13C426E12422919C00BC5B1E /* StatueVenus.FBX in Resources */ = {isa = PBXBuildFile; fileRef = 13C426E02422919C00BC5B1E /* StatueVenus.FBX */; };
-		13C426E3242291A900BC5B1E /* Hexapus_viewer_2.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 13C426E2242291A900BC5B1E /* Hexapus_viewer_2.fbx */; };
+		13C426E3242291A900BC5B1E /* Hexapus.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 13C426E2242291A900BC5B1E /* Hexapus.fbx */; };
 		13C426E524229D4100BC5B1E /* ProjectsCollectionHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C426E424229D4100BC5B1E /* ProjectsCollectionHeaderViewCell.swift */; };
+		13C426E72422BD6D00BC5B1E /* FileManagerNotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C426E62422BD6D00BC5B1E /* FileManagerNotify.swift */; };
 		13D3AB0C24128A6C004E902C /* String + Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D3AB0B24128A6C004E902C /* String + Localization.swift */; };
 		13D5BB0C2408FE1000A65256 /* ProjectsViewAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D5BB0B2408FE1000A65256 /* ProjectsViewAction.swift */; };
 		13D5BB0E2409209E00A65256 /* CustomAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D5BB0D2409209E00A65256 /* CustomAlertAction.swift */; };
@@ -247,8 +248,9 @@
 		13BAE82C24052D91008A44E0 /* CloudModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudModel.swift; sourceTree = "<group>"; };
 		13BAE83424054033008A44E0 /* UIImage + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + UIView.swift"; sourceTree = "<group>"; };
 		13C426E02422919C00BC5B1E /* StatueVenus.FBX */ = {isa = PBXFileReference; lastKnownFileType = file; path = StatueVenus.FBX; sourceTree = "<group>"; };
-		13C426E2242291A900BC5B1E /* Hexapus_viewer_2.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hexapus_viewer_2.fbx; sourceTree = "<group>"; };
+		13C426E2242291A900BC5B1E /* Hexapus.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Hexapus.fbx; sourceTree = "<group>"; };
 		13C426E424229D4100BC5B1E /* ProjectsCollectionHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsCollectionHeaderViewCell.swift; sourceTree = "<group>"; };
+		13C426E62422BD6D00BC5B1E /* FileManagerNotify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerNotify.swift; sourceTree = "<group>"; };
 		13D3AB0B24128A6C004E902C /* String + Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Localization.swift"; sourceTree = "<group>"; };
 		13D5BB0B2408FE1000A65256 /* ProjectsViewAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewAction.swift; sourceTree = "<group>"; };
 		13D5BB0D2409209E00A65256 /* CustomAlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertAction.swift; sourceTree = "<group>"; };
@@ -794,7 +796,7 @@
 		13C426DF2422916100BC5B1E /* DefaultModels */ = {
 			isa = PBXGroup;
 			children = (
-				13C426E2242291A900BC5B1E /* Hexapus_viewer_2.fbx */,
+				13C426E2242291A900BC5B1E /* Hexapus.fbx */,
 				13C426E02422919C00BC5B1E /* StatueVenus.FBX */,
 			);
 			path = DefaultModels;
@@ -816,6 +818,7 @@
 				13D5BB2424094D2C00A65256 /* LocalFileFetcher.swift */,
 				13D5BB28240950C000A65256 /* StorageManager.swift */,
 				13D5BB3D2409698400A65256 /* TrueFormats.swift */,
+				13C426E62422BD6D00BC5B1E /* FileManagerNotify.swift */,
 			);
 			path = FileManager;
 			sourceTree = "<group>";
@@ -907,7 +910,7 @@
 				137ADD3223FC0B0500237368 /* TTNorms-Bold.ttf in Resources */,
 				137ADD3E23FC0B0500237368 /* TTNorms-Heavy.ttf in Resources */,
 				137ADD3523FC0B0500237368 /* TTNorms-ExtraLight.ttf in Resources */,
-				13C426E3242291A900BC5B1E /* Hexapus_viewer_2.fbx in Resources */,
+				13C426E3242291A900BC5B1E /* Hexapus.fbx in Resources */,
 				137ADD3823FC0B0500237368 /* TTNorms-LightItalic.ttf in Resources */,
 				137ADD3B23FC0B0500237368 /* TTNorms-ExtraBold.ttf in Resources */,
 				137ADD3723FC0B0500237368 /* TTNorms-Medium.ttf in Resources */,
@@ -979,6 +982,7 @@
 				13BAE81524041552008A44E0 /* FormatListViewController.swift in Sources */,
 				135BA1232420B94700EC67E9 /* InfoTableViewVM.swift in Sources */,
 				130B982A23FD695300DE6C60 /* ProjectsCollectionViewCellVM.swift in Sources */,
+				13C426E72422BD6D00BC5B1E /* FileManagerNotify.swift in Sources */,
 				13D5BB29240950C000A65256 /* StorageManager.swift in Sources */,
 				137ADD1723FC09A300237368 /* NetworkDataFetcher.swift in Sources */,
 				13C426E524229D4100BC5B1E /* ProjectsCollectionHeaderViewCell.swift in Sources */,

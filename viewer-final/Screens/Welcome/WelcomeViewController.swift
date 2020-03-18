@@ -67,15 +67,19 @@ final class WelcomeViewController: UIViewController {
     
     
     fileprivate let openProjectsButton: UIButton = {
-        let button  = UIButton.getCustomButton(label:"Welcome.projects".localized)
-        button.titleLabel?.font = UIFont.getTTNormsFont(type: .medium, size: 16)
+        let button  = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .clear
+        button.setTitle("Welcome.projects".localized, for: UIControl.State.normal)
+        button.titleLabel!.font = UIFont.getTTNormsFont(type: .medium, size: 16)
+        button.setTitleColor(UIColor.Black.primary, for: .normal)
         button.addTarget(self, action: #selector(openProjectsButtonTapped), for: .touchUpInside)
         return button
     }()
     
     
     @objc func openProjectsButtonTapped(_ sender: UIButton) {
-        navigation(.chooseCloud)
+        self.navigation(.dismiss)
     }
     
     @objc func enterButtonTapped(_ sender: UIButton) {
@@ -111,9 +115,16 @@ final class WelcomeViewController: UIViewController {
             //            enterButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
             //
             
+            
+            view.addSubview(openProjectsButton)
+            openProjectsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            openProjectsButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+            openProjectsButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
+            openProjectsButton.widthAnchor.constraint(equalToConstant: 343).isActive = true
+            
             view.addSubview(enterButton)
             enterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            enterButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+            enterButton.bottomAnchor.constraint(equalTo: openProjectsButton.topAnchor).isActive = true
             enterButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
             enterButton.widthAnchor.constraint(equalToConstant: 343).isActive = true
             
@@ -141,11 +152,20 @@ final class WelcomeViewController: UIViewController {
             //            bgView.heightAnchor.constraint(equalToConstant: 420).isActive = true
             bgView.widthAnchor.constraint(equalToConstant: 1194).isActive = true
         } else {
+            
+            
+            view.addSubview(openProjectsButton)
+            openProjectsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            openProjectsButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+            openProjectsButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
+            openProjectsButton.widthAnchor.constraint(equalToConstant: 343).isActive = true
+            
             view.addSubview(enterButton)
             enterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            enterButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+            enterButton.bottomAnchor.constraint(equalTo: openProjectsButton.topAnchor).isActive = true
             enterButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
             enterButton.widthAnchor.constraint(equalToConstant: 343).isActive = true
+            
             
             view.addSubview(descriptionLabel)
             descriptionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -206,11 +226,13 @@ final class WelcomeViewController: UIViewController {
             view.backgroundColor = .white
             titleLabel.textColor = UIColor.Primary.primary
             descriptionLabel.textColor = UIColor.Black.primary
+            openProjectsButton.setTitleColor(UIColor.Black.primary, for: .normal)
         } else {
             bgView.image = UIImage(named: "artwork-black")
             view.backgroundColor = UIColor.Black.light
             titleLabel.textColor = .white
             descriptionLabel.textColor = .white
+            openProjectsButton.setTitleColor(.white, for: .normal)
         }
         
         

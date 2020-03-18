@@ -48,7 +48,16 @@ class ProjectsCollectionViewVM: ProjectsCollectionViewVMType {
     }
     
     fileprivate func fetchFromRealm() {
-        self.cells = realm.objects(ProjectFileModel.self)
+        
+        if realm.objects(FirstTimeLauncher.self).count == 0 {
+            fileFetcher.initDefaultFiles { [weak self] in
+                self?.cells = realm.objects(ProjectFileModel.self)
+                StorageManager.firstTimeLauncher {}
+            }
+            
+        } else {
+            self.cells = realm.objects(ProjectFileModel.self)
+        }
     }
     
     
@@ -97,6 +106,9 @@ class ProjectsCollectionViewVM: ProjectsCollectionViewVMType {
     func selectItem(atIndexPath indexPath: IndexPath) {
         self.selectedIndexPath = indexPath
     }
+    
+    
+    
     
     
     

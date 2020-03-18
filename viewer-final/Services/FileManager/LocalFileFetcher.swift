@@ -47,12 +47,32 @@ class LocalFileFetcher {
 //        } catch {
 //            print("Error while enumerating files \(projectsPath.path): \(error.localizedDescription)")
 //        }
-//        
-//        
+
     }
     
     
-    
+
+    func initDefaultFiles(completion: @escaping() -> Void) {
+        
+        
+        let url = Bundle.main.resourceURL!
+        do {
+            let urls = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys:[], options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles)
+            urls.forEach { path in
+                if path.pathExtension.lowercased() == "fbx" {
+                    print(path)
+                    
+                    self.copyFile(path) { notify in
+                        print(notify.getDescription())
+                    }
+                }
+            }
+            
+        } catch {
+            print(error)
+        }
+        completion()
+    }
     
     
     
@@ -140,18 +160,3 @@ extension URL    {
 
 
 
-enum FileManagerNotify {
-    case fileExist
-    case success
-    case error
-    func getDescription() -> String {
-        switch self {
-        case .fileExist:
-            return "FileManager.exist".localized
-        case .success:
-            return "FileManager.success".localized
-        case .error:
-            return "FileManager.error".localized
-        }
-    }
-}

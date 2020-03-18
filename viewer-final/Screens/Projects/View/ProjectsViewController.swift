@@ -165,6 +165,7 @@ final class ProjectsViewController: UIViewController {
     
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
         if UIDevice.current.orientation.isLandscape {
             viewModel?.collectionView.reloadData()
         } else {
