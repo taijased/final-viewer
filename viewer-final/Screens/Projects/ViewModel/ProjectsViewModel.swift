@@ -27,6 +27,7 @@ protocol ProjectsViewModelType {
     var delegate: ProjectsViewModelDelegate? { get set }
     var searchController: UISearchController { get }
     func update()
+    func getAlertTextfield() -> String? 
 }
 
 
@@ -78,24 +79,36 @@ class ProjectsViewModel: ProjectsViewModelType {
     lazy var renameAlert: UIAlertController = {
         
         
-        //        "Projects.rename.desc" = "Please write new name";
         
         let actionSheet = UIAlertController(title: "", message: "Projects.rename.desc".localized, preferredStyle: .alert)
         
         
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { [weak self] _ in
+//            actionSheet.textFields?.first?.text = self?.projectItem?.object.name
+        }))
         
         actionSheet.addAction(UIAlertAction(title: "Rename", style: .destructive, handler: { [weak self] (action: UIAlertAction) in
             if let alertTextField = actionSheet.textFields?.first, alertTextField.text != nil {
                 self?.renameItem(alertTextField.text!)
             }
+
         }))
         
-        actionSheet.addTextField { (textField) in  textField.text = self.projectItem?.object.name }
+        actionSheet.addTextField { [weak self] (textField) in
+            
+            textField.text = self?.projectItem?.object.name
+        }
+        
         actionSheet.setTitlet(font: UIFont.getTTNormsFont(type: .medium, size: 14), color: nil)
         
         return actionSheet
     }()
+    
+    func getAlertTextfield() -> String? {
+        return self.projectItem?.object.name
+    }
+    
+    
     
     lazy var optionMenu: UIAlertController = {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -272,5 +285,4 @@ extension ProjectsViewModel: ProjectsCollectionViewDelegate {
         delegate?.onEvents(type: .didSelectItemAt)
     }
 }
-
 

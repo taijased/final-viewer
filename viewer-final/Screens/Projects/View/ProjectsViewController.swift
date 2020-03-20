@@ -190,6 +190,7 @@ final class ProjectsViewController: UIViewController {
             
         case .renameAlert:
             guard let renameAlert = viewModel?.renameAlert else { return }
+            renameAlert.textFields?.first?.text = viewModel?.getAlertTextfield()
             self.present(renameAlert, animated: true, completion: nil)
         case .dismiss:
             self.dismiss(animated: true, completion: nil)

@@ -74,8 +74,6 @@ final class ARViewControls: UIView {
     
     
     
-    
-    
     @objc fileprivate func closeButtonTapped(_ sender: UIButton) {
         sender.flash()
         delegate?.controlsActions(.close)

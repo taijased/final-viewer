@@ -212,5 +212,84 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9E79E996-EB9F-4141-A9A4-D885EE2A4AE5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "viewer-final/Screens/Projects/ViewModel/ProjectsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "renameAlert"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9CEE56B-BD42-4743-A67C-5E7A25312FA7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "viewer-final/Screens/Projects/ViewModel/ProjectsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "renameAlert"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "B9CEE56B-BD42-4743-A67C-5E7A25312FA7 - 2145aeaa0a87275e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ARQ_Viewer.ProjectsViewModel.renameAlert.getter : __C.UIAlertController"
+                  moduleName = "ARQ Viewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimspiridonov/Documents/ARQ/IOS/New%20Viewer/good-version/final-viewer/viewer-final/Screens/Projects/ViewModel/ProjectsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "354">
+               </Location>
+               <Location
+                  uuid = "B9CEE56B-BD42-4743-A67C-5E7A25312FA7 - 66a4060e83e1c2a"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; __C.UIAlertController in ARQ_Viewer.ProjectsViewModel.renameAlert.getter : __C.UIAlertController"
+                  moduleName = "ARQ Viewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimspiridonov/Documents/ARQ/IOS/New%20Viewer/good-version/final-viewer/viewer-final/Screens/Projects/ViewModel/ProjectsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "B9CEE56B-BD42-4743-A67C-5E7A25312FA7 - c36cdfc6eb5f8522"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ARQ_Viewer.ProjectsViewModel.renameAlert.setter : __C.UIAlertController"
+                  moduleName = "ARQ Viewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimspiridonov/Documents/ARQ/IOS/New%20Viewer/good-version/final-viewer/viewer-final/Screens/Projects/ViewModel/ProjectsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "132">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
