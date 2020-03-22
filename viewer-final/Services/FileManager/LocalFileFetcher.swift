@@ -39,14 +39,14 @@ class LocalFileFetcher {
         }
         
         
-//        do {
-//            let fileUrls = try fileManager.contentsOfDirectory(at: projectsPath, includingPropertiesForKeys: nil)
-//            print("--------------ARQprojects Files--------------")
-//            print(fileUrls)
-//            print("-------------------------------")
-//        } catch {
-//            print("Error while enumerating files \(projectsPath.path): \(error.localizedDescription)")
-//        }
+        do {
+            let fileUrls = try fileManager.contentsOfDirectory(at: projectsPath.appendingPathComponent("A5631D9E-ACEF-4E17-83DC-51195C76499B"), includingPropertiesForKeys: nil)
+            print("--------------ARQprojects Files--------------")
+            print(fileUrls)
+            print("-------------------------------")
+        } catch {
+            print("Error while enumerating files \(projectsPath.path): \(error.localizedDescription)")
+        }
 
     }
     
@@ -58,14 +58,48 @@ class LocalFileFetcher {
         let url = Bundle.main.resourceURL!
         do {
             let urls = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys:[], options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles)
+            
+            
+            
+            var index: Int = 1
             urls.forEach { path in
+                
+        
+                
+                
                 if path.pathExtension.lowercased() == "fbx" {
-                    print(path)
                     
-                    self.copyFile(path) { notify in
-                        print(notify.getDescription())
+                    
+                    guard TrueFormats().isSupportedFormats(path.pathExtension) else { return }
+                    let guid = UUID().uuidString
+                    let sandboxFolderURL = projectsPath.appendingPathComponent(guid)
+                    do {
+                        
+                        
+                        try fileManager.createDirectory(atPath: sandboxFolderURL.path, withIntermediateDirectories: true, attributes: nil)
+                        try fileManager.copyItem(at: path, to: sandboxFolderURL.appendingPathComponent(path.lastPathComponent))
+
+
+                        
+
+                        let darkPath = path.deletingLastPathComponent().appendingPathComponent("dark-\(index).png")
+                        try fileManager.copyItem(at: darkPath, to: sandboxFolderURL.appendingPathComponent("dark.png"))
+
+                        let lightPath = path.deletingLastPathComponent().appendingPathComponent("light-\(index).png")
+                        try fileManager.copyItem(at: lightPath, to: sandboxFolderURL.appendingPathComponent("light.png"))
+
+
+
+
+                        StorageManager.create(id: guid, path) {}
+                        index += 1
+                    }
+                    catch let error as NSError  {
+                        self.removeFolder(guid)
+                        print(error)
                     }
                 }
+                
             }
             
         } catch {
