@@ -39,14 +39,14 @@ class LocalFileFetcher {
         }
         
         
-        do {
-            let fileUrls = try fileManager.contentsOfDirectory(at: projectsPath.appendingPathComponent("A5631D9E-ACEF-4E17-83DC-51195C76499B"), includingPropertiesForKeys: nil)
-            print("--------------ARQprojects Files--------------")
-            print(fileUrls)
-            print("-------------------------------")
-        } catch {
-            print("Error while enumerating files \(projectsPath.path): \(error.localizedDescription)")
-        }
+//        do {
+//            let fileUrls = try fileManager.contentsOfDirectory(at: projectsPath.appendingPathComponent("A5631D9E-ACEF-4E17-83DC-51195C76499B"), includingPropertiesForKeys: nil)
+//            print("--------------ARQprojects Files--------------")
+//            print(fileUrls)
+//            print("-------------------------------")
+//        } catch {
+//            print("Error while enumerating files \(projectsPath.path): \(error.localizedDescription)")
+//        }
 
     }
     
