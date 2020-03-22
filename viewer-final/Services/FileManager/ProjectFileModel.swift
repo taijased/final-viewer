@@ -43,6 +43,16 @@ class ProjectFileModel: Object {
         self.objectRPS = ""
     }
     
+    convenience init(id: String, path: URL, imagePath: String) {
+        self.init()
+        self.id = id
+        self.name = path.lastPathComponent
+        self.path = "\(id)/\(path.lastPathComponent)"
+        self.imagePath = imagePath
+        self.lastPathComponent = path.lastPathComponent
+        self.objectRPS = ""
+    }
+    
     
     convenience init(newValue: String, object: ProjectFileModel) {
         self.init()
