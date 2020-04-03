@@ -9,17 +9,8 @@
 import UIKit
 
 
-
-protocol ProjectsUploadViewDelegate: class {
-    func dissmis(_ guid: String?)
-}
-
-
 final class ProjectsUploadView: UIView {
-    
-    weak var delegate: ProjectsUploadViewDelegate?
 
-    
     fileprivate let label: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
@@ -29,58 +20,34 @@ final class ProjectsUploadView: UIView {
         return label
     }()
     
-    private var dataFetcherService = DataFetcherService()
-    private var uploadingService = UploadingService()
+//    private var dataFetcherService = DataFetcherService()
+//    private var uploadingService = UploadingService()
+//
     
     
+//
+//    let fileFetcher: LocalFileFetcher
+//    let projectId: String?
+//
+//    init(frame: CGRect, fileFetcher: LocalFileFetcher, id: String?) {
+//        self.projectId = id
+//        self.fileFetcher = fileFetcher
+//        super.init(frame: frame)
+//        setupUI()
+//
+//    }
     
-    
-    let fileFetcher: LocalFileFetcher
-    let projectId: String?
-    
-    init(frame: CGRect, fileFetcher: LocalFileFetcher, id: String?) {
-        self.projectId = id
-        self.fileFetcher = fileFetcher
+    override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
-       
+        
     }
     
-
     
-    func startUpload() {
-        
-        guard let id = projectId, let zipFilePath = fileFetcher.getZipFilePath(id: id) else { return }
-
-        
-        let zipFile: Data = try! Data(contentsOf: zipFilePath)
-        print(zipFile)
-        
-        
-        dataFetcherService.uploadFile(filePath: zipFilePath) { [weak self] (data) in
-            self?.delegate?.dissmis(data?.guid)
+    func startUpload(_ progress: Double) {
+        UIView.animate(withDuration: 0.25) { [weak self] in
+            self?.label.text = "\(Int(progress * 100))%"
         }
-
-        dataFetcherService.onProgress = { [weak self] progress in
-            UIView.animate(withDuration: 0.25) {
-                self?.label.text = "\(Int(progress * 100))%"
-            }
-        }
-        
-        
-        
-        
-        
-        
-        
-//        dataFetcherService.uploadFile(fileData: zipFile) { (data) in
-//            print(data)
-//        }
-
-//        dataFetcherService.share { (data) in
-//            print(data)
-//        }
-
     }
     
     fileprivate func setupUI() {

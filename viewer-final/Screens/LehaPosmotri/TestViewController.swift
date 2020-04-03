@@ -32,7 +32,6 @@ class TestViewController: UIViewController {
     
     @objc fileprivate func takePhotoButtonTapped(_ sender: UIButton) {
         sender.flash()
-        print(#function)
     }
     
     

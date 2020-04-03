@@ -30,7 +30,6 @@ class AuthViewModel: AuthViewModelType {
     
     @objc func enterButtonTapped(_ sender: UIButton) {
         sender.flash()
-        print(#function)
     }
     
     init() {

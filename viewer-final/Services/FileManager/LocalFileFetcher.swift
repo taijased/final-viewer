@@ -38,6 +38,55 @@ class LocalFileFetcher {
         }
     }
     
+    func addNewZip(_ path: URL, completion: @escaping(URL?) -> Void) {
+        
+        let guid = UUID().uuidString
+        let sandboxFolderURL = projectsPath.appendingPathComponent(guid)
+        
+
+        do {
+            
+            //создани папкм
+            try fileManager.createDirectory(atPath: sandboxFolderURL.path, withIntermediateDirectories: true, attributes: nil)
+            
+            //запись архива в папку
+            let savedURL = sandboxFolderURL.appendingPathComponent("archive").appendingPathExtension("zip")
+            try FileManager.default.moveItem(at: path, to: savedURL)
+            
+            //unziping
+            
+            try Zip.unzipFile(savedURL, destination: sandboxFolderURL, overwrite: true, password: nil)
+            
+          
+            
+     
+            let unzipFiles = try fileManager.contentsOfDirectory(at: projectsPath.appendingPathComponent(guid), includingPropertiesForKeys: nil)
+            
+            
+            var modelPath: URL? = nil
+            
+            unzipFiles.forEach { url in
+                if TrueFormats().isSupportedFormats(url.pathExtension) {
+                    modelPath = url
+                }
+            }
+            
+            if modelPath != nil {
+                StorageManager.create(id: guid, modelPath!) {}
+                completion(path)
+            } else {
+                throw NSError()
+            }
+            
+            
+        }
+        catch let error as NSError  {
+            self.removeFolder(guid)
+            completion(nil)
+            print(error)
+        }
+    }
+    
     
     fileprivate func createZIP(id: String, archiveName: String = "archive.zip") {
         do {
@@ -187,6 +236,7 @@ class LocalFileFetcher {
         }
         
     }
+    
     
 }
 

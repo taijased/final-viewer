@@ -33,6 +33,10 @@
 		130B983023FD6F8C00DE6C60 /* ProjectsContextViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130B982F23FD6F8C00DE6C60 /* ProjectsContextViewMenu.swift */; };
 		130B984923FFC91600DE6C60 /* PasswordFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130B984823FFC91600DE6C60 /* PasswordFieldViewModel.swift */; };
 		130B984B23FFC92C00DE6C60 /* EmailFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130B984A23FFC92C00DE6C60 /* EmailFieldViewModel.swift */; };
+		133491152437712000B96163 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133491142437712000B96163 /* LoaderViewController.swift */; };
+		133491172437713900B96163 /* LoaderPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133491162437713900B96163 /* LoaderPresentationController.swift */; };
+		13349120243789DE00B96163 /* dark-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1334911F243789DE00B96163 /* dark-2.png */; };
+		1334912424378AC500B96163 /* dark-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1334912324378AC500B96163 /* dark-3.png */; };
 		133935C7240E79EF003B8BB5 /* UIAlertController + custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133935C6240E79EF003B8BB5 /* UIAlertController + custom.swift */; };
 		133935CD240FF4A6003B8BB5 /* UIFont + init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133935CC240FF4A6003B8BB5 /* UIFont + init.swift */; };
 		133935D4241001CF003B8BB5 /* ARViewControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133935D3241001CF003B8BB5 /* ARViewControls.swift */; };
@@ -96,8 +100,6 @@
 		137ADD6123FC3E4600237368 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD6023FC3E4600237368 /* UIView+Border.swift */; };
 		13848FC62412B18E008FE315 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 13848FC82412B18E008FE315 /* Localizable.strings */; };
 		138C66462416C21800E18551 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C66452416C21800E18551 /* TestViewController.swift */; };
-		13923B47242A4F1E002A9181 /* UploadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13923B46242A4F1E002A9181 /* UploadingViewController.swift */; };
-		13923B49242A4F2A002A9181 /* UploadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13923B48242A4F2A002A9181 /* UploadingViewModel.swift */; };
 		13A3A6792433539D00A6F479 /* ProjectsUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3A6782433539D00A6F479 /* ProjectsUploadView.swift */; };
 		13A6B871241FE50D00FF95AB /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A6B870241FE50D00FF95AB /* InformationViewController.swift */; };
 		13A6B873241FE51F00FF95AB /* InformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A6B872241FE51F00FF95AB /* InformationViewModel.swift */; };
@@ -136,10 +138,8 @@
 		13D5BB29240950C000A65256 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D5BB28240950C000A65256 /* StorageManager.swift */; };
 		13D5BB3E2409698400A65256 /* TrueFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D5BB3D2409698400A65256 /* TrueFormats.swift */; };
 		13E7358F2427C747009C236D /* ARQFamily.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 13E7358E2427C747009C236D /* ARQFamily.fbx */; };
-		13E735912427CA30009C236D /* dark-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E735902427CA30009C236D /* dark-2.png */; };
 		13E735932427CA3D009C236D /* light-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E735922427CA3D009C236D /* light-2.png */; };
 		13E735962427CAE8009C236D /* light-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E735952427CAE8009C236D /* light-1.png */; };
-		13E735A12427CE9E009C236D /* dark-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E735A02427CE9E009C236D /* dark-3.png */; };
 		13E735A32427CEAF009C236D /* light-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E735A22427CEAF009C236D /* light-3.png */; };
 		13E735A52427CFF3009C236D /* dark-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E735A42427CFF3009C236D /* dark-1.png */; };
 		13F94AB02434BC48008B69CE /* UploadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F94AAF2434BC48008B69CE /* UploadingService.swift */; };
@@ -172,6 +172,10 @@
 		130B982F23FD6F8C00DE6C60 /* ProjectsContextViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsContextViewMenu.swift; sourceTree = "<group>"; };
 		130B984823FFC91600DE6C60 /* PasswordFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFieldViewModel.swift; sourceTree = "<group>"; };
 		130B984A23FFC92C00DE6C60 /* EmailFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailFieldViewModel.swift; sourceTree = "<group>"; };
+		133491142437712000B96163 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
+		133491162437713900B96163 /* LoaderPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderPresentationController.swift; sourceTree = "<group>"; };
+		1334911F243789DE00B96163 /* dark-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-2.png"; sourceTree = "<group>"; };
+		1334912324378AC500B96163 /* dark-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-3.png"; sourceTree = "<group>"; };
 		133935C6240E79EF003B8BB5 /* UIAlertController + custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController + custom.swift"; sourceTree = "<group>"; };
 		133935CC240FF4A6003B8BB5 /* UIFont + init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + init.swift"; sourceTree = "<group>"; };
 		133935D3241001CF003B8BB5 /* ARViewControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewControls.swift; sourceTree = "<group>"; };
@@ -239,8 +243,6 @@
 		13848FC72412B18E008FE315 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		13848FC92412B196008FE315 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		138C66452416C21800E18551 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		13923B46242A4F1E002A9181 /* UploadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingViewController.swift; sourceTree = "<group>"; };
-		13923B48242A4F2A002A9181 /* UploadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingViewModel.swift; sourceTree = "<group>"; };
 		13A3A6782433539D00A6F479 /* ProjectsUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsUploadView.swift; sourceTree = "<group>"; };
 		13A6B870241FE50D00FF95AB /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		13A6B872241FE51F00FF95AB /* InformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModel.swift; sourceTree = "<group>"; };
@@ -283,10 +285,8 @@
 		13D5BB3724095D2900A65256 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D5BB3D2409698400A65256 /* TrueFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueFormats.swift; sourceTree = "<group>"; };
 		13E7358E2427C747009C236D /* ARQFamily.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = ARQFamily.fbx; sourceTree = "<group>"; };
-		13E735902427CA30009C236D /* dark-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-2.png"; sourceTree = "<group>"; };
 		13E735922427CA3D009C236D /* light-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-2.png"; sourceTree = "<group>"; };
 		13E735952427CAE8009C236D /* light-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-1.png"; sourceTree = "<group>"; };
-		13E735A02427CE9E009C236D /* dark-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-3.png"; sourceTree = "<group>"; };
 		13E735A22427CEAF009C236D /* light-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-3.png"; sourceTree = "<group>"; };
 		13E735A42427CFF3009C236D /* dark-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-1.png"; sourceTree = "<group>"; };
 		13F94AAF2434BC48008B69CE /* UploadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingService.swift; sourceTree = "<group>"; };
@@ -373,6 +373,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		13349113243770C100B96163 /* CustomAlert */ = {
+			isa = PBXGroup;
+			children = (
+				133491142437712000B96163 /* LoaderViewController.swift */,
+				133491162437713900B96163 /* LoaderPresentationController.swift */,
+			);
+			path = CustomAlert;
+			sourceTree = "<group>";
+		};
 		133935C5240E79DD003B8BB5 /* UIAlert */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,7 +447,6 @@
 		137ADCF523FC073000237368 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				13923B42242A4EDF002A9181 /* Uploading */,
 				133935CE240FFEC7003B8BB5 /* LehaPosmotri */,
 				13A6B86C241FE2EF00FF95AB /* Info */,
 				13BAE82424052B18008A44E0 /* Cloud */,
@@ -556,6 +564,7 @@
 		137ADD1A23FC09E600237368 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				13349113243770C100B96163 /* CustomAlert */,
 				130ADC042406B1AF00E6EAE3 /* PresentationController */,
 				130ADBFF2406B12000E6EAE3 /* Toast */,
 				137ADD4A23FC2F8900237368 /* SVG Icons */,
@@ -649,39 +658,6 @@
 			isa = PBXGroup;
 			children = (
 				137ADD5B23FC371000237368 /* AuthData.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		13923B42242A4EDF002A9181 /* Uploading */ = {
-			isa = PBXGroup;
-			children = (
-				13923B45242A4F03002A9181 /* Model */,
-				13923B44242A4F00002A9181 /* View */,
-				13923B43242A4EFD002A9181 /* ViewModel */,
-			);
-			path = Uploading;
-			sourceTree = "<group>";
-		};
-		13923B43242A4EFD002A9181 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				13923B48242A4F2A002A9181 /* UploadingViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		13923B44242A4F00002A9181 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				13923B46242A4F1E002A9181 /* UploadingViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		13923B45242A4F03002A9181 /* Model */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -862,10 +838,10 @@
 			isa = PBXGroup;
 			children = (
 				13E735922427CA3D009C236D /* light-2.png */,
-				13E735902427CA30009C236D /* dark-2.png */,
+				1334911F243789DE00B96163 /* dark-2.png */,
 				13E7358E2427C747009C236D /* ARQFamily.fbx */,
-				13E735A02427CE9E009C236D /* dark-3.png */,
 				13E735A22427CEAF009C236D /* light-3.png */,
+				1334912324378AC500B96163 /* dark-3.png */,
 				13C426E2242291A900BC5B1E /* Hexapus.fbx */,
 				13E735952427CAE8009C236D /* light-1.png */,
 				13E735A42427CFF3009C236D /* dark-1.png */,
@@ -981,6 +957,7 @@
 				137ADD3023FC0B0500237368 /* TTNorms-Thin.ttf in Resources */,
 				137ADD3C23FC0B0500237368 /* TTNorms-ExtraLightItalic.ttf in Resources */,
 				137ADD3223FC0B0500237368 /* TTNorms-Bold.ttf in Resources */,
+				1334912424378AC500B96163 /* dark-3.png in Resources */,
 				137ADD3E23FC0B0500237368 /* TTNorms-Heavy.ttf in Resources */,
 				137ADD3523FC0B0500237368 /* TTNorms-ExtraLight.ttf in Resources */,
 				13C426E3242291A900BC5B1E /* Hexapus.fbx in Resources */,
@@ -989,7 +966,6 @@
 				137ADD3B23FC0B0500237368 /* TTNorms-ExtraBold.ttf in Resources */,
 				137ADD3723FC0B0500237368 /* TTNorms-Medium.ttf in Resources */,
 				13E7358F2427C747009C236D /* ARQFamily.fbx in Resources */,
-				13E735912427CA30009C236D /* dark-2.png in Resources */,
 				13C426E12422919C00BC5B1E /* StatueVenus.FBX in Resources */,
 				13E735A52427CFF3009C236D /* dark-1.png in Resources */,
 				137ADD3123FC0B0500237368 /* TTNorms-BoldItalic.ttf in Resources */,
@@ -997,8 +973,8 @@
 				137ADD3D23FC0B0500237368 /* TTNorms-Light.ttf in Resources */,
 				137ADD3F23FC0B0500237368 /* TTNorms-Italic.ttf in Resources */,
 				130ADBFA240692AD00E6EAE3 /* viewer-file.png in Resources */,
+				13349120243789DE00B96163 /* dark-2.png in Resources */,
 				137ADCEA23FC04F900237368 /* Assets.xcassets in Resources */,
-				13E735A12427CE9E009C236D /* dark-3.png in Resources */,
 				137ADD3423FC0B0500237368 /* TTNorms-MediumItalic.ttf in Resources */,
 				137ADD3923FC0B0500237368 /* TTNorms-HeavyItalic.ttf in Resources */,
 				13E735932427CA3D009C236D /* light-2.png in Resources */,
@@ -1085,13 +1061,13 @@
 				130ADC1C2407CB5800E6EAE3 /* CPopUpTableHeaderView.swift in Sources */,
 				130B982E23FD6EC100DE6C60 /* UINavigationBar + bottomLine.swift in Sources */,
 				133A595B24054CF800BAC954 /* CloudTableViewVM.swift in Sources */,
-				13923B49242A4F2A002A9181 /* UploadingViewModel.swift in Sources */,
 				13A6B871241FE50D00FF95AB /* InformationViewController.swift in Sources */,
 				13D5BB122409396C00A65256 /* ProjectsNavigation.swift in Sources */,
 				13BAE82D24052D91008A44E0 /* CloudModel.swift in Sources */,
 				133935D4241001CF003B8BB5 /* ARViewControls.swift in Sources */,
 				130B982023FD647500DE6C60 /* ProjectsViewController.swift in Sources */,
 				13BAE81F240415AA008A44E0 /* FormatListTableViewVM.swift in Sources */,
+				133491152437712000B96163 /* LoaderViewController.swift in Sources */,
 				130B984B23FFC92C00DE6C60 /* EmailFieldViewModel.swift in Sources */,
 				13BAE82B24052D78008A44E0 /* CloudViewModel.swift in Sources */,
 				13BAE823240417C7008A44E0 /* FormatListModel.swift in Sources */,
@@ -1121,11 +1097,11 @@
 				13A3A6792433539D00A6F479 /* ProjectsUploadView.swift in Sources */,
 				137ADD1923FC09B600237368 /* DataFetcherService.swift in Sources */,
 				133A595324054C3700BAC954 /* CloudTableView.swift in Sources */,
-				13923B47242A4F1E002A9181 /* UploadingViewController.swift in Sources */,
 				13BAE81D2404159B008A44E0 /* FormatListTableHeaderView.swift in Sources */,
 				13BAE81B2404158F008A44E0 /* FormatListTableViewCell.swift in Sources */,
 				137ADCF823FC076200237368 /* Constraints.swift in Sources */,
 				13BAE80024040401008A44E0 /* SelectCloudTableViewCellVM.swift in Sources */,
+				133491172437713900B96163 /* LoaderPresentationController.swift in Sources */,
 				137ADCE123FC04F700237368 /* AppDelegate.swift in Sources */,
 				13BAE83524054033008A44E0 /* UIImage + UIView.swift in Sources */,
 				135BA11F2420B92900EC67E9 /* InfoTableView.swift in Sources */,

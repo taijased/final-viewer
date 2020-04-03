@@ -14,3 +14,8 @@ struct UploadingResponse: Codable {
     let success: Bool
     let message, guid: String?
 }
+
+
+struct DownloadResponse: Codable {
+    let data: Data
+}

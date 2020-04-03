@@ -10,15 +10,18 @@ import Foundation
 
 
 protocol DataFetcher {
+    
+    func fetchData(urlString: String)
     func fetchGenericJSONData<T: Decodable>(urlString: String, response: @escaping(T?) -> Void)
-    func uploadGenericJSONData<T: Decodable>(urlString: String, data: Data, response: @escaping(T?) -> Void)
     func uploadGenericData<T: Decodable>(urlString: String, filePath: URL, response: @escaping(T?) -> Void)
-    var onProgress: ((Double) -> ())? { get set}
+    var onProgress: ((Double) -> ())? { get set }
+    var fileLocation: ((URL?) -> ())? { get set }
 }
 
 class NetworkDataFetcher: DataFetcher{
     
     var onProgress: ((Double) -> ())?
+    var fileLocation: ((URL?) -> ())?
     
     var networking: Networking
     
@@ -27,36 +30,35 @@ class NetworkDataFetcher: DataFetcher{
         self.networking.onProgress = { [weak self] progress in
             self?.onProgress?(progress)
         }
+        self.networking.fileLocation = { [weak self] url in
+            self?.fileLocation?(url)
+        }
+               
+        
+        
+        
     }
     
     
     func fetchGenericJSONData<T: Decodable>(urlString: String, response: @escaping(T?) -> Void) {
-        networking.request(urlString: urlString) { (data, error) in
-            if let error = error {
-                print("Failed  received requesting data", error)
-                response(nil)
-            }
-            
-            let decoded = self.decodeJSON(type: T.self, from: data)
-            response(decoded)
-        }
+//        networking.request(urlString: urlString) { (data, error) in
+//            if let error = error {
+//                print("Failed  received requesting data", error)
+//                response(nil)
+//            }
+//            
+//            let decoded = self.decodeJSON(type: T.self, from: data)
+//            response(decoded)
+//            
+//        }
+    }
+    
+    func fetchData(urlString: String) {
+        networking.request(urlString: urlString)
     }
     
     
-    func uploadGenericJSONData<T>(urlString: String, data: Data, response: @escaping (T?) -> Void) where T : Decodable {
-        networking.request(urlString: urlString, httpBody: data) { (data, error) in
-            if let error = error {
-                print("Failed  received requesting data", error)
-                response(nil)
-            }
-            
-            
-            let decoded = self.decodeJSON(type: T.self, from: data)
-            response(decoded)
-        }
-    }
 
-    
     func uploadGenericData<T: Decodable>(urlString: String, filePath: URL, response: @escaping(T?) -> Void) {
         networking.request(urlString: urlString, filePathURL: filePath) { (data, error) in
             if let error = error {

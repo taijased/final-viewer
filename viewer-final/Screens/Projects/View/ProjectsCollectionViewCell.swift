@@ -149,6 +149,8 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         myImageView.image = nil
+        label.text = nil
+        viewModel = nil
     }
     
     override func layoutSubviews() {

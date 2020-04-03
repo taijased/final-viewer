@@ -22,7 +22,8 @@ protocol ProjectsViewModelType {
     var optionMenu: UIAlertController { get }
     var renameAlert: UIAlertController { get }
     var shareAlert: UIAlertController { get }
-    var uploadAlertController: UIAlertController { get }
+    var uploadAlertController: LoaderViewController { get }
+    var downloadAlertController: LoaderViewController { get }
     var collectionView: ProjectsCollectionView { get }
     var plusButton: UIButton { get }
     var infoButton: UIButton { get }
@@ -30,19 +31,22 @@ protocol ProjectsViewModelType {
     var searchController: UISearchController { get }
     func update()
     func getAlertTextfield() -> String?
-    var shareGUID: URL? { get }
+    var shareLink: URL? { get }
+    var guid: String? { get }
+    func downloadFile(_ guid: String?)
 }
 
 
 
 class ProjectsViewModel: ProjectsViewModelType {
-    
-    var shareGUID: URL?
+    var guid: String?
+    var shareLink: URL?
     
     private var projectItem: ProjectsCollectionViewCellVMType?
     
     weak var delegate: ProjectsViewModelDelegate?
     fileprivate let localFileFetcher: LocalFileFetcher = LocalFileFetcher()
+    
     
     
     lazy var plusButton: UIButton = {
@@ -73,35 +77,9 @@ class ProjectsViewModel: ProjectsViewModelType {
         sender.flash()
         delegate?.onEvents(type: .info)
     }
-    
-    
-    var customView: ProjectsUploadView?
-    
-    
-    lazy var uploadAlertController: UIAlertController = {
-        
-        let title = "Share.upload.title".localized
-        let description = "Share.upload.desc".localized
-        
-        let alert = UIAlertController(title: "\n\n\n\n\n\n\n\n\(title)", message: description, preferredStyle: .alert)
-        
-        customView = ProjectsUploadView(frame: .zero, fileFetcher: self.fileFetcher, id: self.projectItem?.object.id )
-        
-        
-        alert.view.addSubview(customView!)
-        customView!.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -61).isActive = true
-        customView!.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 20).isActive = true
-        customView!.leadingAnchor.constraint(equalTo: alert.view.leadingAnchor, constant: 0).isActive = true
-        customView!.trailingAnchor.constraint(equalTo: alert.view.trailingAnchor, constant: 0).isActive = true
-        customView!.delegate = self
-        customView!.startUpload()
-        
-        return alert
-    }()
-    
-    
-    
-    
+
+    lazy var uploadAlertController: LoaderViewController = LoaderViewController(title: "Share.upload.title".localized, description: "Share.upload.desc".localized)
+    lazy var downloadAlertController: LoaderViewController = LoaderViewController(title: "Загружаю", description: "Не выебывайся")
     
     lazy var shareAlert: UIAlertController = {
         
@@ -116,11 +94,10 @@ class ProjectsViewModel: ProjectsViewModelType {
         
         
         let agree = UIAlertAction(title: "Share.agree".localized, style: .default, handler: { [weak self] _ in
-            
-            if let customView = self?.customView {
-                customView.startUpload()
-            }
+
+            shareAlert.dismiss(animated: true, completion: nil)
             self?.delegate?.onEvents(type: .uploadItem)
+            self?.uploadAlertController.startUpload(guid: self?.projectItem?.object.id ?? "")
         })
         
         shareAlert.addAction(agree)
@@ -213,6 +190,7 @@ class ProjectsViewModel: ProjectsViewModelType {
     init() {
         self.collectionView = ProjectsCollectionView(fileFetcher: fileFetcher)
         self.collectionView.collectionDelegate = self
+        self.uploadAlertController.delegate = self
     }
     
     
@@ -299,6 +277,13 @@ class ProjectsViewModel: ProjectsViewModelType {
         delegate?.onEvents(type: .longTappedItem(type: .share, item: project))
     }
     
+    func downloadFile(_ guid: String?) {
+        guard let guid = guid else { return }
+        
+        delegate?.onEvents(type: .download)
+        downloadAlertController.startDownload(guid: guid)
+    }
+    
 }
 
 
@@ -340,24 +325,23 @@ extension ProjectsViewModel: ProjectsCollectionViewDelegate {
 }
 
 
-//MARK: - ProjectsCollectionViewDelegate
-extension ProjectsViewModel: ProjectsUploadViewDelegate {
-    func dissmis(_ guid: String?) {
-        if guid != nil {
-            if let link = URL(string: "https://share.arq.studio/\(String(describing: guid))") {
-                self.shareGUID = link
-
-            }
-//            if let link = URL(string: "https://arq.studio") {
-//                self.shareGUID = link
-//            }
+//MARK: - LoaderViewControllerDelegate
+extension ProjectsViewModel: LoaderViewControllerDelegate {
+    func deinitController() {
+        print(#function)
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
         }
-        
-//        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) {[weak self] _ in
-            self.uploadAlertController.dismiss(animated: true, completion: nil)
-            self.delegate?.onEvents(type: .share(guid))
-//        }
-      
     }
+    
+    func finishUploadingFile(guid: String?) {
+        if guid != nil {
+            if let link = URL(string: "https://share.arq.studio/\(guid!)") {
+                self.shareLink = link
+            }
+        }
+        self.delegate?.onEvents(type: .share(guid))
+    }
+    
+    
 }
-

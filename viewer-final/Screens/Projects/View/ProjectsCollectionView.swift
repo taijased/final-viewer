@@ -25,12 +25,8 @@ class ProjectsCollectionView: UICollectionView {
         layout.scrollDirection = .vertical
         
         //
-        //        let layout = AlignedCollectionViewFlowLayout(horizontalAlignment: .justified, verticalAlignment: .center)
-        //        super.init(frame: .zero, collectionViewLayout: layout)
-        
-        
+//        let layout = AlignedCollectionViewFlowLayout(horizontalAlignment: .justified, verticalAlignment: .center)
         super.init(frame: .zero, collectionViewLayout: layout)
-        
         
         
         autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -67,7 +63,6 @@ class ProjectsCollectionView: UICollectionView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         backgroundColor = traitCollection.userInterfaceStyle == .light ? .white : UIColor.Black.light
         updateBackground()
     }
@@ -101,6 +96,7 @@ extension ProjectsCollectionView: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: ProjectsCollectionViewCell.reuseId, for: indexPath) as? ProjectsCollectionViewCell
         
+        
         guard let collectionViewCell = cell, let viewModel = viewModel else { return UICollectionViewCell() }
         
         let cellViewModel = viewModel.cellViewModel(forIndexPath: indexPath)
@@ -131,17 +127,17 @@ extension ProjectsCollectionView: UICollectionViewDelegateFlowLayout {
         return viewModel?.sizeForItemAt(collectionView.frame.size) ?? CGSize.zero
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return viewModel?.minimumInteritemSpacingForSectionAt ?? 0
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout
-        collectionViewLayout: UICollectionViewLayout,
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return viewModel?.minimumLineSpacingForSectionAt ?? 0
-    }
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return viewModel?.minimumInteritemSpacingForSectionAt ?? 0
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout
+//        collectionViewLayout: UICollectionViewLayout,
+//                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return viewModel?.minimumLineSpacingForSectionAt ?? 0
+//    }
     
     
     

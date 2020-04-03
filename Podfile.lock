@@ -1,5 +1,6 @@
 PODS:
   - AlignedCollectionViewFlowLayout (1.1.2)
+  - lottie-ios (3.1.6)
   - Realm (4.3.2):
     - Realm/Headers (= 4.3.2)
   - Realm/Headers (4.3.2)
@@ -10,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - AlignedCollectionViewFlowLayout
+  - lottie-ios
   - RealmSwift
   - SwiftGen
   - Zip
@@ -17,6 +19,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AlignedCollectionViewFlowLayout
+    - lottie-ios
     - Realm
     - RealmSwift
     - SwiftGen
@@ -24,11 +27,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AlignedCollectionViewFlowLayout: ee2ef451e741ec08f8e0967d828001e2f051c20a
+  lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
   Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
   RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: 88c06489a9affc9fe4f558a6db6ccc826baa9561
+PODFILE CHECKSUM: ecb759930929ea8c3d41e04d2ce2a3816773eb40
 
 COCOAPODS: 1.8.3

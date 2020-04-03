@@ -12,9 +12,11 @@ import Foundation
 class DataFetcherService {
     
     var onProgress: ((Double) -> ())?
+    var fileLocation: ((URL?) -> ())?
+      
     
-    //    fileprivate let baseURL = "https://handshake.arq.su/vl/"
-    fileprivate let baseURL = "http://192.168.0.113:5000/"
+    fileprivate let baseURL = "https://handshake.arq.su/vl/"
+//    fileprivate let baseURL = "http://192.168.0.113:5000/"
     
     
     
@@ -25,32 +27,21 @@ class DataFetcherService {
         self.dataFetcher.onProgress = { [weak self] progress in
             self?.onProgress?(progress)
         }
+        
+        self.dataFetcher.fileLocation = { [weak self] url in
+            self?.fileLocation?(url)
+        }
     }
-    
-    
-    //    func fetchRSSAppleMusic(completion: @escaping (RSSModel?) -> Void) {
-    //        let urlString = "https://rss.itunes.apple.com/api/v1/us/apple-music/hot-tracks/all/20/explicit.json"
-    //        dataFetcher.fetchGenericJSONData(urlString: urlString, response: completion)
-    //    }
-    
-    
-    func uploadFile(fileData: Data, completion: @escaping (UploadingResponse?) -> Void) {
-        let urlString = baseURL + "share"
-        dataFetcher.uploadGenericJSONData(urlString: urlString, data: fileData, response: completion)
-    }
-    
+   
     func uploadFile(filePath: URL, completion: @escaping (UploadingResponse?) -> Void) {
         let urlString = baseURL + "share"
         dataFetcher.uploadGenericData(urlString: urlString, filePath: filePath, response: completion)
-        
     }
     
     
-    
-    
-    func share(completion: @escaping (Data?) -> Void) {
-        let urlString = baseURL + "share/c5c6dc9a-c6e2-4ae4-9ee4-d7036cc01d8a"
-        dataFetcher.fetchGenericJSONData(urlString: urlString, response: completion)
+    func downloadFile(guid: String) {
+        let urlString = baseURL + "share/\(guid)"
+        dataFetcher.fetchData(urlString: urlString)
     }
     
     

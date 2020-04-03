@@ -18,5 +18,5 @@ enum ProjectsViewAction {
     case renameAlert
     case uploadItem
     case share(_ guid: String?)
-
+    case download
 }

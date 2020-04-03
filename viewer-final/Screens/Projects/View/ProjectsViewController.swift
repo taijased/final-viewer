@@ -43,11 +43,23 @@ final class ProjectsViewController: UIViewController {
     }()
     
     
+    fileprivate var guid: String?
+    
+    init(guid: String?) {
+        self.guid = guid
+        super.init(nibName: nil, bundle: nil)
+        viewModel = ProjectsViewModel()
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel = ProjectsViewModel()
         setupUI()
     }
     
@@ -119,6 +131,8 @@ final class ProjectsViewController: UIViewController {
         navigationController?.navigationBar.hideBottomHairline()
         
         
+        
+        viewModel.downloadFile(guid)
     }
     
     
@@ -203,37 +217,37 @@ final class ProjectsViewController: UIViewController {
             guard let shareAlert = viewModel?.shareAlert else { return }
             self.present(shareAlert, animated: true, completion: nil)
         case .uploading:
+            guard let uploadController = viewModel?.uploadAlertController else { return }
+            self.present(uploadController, animated: true)
             
-            viewModel?.shareAlert.dismiss(animated: true, completion: nil)
-            
-            guard let uploadAlert = viewModel?.uploadAlertController else { return }
-            self.present(uploadAlert, animated: true, completion: nil)
         case .share:
+            
+            guard let link = self.viewModel?.shareLink else { return }
+            let activityViewController = UIActivityViewController(activityItems: [link], applicationActivities: nil)
+            activityViewController.view.backgroundColor = .clear
+            activityViewController.excludedActivityTypes = [.airDrop]
 
-            guard let link = self.viewModel?.shareGUID else { return }
-            let activityVC = UIActivityViewController(activityItems: [link], applicationActivities: nil)
-            activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList, UIActivity.ActivityType.message, UIActivity.ActivityType.mail]
-            print(link)
-            
-//            UIView.animate(withDuration: 0.0) {
-                self.present(activityVC, animated: true, completion: nil)
-//            }/
-            
-//            DispatchQueue.main.async {
-//               self.present(activityVC, animated: true, completion: nil)
-//            }
+            if let popoverController = activityViewController.popoverPresentationController {
+                popoverController.sourceRect = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2, width: 0, height: 0)
+                popoverController.sourceView = self.view
+                popoverController.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+            }
 
-            
-            
+            self.present(activityViewController, animated: true, completion: nil)
         case .toast(let title):
             
             let toast = ToastViewController(title: title)
-            DispatchQueue.main.async {
-                self.present(toast, animated: true)
-            }
+//            DispatchQueue.main.async {
+            self.present(toast, animated: true)
+//            }
             
             Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
                 toast.dismiss(animated: true)
+            }
+        case .download:
+            guard let uploadController = viewModel?.downloadAlertController else { return }
+            DispatchQueue.main.async {
+                self.present(uploadController, animated: true, completion: nil)
             }
         }
     }
@@ -284,6 +298,8 @@ extension ProjectsViewController: ProjectsViewModelDelegate {
             } else {
                 self.navigation(.toast(title: "Упс что то пошло не так!"))
             }
+        case .download:
+            self.navigation(.download)
         }
     }
 }

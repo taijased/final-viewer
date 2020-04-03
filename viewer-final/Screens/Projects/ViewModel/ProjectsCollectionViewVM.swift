@@ -59,11 +59,11 @@ class ProjectsCollectionViewVM: ProjectsCollectionViewVMType {
         } else {
             self.cells = realm.objects(ProjectFileModel.self)
         }
+        onReloadData?()
     }
     
     
     func sizeForItemAt(_ size: CGSize) -> CGSize {
-        
         if UIDevice.current.model == "iPhone" {
             let width: CGFloat = (UIScreen.main.bounds.width - 60) * 0.5
             let height: CGFloat = 160
@@ -71,13 +71,15 @@ class ProjectsCollectionViewVM: ProjectsCollectionViewVMType {
             return size
         } else {
             if UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown {
-                let width: CGFloat = (UIScreen.main.bounds.width - 16.0 * 5) / 4
+                let width: CGFloat = (UIScreen.main.bounds.width - 16 * 5) / 4
                 let height: CGFloat = 160
-                return CGSize(width: width, height: height)
+                let size = CGSize(width: width, height: height)
+                return size
             } else {
-                let width: CGFloat = (UIScreen.main.bounds.width - 16.0 * 6) / 5
+                let width: CGFloat = (UIScreen.main.bounds.width - 16 * 6) / 5
                 let height: CGFloat = 160
-                return CGSize(width: width, height: height)
+                let size = CGSize(width: width, height: height)
+                return size
             }
         }
     }

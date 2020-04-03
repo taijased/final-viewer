@@ -19,5 +19,6 @@ enum ProjectsNavigationType {
     case uploading
     case share
     case toast(title: String)
+    case download
     
 }

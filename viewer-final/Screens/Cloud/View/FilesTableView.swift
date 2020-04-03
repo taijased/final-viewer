@@ -98,7 +98,6 @@ extension FilesTableView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
   
-        print(#function)
         guard let viewModel = viewModel else { return }
         viewModel.selectItem(atIndexPath: indexPath)
         

@@ -10,5 +10,6 @@ target 'viewer-final' do
   pod 'AlignedCollectionViewFlowLayout'
   pod 'SwiftGen'
   pod 'Zip'
+  pod 'lottie-ios'
 
 end
