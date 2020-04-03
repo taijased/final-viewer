@@ -13,7 +13,11 @@ enum ProjectsNavigationType {
     case selectCloud
     case openProject
     case renameAlert
+    case shareAlert
     case information
     case dismiss
+    case uploading
+    case share
+    case toast(title: String)
     
 }

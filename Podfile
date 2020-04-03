@@ -9,5 +9,6 @@ target 'viewer-final' do
   pod 'RealmSwift'
   pod 'AlignedCollectionViewFlowLayout'
   pod 'SwiftGen'
+  pod 'Zip'
 
 end

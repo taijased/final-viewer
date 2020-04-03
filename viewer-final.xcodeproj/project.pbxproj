@@ -47,6 +47,7 @@
 		133A5971240559E000BAC954 /* FilesTableViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A5970240559E000BAC954 /* FilesTableViewVM.swift */; };
 		133A5973240559ED00BAC954 /* FilesTableViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A5972240559ED00BAC954 /* FilesTableViewCellVM.swift */; };
 		133A5975240564D600BAC954 /* UITableView + escaping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133A5974240564D600BAC954 /* UITableView + escaping.swift */; };
+		1354897D2436353D00ECDDD2 /* FileZipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1354897C2436353D00ECDDD2 /* FileZipModel.swift */; };
 		135BA11B2420B3D400EC67E9 /* SectionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135BA11A2420B3D400EC67E9 /* SectionCollectionView.swift */; };
 		135BA11D2420B3E800EC67E9 /* SectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135BA11C2420B3E800EC67E9 /* SectionCollectionViewCell.swift */; };
 		135BA11F2420B92900EC67E9 /* InfoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135BA11E2420B92900EC67E9 /* InfoTableView.swift */; };
@@ -95,6 +96,9 @@
 		137ADD6123FC3E4600237368 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137ADD6023FC3E4600237368 /* UIView+Border.swift */; };
 		13848FC62412B18E008FE315 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 13848FC82412B18E008FE315 /* Localizable.strings */; };
 		138C66462416C21800E18551 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138C66452416C21800E18551 /* TestViewController.swift */; };
+		13923B47242A4F1E002A9181 /* UploadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13923B46242A4F1E002A9181 /* UploadingViewController.swift */; };
+		13923B49242A4F2A002A9181 /* UploadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13923B48242A4F2A002A9181 /* UploadingViewModel.swift */; };
+		13A3A6792433539D00A6F479 /* ProjectsUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A3A6782433539D00A6F479 /* ProjectsUploadView.swift */; };
 		13A6B871241FE50D00FF95AB /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A6B870241FE50D00FF95AB /* InformationViewController.swift */; };
 		13A6B873241FE51F00FF95AB /* InformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A6B872241FE51F00FF95AB /* InformationViewModel.swift */; };
 		13BAE7F42403FDDE008A44E0 /* SelectCloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAE7F32403FDDE008A44E0 /* SelectCloudViewController.swift */; };
@@ -138,6 +142,8 @@
 		13E735A12427CE9E009C236D /* dark-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E735A02427CE9E009C236D /* dark-3.png */; };
 		13E735A32427CEAF009C236D /* light-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E735A22427CEAF009C236D /* light-3.png */; };
 		13E735A52427CFF3009C236D /* dark-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E735A42427CFF3009C236D /* dark-1.png */; };
+		13F94AB02434BC48008B69CE /* UploadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F94AAF2434BC48008B69CE /* UploadingService.swift */; };
+		13F94AB22434C369008B69CE /* UploadingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F94AB12434C369008B69CE /* UploadingResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -180,6 +186,8 @@
 		133A5970240559E000BAC954 /* FilesTableViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesTableViewVM.swift; sourceTree = "<group>"; };
 		133A5972240559ED00BAC954 /* FilesTableViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesTableViewCellVM.swift; sourceTree = "<group>"; };
 		133A5974240564D600BAC954 /* UITableView + escaping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + escaping.swift"; sourceTree = "<group>"; };
+		134076A424322CE200004AFF /* ARQ Viewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ARQ Viewer.entitlements"; sourceTree = "<group>"; };
+		1354897C2436353D00ECDDD2 /* FileZipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileZipModel.swift; sourceTree = "<group>"; };
 		135BA11A2420B3D400EC67E9 /* SectionCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCollectionView.swift; sourceTree = "<group>"; };
 		135BA11C2420B3E800EC67E9 /* SectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		135BA11E2420B92900EC67E9 /* InfoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableView.swift; sourceTree = "<group>"; };
@@ -231,6 +239,9 @@
 		13848FC72412B18E008FE315 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		13848FC92412B196008FE315 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		138C66452416C21800E18551 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		13923B46242A4F1E002A9181 /* UploadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingViewController.swift; sourceTree = "<group>"; };
+		13923B48242A4F2A002A9181 /* UploadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingViewModel.swift; sourceTree = "<group>"; };
+		13A3A6782433539D00A6F479 /* ProjectsUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsUploadView.swift; sourceTree = "<group>"; };
 		13A6B870241FE50D00FF95AB /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		13A6B872241FE51F00FF95AB /* InformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewModel.swift; sourceTree = "<group>"; };
 		13BAE7F32403FDDE008A44E0 /* SelectCloudViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCloudViewController.swift; sourceTree = "<group>"; };
@@ -278,6 +289,8 @@
 		13E735A02427CE9E009C236D /* dark-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-3.png"; sourceTree = "<group>"; };
 		13E735A22427CEAF009C236D /* light-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-3.png"; sourceTree = "<group>"; };
 		13E735A42427CFF3009C236D /* dark-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-1.png"; sourceTree = "<group>"; };
+		13F94AAF2434BC48008B69CE /* UploadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingService.swift; sourceTree = "<group>"; };
+		13F94AB12434C369008B69CE /* UploadingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingResponse.swift; sourceTree = "<group>"; };
 		15B78AE3BE72EE7682A8D499 /* Pods-viewer-final.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viewer-final.release.xcconfig"; path = "Target Support Files/Pods-viewer-final/Pods-viewer-final.release.xcconfig"; sourceTree = "<group>"; };
 		1855360A240CF71400AEF928 /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CB4FC396E21FD3D16F776BB /* Pods_viewer_final.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_viewer_final.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -342,6 +355,7 @@
 				13C426E424229D4100BC5B1E /* ProjectsCollectionHeaderViewCell.swift */,
 				130B982B23FD695F00DE6C60 /* ProjectsCollectionViewCell.swift */,
 				130B982F23FD6F8C00DE6C60 /* ProjectsContextViewMenu.swift */,
+				13A3A6782433539D00A6F479 /* ProjectsUploadView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -353,6 +367,8 @@
 				13D5BB0B2408FE1000A65256 /* ProjectsViewAction.swift */,
 				13D5BB0D2409209E00A65256 /* CustomAlertAction.swift */,
 				13D5BB112409396C00A65256 /* ProjectsNavigation.swift */,
+				13F94AB12434C369008B69CE /* UploadingResponse.swift */,
+				1354897C2436353D00ECDDD2 /* FileZipModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -396,6 +412,7 @@
 		137ADCDF23FC04F700237368 /* viewer-final */ = {
 			isa = PBXGroup;
 			children = (
+				134076A424322CE200004AFF /* ARQ Viewer.entitlements */,
 				130ADBF9240692AD00E6EAE3 /* viewer-file.png */,
 				137ADCE023FC04F700237368 /* AppDelegate.swift */,
 				137ADD1A23FC09E600237368 /* Library */,
@@ -421,6 +438,7 @@
 		137ADCF523FC073000237368 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				13923B42242A4EDF002A9181 /* Uploading */,
 				133935CE240FFEC7003B8BB5 /* LehaPosmotri */,
 				13A6B86C241FE2EF00FF95AB /* Info */,
 				13BAE82424052B18008A44E0 /* Cloud */,
@@ -635,6 +653,39 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		13923B42242A4EDF002A9181 /* Uploading */ = {
+			isa = PBXGroup;
+			children = (
+				13923B45242A4F03002A9181 /* Model */,
+				13923B44242A4F00002A9181 /* View */,
+				13923B43242A4EFD002A9181 /* ViewModel */,
+			);
+			path = Uploading;
+			sourceTree = "<group>";
+		};
+		13923B43242A4EFD002A9181 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				13923B48242A4F2A002A9181 /* UploadingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		13923B44242A4F00002A9181 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13923B46242A4F1E002A9181 /* UploadingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13923B45242A4F03002A9181 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		13A6B86C241FE2EF00FF95AB /* Info */ = {
 			isa = PBXGroup;
 			children = (
@@ -840,6 +891,7 @@
 				13D5BB28240950C000A65256 /* StorageManager.swift */,
 				13D5BB3D2409698400A65256 /* TrueFormats.swift */,
 				13C426E62422BD6D00BC5B1E /* FileManagerNotify.swift */,
+				13F94AAF2434BC48008B69CE /* UploadingService.swift */,
 			);
 			path = FileManager;
 			sourceTree = "<group>";
@@ -1021,6 +1073,7 @@
 				137ADD5C23FC371000237368 /* AuthData.swift in Sources */,
 				133A595724054C6200BAC954 /* CloudTableViewSectionHeader.swift in Sources */,
 				130ADC062406B1C600E6EAE3 /* PresentationController.swift in Sources */,
+				13F94AB22434C369008B69CE /* UploadingResponse.swift in Sources */,
 				133A596F240559D200BAC954 /* FilesTableViewCell.swift in Sources */,
 				130ADBF82406837C00E6EAE3 /* FileManager + contentsOfDirectoryURLs.swift in Sources */,
 				13BAE7FE240403B2008A44E0 /* SelectCloudTableViewVM.swift in Sources */,
@@ -1032,6 +1085,7 @@
 				130ADC1C2407CB5800E6EAE3 /* CPopUpTableHeaderView.swift in Sources */,
 				130B982E23FD6EC100DE6C60 /* UINavigationBar + bottomLine.swift in Sources */,
 				133A595B24054CF800BAC954 /* CloudTableViewVM.swift in Sources */,
+				13923B49242A4F2A002A9181 /* UploadingViewModel.swift in Sources */,
 				13A6B871241FE50D00FF95AB /* InformationViewController.swift in Sources */,
 				13D5BB122409396C00A65256 /* ProjectsNavigation.swift in Sources */,
 				13BAE82D24052D91008A44E0 /* CloudModel.swift in Sources */,
@@ -1064,8 +1118,10 @@
 				135BA1252420B95300EC67E9 /* InfoTableViewCellVM.swift in Sources */,
 				133935CD240FF4A6003B8BB5 /* UIFont + init.swift in Sources */,
 				130B97FA23FD290700DE6C60 /* TextFieldView.swift in Sources */,
+				13A3A6792433539D00A6F479 /* ProjectsUploadView.swift in Sources */,
 				137ADD1923FC09B600237368 /* DataFetcherService.swift in Sources */,
 				133A595324054C3700BAC954 /* CloudTableView.swift in Sources */,
+				13923B47242A4F1E002A9181 /* UploadingViewController.swift in Sources */,
 				13BAE81D2404159B008A44E0 /* FormatListTableHeaderView.swift in Sources */,
 				13BAE81B2404158F008A44E0 /* FormatListTableViewCell.swift in Sources */,
 				137ADCF823FC076200237368 /* Constraints.swift in Sources */,
@@ -1082,6 +1138,7 @@
 				137ADD5723FC36C600237368 /* AuthViewController.swift in Sources */,
 				135BA12A2420D12300EC67E9 /* InformationModel.swift in Sources */,
 				137ADD0823FC082A00237368 /* UIColor + hexValue.swift in Sources */,
+				13F94AB02434BC48008B69CE /* UploadingService.swift in Sources */,
 				135BA11B2420B3D400EC67E9 /* SectionCollectionView.swift in Sources */,
 				130ADC1A2407C68400E6EAE3 /* CloudPopUpViewControllerVM.swift in Sources */,
 				13BAE7F82404026C008A44E0 /* SelectCloudTableView.swift in Sources */,
@@ -1090,6 +1147,7 @@
 				13D5BB2524094D2C00A65256 /* LocalFileFetcher.swift in Sources */,
 				138C66462416C21800E18551 /* TestViewController.swift in Sources */,
 				130B982423FD67A000DE6C60 /* ProjectsCollectionView.swift in Sources */,
+				1354897D2436353D00ECDDD2 /* FileZipModel.swift in Sources */,
 				137ADD0623FC081700237368 /* UILabel + Theme.swift in Sources */,
 				133A595524054C4600BAC954 /* CloudTableHeaderView.swift in Sources */,
 				130ADC032406B13E00E6EAE3 /* ToastPresentationController.swift in Sources */,
@@ -1247,6 +1305,7 @@
 			baseConfigurationReference = D942D03D497D7DD5A3203887 /* Pods-viewer-final.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "viewer-final/ARQ Viewer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4226M9N553;
 				ENABLE_BITCODE = NO;
@@ -1255,7 +1314,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.taijased.viewer-finall";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ARQ-Viewer-Lite";
 				PRODUCT_NAME = "ARQ Viewer";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1267,6 +1326,7 @@
 			baseConfigurationReference = 15B78AE3BE72EE7682A8D499 /* Pods-viewer-final.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "viewer-final/ARQ Viewer.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4226M9N553;
 				ENABLE_BITCODE = NO;
@@ -1275,7 +1335,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.taijased.viewer-finall";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ARQ-Viewer-Lite";
 				PRODUCT_NAME = "ARQ Viewer";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

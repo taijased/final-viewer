@@ -37,10 +37,10 @@ extension ProjectsContextViewMenu {
         
         
         menuItems.append(open)
-        //        menuItems.append(self.setupCustomAction(.share, someHandler: { (action) in
-        //            completion(.share)
-        //        }))
-        //
+        
+        menuItems.append(self.setupCustomAction(.share, someHandler: { (action) in
+            completion(.share)
+        }))
         
         menuItems.append(self.setupCustomAction(.rename, someHandler: { (action) in
             completion(.rename)
@@ -78,8 +78,8 @@ extension ProjectsContextViewMenu {
             result.attributes = .init()
         case .rename:
             result.attributes = .init()
-            //        case .share:
-        //            result.attributes = .init()
+        case .share:
+            result.attributes = .init()
         case .delete:
             result.attributes = .destructive
         case .cancel:

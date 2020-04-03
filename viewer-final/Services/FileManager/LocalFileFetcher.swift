@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Zip
+
 
 
 class LocalFileFetcher {
@@ -26,6 +28,27 @@ class LocalFileFetcher {
         self.initARQProjectDirectory()
     }
     
+    func getZipFilePath(id: String) -> URL? {
+        do {
+            let fileUrls = try fileManager.contentsOfDirectory(at: projectsPath.appendingPathComponent(id), includingPropertiesForKeys: nil)
+            return fileUrls.filter { $0.pathExtension.lowercased() == "zip"}.first
+        } catch {
+            print("Error while get zip file \(projectsPath.path): \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
+    
+    fileprivate func createZIP(id: String, archiveName: String = "archive.zip") {
+        do {
+            let projectPath = projectsPath.appendingPathComponent(id)
+            let fileUrls = try fileManager.contentsOfDirectory(at: projectPath, includingPropertiesForKeys: nil)
+            let zipFilePath = projectPath.appendingPathComponent(archiveName)
+            try Zip.zipFiles(paths: fileUrls, zipFilePath: zipFilePath, password: nil, progress: nil)
+        } catch  {}
+    }
+    
+    
     
     fileprivate func initARQProjectDirectory() {
         
@@ -38,37 +61,20 @@ class LocalFileFetcher {
             }
         }
         
-        
-        do {
-            let fileUrls = try fileManager.contentsOfDirectory(at: projectsPath.appendingPathComponent("A5631D9E-ACEF-4E17-83DC-51195C76499B"), includingPropertiesForKeys: nil)
-            print("--------------ARQprojects Files--------------")
-            print(fileUrls)
-            print("-------------------------------")
-        } catch {
-            print("Error while enumerating files \(projectsPath.path): \(error.localizedDescription)")
-        }
-
     }
     
     
-
+    
     func initDefaultFiles(completion: @escaping() -> Void) {
-        
         
         let url = Bundle.main.resourceURL!
         do {
             let urls = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys:[], options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles)
             
-            
-            
             var index: Int = 1
             urls.forEach { path in
                 
-        
-                
-                
                 if path.pathExtension.lowercased() == "fbx" {
-                    
                     
                     guard TrueFormats().isSupportedFormats(path.pathExtension) else { return }
                     let guid = UUID().uuidString
@@ -78,24 +84,25 @@ class LocalFileFetcher {
                         
                         try fileManager.createDirectory(atPath: sandboxFolderURL.path, withIntermediateDirectories: true, attributes: nil)
                         try fileManager.copyItem(at: path, to: sandboxFolderURL.appendingPathComponent(path.lastPathComponent))
-
-
                         
-
+                        
+                        
+                        
                         let darkPath = path.deletingLastPathComponent().appendingPathComponent("dark-\(index).png")
                         try fileManager.copyItem(at: darkPath, to: sandboxFolderURL.appendingPathComponent("dark.png"))
-
+                        
                         let lightPath = path.deletingLastPathComponent().appendingPathComponent("light-\(index).png")
                         try fileManager.copyItem(at: lightPath, to: sandboxFolderURL.appendingPathComponent("light.png"))
-
-
-
-
+                        
+                        
+                        
+                        
                         StorageManager.create(id: guid, imagePath: darkPath.absoluteString, path) {
-                           
+                            
                         }
                         index += 1
                         
+                        createZIP(id: guid)
                     }
                     catch let error as NSError  {
                         self.removeFolder(guid)
@@ -104,6 +111,8 @@ class LocalFileFetcher {
                 }
                 
             }
+            
+            
             
         } catch {
             print(error)
@@ -137,6 +146,8 @@ class LocalFileFetcher {
                     completion(.success)
                 }
                 
+                createZIP(id: guid)
+                
             }
             catch let error as NSError  {
                 self.removeFolder(guid)
@@ -150,14 +161,14 @@ class LocalFileFetcher {
     fileprivate func checkExistSelectFile(_ lastPathComponent: String) -> Bool {
         
         guard let fileUrls = try? fileManager.contentsOfDirectory(at: projectsPath, includingPropertiesForKeys: nil) else { return false }
-
+        
         for file in fileUrls {
             
             if file.appendingPathComponent(lastPathComponent).checkFileExist() {
                 return true
             }
         }
-
+        
         return false
         
     }

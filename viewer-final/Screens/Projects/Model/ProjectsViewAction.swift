@@ -16,4 +16,7 @@ enum ProjectsViewAction {
     case didSelectItemAt
     case longTappedItem(type: CustomAlertAction, item: ProjectsCollectionViewCellVMType)
     case renameAlert
+    case uploadItem
+    case share(_ guid: String?)
+
 }

@@ -13,7 +13,7 @@ import UIKit
 enum CustomAlertAction {
     case open
     case rename
-//    case share
+    case share
     case delete
     case cancel
     
@@ -43,8 +43,8 @@ enum CustomAlertAction {
             result = "Projects.open".localized
         case .rename:
             result = "Projects.rename".localized
-//        case .share:
-//            result = "Share"
+        case .share:
+            result = "Projects.share".localized
         case .delete:
             result = "Projects.delete".localized
         case .cancel:
@@ -62,8 +62,8 @@ enum CustomAlertAction {
             result = "arkit"
         case .rename:
             result = "pencil"
-//        case .share:
-//            result = "share"
+        case .share:
+            result = "square.and.arrow.up"
         case .delete:
             result = "trash"
         case .cancel:
@@ -83,8 +83,8 @@ enum CustomAlertAction {
                 return .default
             case .rename:
                 return .default
-//            case .share:
-//                return .default
+            case .share:
+                return .default
             case .delete:
                 return .destructive
             case .cancel:

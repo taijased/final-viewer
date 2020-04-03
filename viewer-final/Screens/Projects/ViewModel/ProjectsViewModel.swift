@@ -21,19 +21,23 @@ protocol ProjectsViewModelDelegate: class {
 protocol ProjectsViewModelType {
     var optionMenu: UIAlertController { get }
     var renameAlert: UIAlertController { get }
+    var shareAlert: UIAlertController { get }
+    var uploadAlertController: UIAlertController { get }
     var collectionView: ProjectsCollectionView { get }
     var plusButton: UIButton { get }
     var infoButton: UIButton { get }
     var delegate: ProjectsViewModelDelegate? { get set }
     var searchController: UISearchController { get }
     func update()
-    func getAlertTextfield() -> String? 
+    func getAlertTextfield() -> String?
+    var shareGUID: URL? { get }
 }
 
 
 
 class ProjectsViewModel: ProjectsViewModelType {
     
+    var shareGUID: URL?
     
     private var projectItem: ProjectsCollectionViewCellVMType?
     
@@ -71,7 +75,59 @@ class ProjectsViewModel: ProjectsViewModelType {
     }
     
     
+    var customView: ProjectsUploadView?
     
+    
+    lazy var uploadAlertController: UIAlertController = {
+        
+        let title = "Share.upload.title".localized
+        let description = "Share.upload.desc".localized
+        
+        let alert = UIAlertController(title: "\n\n\n\n\n\n\n\n\(title)", message: description, preferredStyle: .alert)
+        
+        customView = ProjectsUploadView(frame: .zero, fileFetcher: self.fileFetcher, id: self.projectItem?.object.id )
+        
+        
+        alert.view.addSubview(customView!)
+        customView!.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -61).isActive = true
+        customView!.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 20).isActive = true
+        customView!.leadingAnchor.constraint(equalTo: alert.view.leadingAnchor, constant: 0).isActive = true
+        customView!.trailingAnchor.constraint(equalTo: alert.view.trailingAnchor, constant: 0).isActive = true
+        customView!.delegate = self
+        customView!.startUpload()
+        
+        return alert
+    }()
+    
+    
+    
+    
+    
+    lazy var shareAlert: UIAlertController = {
+        
+        
+        let title = "Share.title".localized
+        let description = "Share.description".localized
+        
+        
+        let shareAlert = UIAlertController(title: title, message: description, preferredStyle: .alert)
+        
+        shareAlert.addAction(UIAlertAction(title: "Share.disagree".localized, style: .destructive))
+        
+        
+        let agree = UIAlertAction(title: "Share.agree".localized, style: .default, handler: { [weak self] _ in
+            
+            if let customView = self?.customView {
+                customView.startUpload()
+            }
+            self?.delegate?.onEvents(type: .uploadItem)
+        })
+        
+        shareAlert.addAction(agree)
+        shareAlert.view.tintColor = UIColor.Primary.primary
+        
+        return shareAlert
+    }()
     
     
     
@@ -83,15 +139,14 @@ class ProjectsViewModel: ProjectsViewModelType {
         let actionSheet = UIAlertController(title: "", message: "Projects.rename.desc".localized, preferredStyle: .alert)
         
         
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { [weak self] _ in
-//            actionSheet.textFields?.first?.text = self?.projectItem?.object.name
+        actionSheet.addAction(UIAlertAction(title: "Projects.cancel".localized, style: .cancel, handler: { [weak self] _ in
+            //            actionSheet.textFields?.first?.text = self?.projectItem?.object.name
         }))
         
-        actionSheet.addAction(UIAlertAction(title: "Rename", style: .destructive, handler: { [weak self] (action: UIAlertAction) in
+        actionSheet.addAction(UIAlertAction(title: "Projects.rename".localized, style: .destructive, handler: { [weak self] (action: UIAlertAction) in
             if let alertTextField = actionSheet.textFields?.first, alertTextField.text != nil {
                 self?.renameItem(alertTextField.text!)
             }
-
         }))
         
         actionSheet.addTextField { [weak self] (textField) in
@@ -123,7 +178,7 @@ class ProjectsViewModel: ProjectsViewModelType {
             self?.delegate?.onEvents(type: .renameAlert)
         }))
         
-        //        actionSheet.addAction(setupAlertAction(.share, someHandler: { [weak self] _ in self?.shareItem() }))
+        actionSheet.addAction(setupAlertAction(.share, someHandler: { [weak self] _ in self?.shareItem() }))
         actionSheet.addAction(setupAlertAction(.delete, someHandler: { [weak self] _ in self?.deleteItem() }))
         actionSheet.addAction(setupAlertAction(.cancel, someHandler: nil))
         
@@ -150,14 +205,13 @@ class ProjectsViewModel: ProjectsViewModelType {
         
     }()
     
-    
-    
+    let fileFetcher: LocalFileFetcher = LocalFileFetcher()
     
     
     
     
     init() {
-        self.collectionView = ProjectsCollectionView()
+        self.collectionView = ProjectsCollectionView(fileFetcher: fileFetcher)
         self.collectionView.collectionDelegate = self
     }
     
@@ -241,9 +295,8 @@ class ProjectsViewModel: ProjectsViewModelType {
     
     
     fileprivate func shareItem() {
-        print(#function)
-        //        guard let project = self.projectItem else { return }
-        //        delegate?.onEvents(type: .longTappedItem(type: .share, item: project))
+        guard let project = self.projectItem else { return }
+        delegate?.onEvents(type: .longTappedItem(type: .share, item: project))
     }
     
 }
@@ -268,8 +321,8 @@ extension ProjectsViewModel: ProjectsCollectionViewDelegate {
             self.openItem()
         case .rename:
             self.delegate?.onEvents(type: .longTappedItem(type: .rename, item: item))
-            //        case .share:
-        //            self.shareItem()
+        case .share:
+            self.shareItem()
         case .delete:
             self.deleteItem()
         case .cancel: break
@@ -283,6 +336,28 @@ extension ProjectsViewModel: ProjectsCollectionViewDelegate {
     
     func didSelectItemAt() {
         delegate?.onEvents(type: .didSelectItemAt)
+    }
+}
+
+
+//MARK: - ProjectsCollectionViewDelegate
+extension ProjectsViewModel: ProjectsUploadViewDelegate {
+    func dissmis(_ guid: String?) {
+        if guid != nil {
+            if let link = URL(string: "https://share.arq.studio/\(String(describing: guid))") {
+                self.shareGUID = link
+
+            }
+//            if let link = URL(string: "https://arq.studio") {
+//                self.shareGUID = link
+//            }
+        }
+        
+//        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) {[weak self] _ in
+            self.uploadAlertController.dismiss(animated: true, completion: nil)
+            self.delegate?.onEvents(type: .share(guid))
+//        }
+      
     }
 }
 

@@ -35,10 +35,6 @@ final class InformationViewController: UIViewController {
         
         guard let viewModel = viewModel else { return }
         
-       
-        
-        
-        
         view.addSubview(viewModel.sectionCollectionView)
         viewModel.sectionCollectionView.fillSuperview()
         
@@ -55,10 +51,7 @@ final class InformationViewController: UIViewController {
         viewModel.segmentControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22).isActive = true
         viewModel.segmentControl.heightAnchor.constraint(equalToConstant: 32).isActive = true
         
-        
-        
     }
-    
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -66,13 +59,10 @@ final class InformationViewController: UIViewController {
         if traitCollection.userInterfaceStyle == .light {
             view.backgroundColor = .white
             visualEffectView.effect = UIBlurEffect(style: .extraLight)
-            
         } else {
             view.backgroundColor = UIColor.Black.light
             visualEffectView.effect = UIBlurEffect(style: .dark)
         }
     }
-    
-    
     
 }

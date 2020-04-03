@@ -20,7 +20,7 @@ class ProjectsCollectionView: UICollectionView {
 
     
     
-    init() {
+    init(fileFetcher: LocalFileFetcher) {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         
@@ -34,7 +34,7 @@ class ProjectsCollectionView: UICollectionView {
         
         
         autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        viewModel = ProjectsCollectionViewVM()
+        viewModel = ProjectsCollectionViewVM(fileFetcher: fileFetcher)
         
         viewModel?.onReloadData = { [weak self] in
             self?.updateBackground()

@@ -2,3 +2,4 @@ ${PODS_ROOT}/Target Support Files/Pods-viewer-final/Pods-viewer-final-frameworks
 ${BUILT_PRODUCTS_DIR}/AlignedCollectionViewFlowLayout/AlignedCollectionViewFlowLayout.framework
 ${BUILT_PRODUCTS_DIR}/Realm/Realm.framework
 ${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework
+${BUILT_PRODUCTS_DIR}/Zip/Zip.framework

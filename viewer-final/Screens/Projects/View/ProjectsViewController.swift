@@ -199,6 +199,42 @@ final class ProjectsViewController: UIViewController {
             let viewController = InformationViewController()
             //            let viewController = TestViewController()
             self.present(viewController, animated: true, completion: nil)
+        case .shareAlert:
+            guard let shareAlert = viewModel?.shareAlert else { return }
+            self.present(shareAlert, animated: true, completion: nil)
+        case .uploading:
+            
+            viewModel?.shareAlert.dismiss(animated: true, completion: nil)
+            
+            guard let uploadAlert = viewModel?.uploadAlertController else { return }
+            self.present(uploadAlert, animated: true, completion: nil)
+        case .share:
+
+            guard let link = self.viewModel?.shareGUID else { return }
+            let activityVC = UIActivityViewController(activityItems: [link], applicationActivities: nil)
+            activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList, UIActivity.ActivityType.message, UIActivity.ActivityType.mail]
+            print(link)
+            
+//            UIView.animate(withDuration: 0.0) {
+                self.present(activityVC, animated: true, completion: nil)
+//            }/
+            
+//            DispatchQueue.main.async {
+//               self.present(activityVC, animated: true, completion: nil)
+//            }
+
+            
+            
+        case .toast(let title):
+            
+            let toast = ToastViewController(title: title)
+            DispatchQueue.main.async {
+                self.present(toast, animated: true)
+            }
+            
+            Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+                toast.dismiss(animated: true)
+            }
         }
     }
     
@@ -232,14 +268,22 @@ extension ProjectsViewController: ProjectsViewModelDelegate {
                 print(item)
             case .rename:
                 self.navigation(.renameAlert)
-                //            case .share:
-            //                print(#function)
+            case .share:
+                self.navigation(.shareAlert)
             default: break
             }
         case .renameAlert:
             self.navigation(.renameAlert)
         case .info:
             self.navigation(.information)
+        case .uploadItem:
+            self.navigation(.uploading)
+        case .share(let guid):
+            if guid != nil {
+                self.navigation(.share)
+            } else {
+                self.navigation(.toast(title: "Упс что то пошло не так!"))
+            }
         }
     }
 }

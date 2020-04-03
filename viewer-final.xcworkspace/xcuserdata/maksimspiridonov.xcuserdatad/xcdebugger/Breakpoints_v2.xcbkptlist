@@ -183,38 +183,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "14402A3B-D5F1-4F08-B1BF-826D0E8FB63E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "viewer-final/Services/FileManager/LocalFileFetcher.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "initDefaultFiles(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AEC96B95-B392-4777-AC54-8FC8F718C1C7"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "viewer-final/Services/FileManager/LocalFileFetcher.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "initDefaultFiles(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "9E79E996-EB9F-4141-A9A4-D885EE2A4AE5"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -222,8 +190,8 @@
             filePath = "viewer-final/Screens/Projects/ViewModel/ProjectsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "renameAlert"
             landmarkType = "24">
          </BreakpointContent>
@@ -238,8 +206,8 @@
             filePath = "viewer-final/Screens/Projects/ViewModel/ProjectsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "renameAlert"
             landmarkType = "24">
             <Locations>
@@ -289,6 +257,118 @@
                   offsetFromSymbolStart = "132">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "04D06088-513E-47B1-85DA-8A268675BF99"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "viewer-final/Services/FileManager/LocalFileFetcher.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "getZipFilePath(id:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "393B47C4-302A-49BF-A65E-AE9B5398DEAD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "viewer-final/Services/FileManager/LocalFileFetcher.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "getZipFilePath(id:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "393B47C4-302A-49BF-A65E-AE9B5398DEAD - 6a1d950408da42a9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ARQ_Viewer.LocalFileFetcher.getZipFilePath(id: Swift.String) -&gt; Swift.Optional&lt;Foundation.URL&gt;"
+                  moduleName = "ARQ Viewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimspiridonov/Documents/ARQ/IOS/New%20Viewer/good-version/final-viewer/viewer-final/Services/FileManager/LocalFileFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "743">
+               </Location>
+               <Location
+                  uuid = "393B47C4-302A-49BF-A65E-AE9B5398DEAD - ac8db147844b8fbd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Foundation.URL) -&gt; Swift.Bool in ARQ_Viewer.LocalFileFetcher.getZipFilePath(id: Swift.String) -&gt; Swift.Optional&lt;Foundation.URL&gt;"
+                  moduleName = "ARQ Viewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimspiridonov/Documents/ARQ/IOS/New%20Viewer/good-version/final-viewer/viewer-final/Services/FileManager/LocalFileFetcher.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "67">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8C19E9DC-169E-4E82-9CF2-369067FE6F7C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "viewer-final/Screens/Projects/View/ProjectsUploadView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "startUpload()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9DB1CCCF-BEF6-4837-B92D-B6B460BBB702"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "viewer-final/Library/Toast/ToastViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "init(title:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B70B73C-4523-40CA-8BC7-5E065590D045"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "viewer-final/Screens/Projects/View/ProjectsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
+            landmarkName = "navigation(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

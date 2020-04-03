@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var bgSessionCompletionHandler: (() -> ())?
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -20,11 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
+        //        let viewController = TestViewController()
         
-//        let viewController = TestViewController()
-
         let viewController = SplashViewController()
-
+        
         viewController.deinitViewController = { [weak self] in
             let viewController = ProjectsViewController()
             viewController.modalPresentationStyle = .fullScreen
@@ -36,9 +36,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
         
+        
+        
+        
+        
         return true
     }
     
- 
+    
+    
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        guard userActivity.activityType == NSUserActivityTypeBrowsingWeb, let url = userActivity.webpageURL else { return false }
+        
+        print(url)
+        return true
+    }
+    
+    
+    
+    
+    func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
+        
+        bgSessionCompletionHandler = completionHandler
+    }
+    
 }
 

@@ -40,10 +40,11 @@ class ProjectsCollectionViewVM: ProjectsCollectionViewVMType {
     
     var cells: Results<ProjectFileModel>?
     
-    let fileFetcher = LocalFileFetcher()
+    let fileFetcher: LocalFileFetcher
     
     
-    init() {
+    init(fileFetcher: LocalFileFetcher) {
+        self.fileFetcher = fileFetcher
         fetchFromRealm()
     }
     
@@ -67,7 +68,6 @@ class ProjectsCollectionViewVM: ProjectsCollectionViewVMType {
             let width: CGFloat = (UIScreen.main.bounds.width - 60) * 0.5
             let height: CGFloat = 160
             let size = CGSize(width: width, height: height)
-            print(size)
             return size
         } else {
             if UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown {

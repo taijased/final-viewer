@@ -41,7 +41,7 @@
 "Projects.delete" = "Delete file";
 "Projects.cancel" = "Cancel";
 "Projects.empty" = "Choose file";
-
+"Projects.share" = "Share";
 
 
 //FileManagerNotify
@@ -65,3 +65,18 @@
 "Info.selected" = "Select";
 "Info.rotation" = "Rotate model";
 "Info.logo" = "To rotate the model around it’s axis, select the object and move the camera's orbit";
+
+
+
+
+
+// Policy privacy
+
+"Share.title" = "Upload agreement";
+"Share.description" = "In order to share your file, we pre-upload it to our server. ARQ, LLC guarantees that the 3D models you upload will not be passed to third parties.";
+"Share.agree" = "Agree";
+"Share.disagree" = "Disagree";
+"Share.upload.title" = "Do not close ARQ Viewer";
+"Share.upload.desc" = "We processing your 3D project";
+
+

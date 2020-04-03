@@ -93,16 +93,7 @@ class ProjectsCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         setupUI()
         
-        
-        
-        
-        
-        
-        
     }
-    
-    
-    
     
     fileprivate func setupUI() {
         
