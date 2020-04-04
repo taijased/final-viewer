@@ -1,7 +1,6 @@
 
 
 import UIKit
-import AlignedCollectionViewFlowLayout
 
 
 protocol ProjectsCollectionViewDelegate: class {
@@ -23,9 +22,6 @@ class ProjectsCollectionView: UICollectionView {
     init(fileFetcher: LocalFileFetcher) {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        
-        //
-//        let layout = AlignedCollectionViewFlowLayout(horizontalAlignment: .justified, verticalAlignment: .center)
         super.init(frame: .zero, collectionViewLayout: layout)
         
         
@@ -126,21 +122,6 @@ extension ProjectsCollectionView: UICollectionViewDelegateFlowLayout {
 
         return viewModel?.sizeForItemAt(collectionView.frame.size) ?? CGSize.zero
     }
-
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return viewModel?.minimumInteritemSpacingForSectionAt ?? 0
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout
-//        collectionViewLayout: UICollectionViewLayout,
-//                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return viewModel?.minimumLineSpacingForSectionAt ?? 0
-//    }
-    
-    
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         collectionDelegate?.scrollCellBegin(scrollView)
     }

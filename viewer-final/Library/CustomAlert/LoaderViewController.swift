@@ -17,8 +17,7 @@ protocol LoaderViewControllerDelegate: class {
 
 class LoaderViewController: UIViewController {
     
-    weak var delegate: LoaderViewControllerDelegate?
-    
+    weak var delegate: LoaderViewControllerDelegate?  
     
     let projectsUploadView: ProjectsUploadView = ProjectsUploadView()
     fileprivate let localFileFetcher: LocalFileFetcher = LocalFileFetcher()
@@ -116,9 +115,6 @@ class LoaderViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    deinit {
-        delegate?.deinitController()
     }
 }
 

@@ -9,11 +9,8 @@
 import Foundation
 import MobileCoreServices
 
-
-
-
 protocol Networking {
-//    func request(urlString: String, completion: @escaping(Data?, Error?) -> Void)
+    //    func request(urlString: String, completion: @escaping(Data?, Error?) -> Void)
     func request(urlString: String)
     func request(urlString: String, filePathURL: URL, completion: @escaping(Data?, Error?) -> Void)
     var onProgress: ((Double) -> ())? { get set }
@@ -22,16 +19,16 @@ protocol Networking {
 
 class NetworkService: NSObject, Networking {
     
+    
+    private var observation: NSKeyValueObservation?
+    deinit {
+      observation?.invalidate()
+    }
+    
     var onProgress: ((Double) -> ())?
     var fileLocation: ((URL?) -> ())?
     
     fileprivate let localFileFetcher: LocalFileFetcher = LocalFileFetcher()
-    
-    
-    
-    
-    
-    
     
     func request(urlString: String) {
         guard let url = URL(string: urlString) else { return }
@@ -39,6 +36,11 @@ class NetworkService: NSObject, Networking {
         downloadTask.earliestBeginDate = Date().addingTimeInterval(1)
         downloadTask.countOfBytesClientExpectsToSend = 512
         downloadTask.countOfBytesClientExpectsToReceive = 50 * 1024 * 1024
+        observation = downloadTask.progress.observe(\.fractionCompleted) { progress, _ in
+            DispatchQueue.main.async {
+                self.onProgress?(progress.fractionCompleted)
+            }
+        }
         downloadTask.resume()
     }
     
@@ -175,20 +177,6 @@ extension NetworkService: URLSessionDownloadDelegate {
         }
     }
     
-    
-    //Прогресс для скачивания
-    
-    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didResumeAtOffset fileOffset: Int64, expectedTotalBytes: Int64) {
-         
-           let progress = Double(fileOffset) / Double(expectedTotalBytes)
-           print("Download progress: \(progress)")
-           
-           DispatchQueue.main.async {
-               self.onProgress?(progress)
-           }
-    }
-    
-
 }
 
 

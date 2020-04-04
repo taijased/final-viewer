@@ -57,10 +57,9 @@ class LocalFileFetcher {
             
             try Zip.unzipFile(savedURL, destination: sandboxFolderURL, overwrite: true, password: nil)
             
-          
-            
-     
             let unzipFiles = try fileManager.contentsOfDirectory(at: projectsPath.appendingPathComponent(guid), includingPropertiesForKeys: nil)
+            
+    
             
             
             var modelPath: URL? = nil
@@ -71,8 +70,17 @@ class LocalFileFetcher {
                 }
             }
             
+            
+            
             if modelPath != nil {
-                StorageManager.create(id: guid, modelPath!) {}
+                
+                if sandboxFolderURL.appendingPathComponent("light.png").checkFileExist() {
+
+                    StorageManager.create(id: guid, imagePath: sandboxFolderURL.appendingPathComponent("light.png").absoluteString, modelPath!) { }
+                    
+                } else {
+                    StorageManager.create(id: guid, modelPath!) {}
+                }
                 completion(path)
             } else {
                 throw NSError()
@@ -94,6 +102,7 @@ class LocalFileFetcher {
             let fileUrls = try fileManager.contentsOfDirectory(at: projectPath, includingPropertiesForKeys: nil)
             let zipFilePath = projectPath.appendingPathComponent(archiveName)
             try Zip.zipFiles(paths: fileUrls, zipFilePath: zipFilePath, password: nil, progress: nil)
+            
         } catch  {}
     }
     

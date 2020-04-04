@@ -79,7 +79,7 @@ class ProjectsViewModel: ProjectsViewModelType {
     }
 
     lazy var uploadAlertController: LoaderViewController = LoaderViewController(title: "Share.upload.title".localized, description: "Share.upload.desc".localized)
-    lazy var downloadAlertController: LoaderViewController = LoaderViewController(title: "Загружаю", description: "Не выебывайся")
+    lazy var downloadAlertController: LoaderViewController = LoaderViewController(title: "Share.upload.title".localized, description: "Share.upload.desc".localized)
     
     lazy var shareAlert: UIAlertController = {
         
@@ -191,6 +191,7 @@ class ProjectsViewModel: ProjectsViewModelType {
         self.collectionView = ProjectsCollectionView(fileFetcher: fileFetcher)
         self.collectionView.collectionDelegate = self
         self.uploadAlertController.delegate = self
+        self.downloadAlertController.delegate = self
     }
     
     
@@ -328,10 +329,7 @@ extension ProjectsViewModel: ProjectsCollectionViewDelegate {
 //MARK: - LoaderViewControllerDelegate
 extension ProjectsViewModel: LoaderViewControllerDelegate {
     func deinitController() {
-        print(#function)
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
-        }
+        self.collectionView.viewModel?.onReloadData?()
     }
     
     func finishUploadingFile(guid: String?) {
