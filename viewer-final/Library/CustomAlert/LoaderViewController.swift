@@ -19,7 +19,7 @@ class LoaderViewController: UIViewController {
     
     weak var delegate: LoaderViewControllerDelegate?  
     
-    let projectsUploadView: ProjectsUploadView = ProjectsUploadView()
+    lazy var projectsUploadView: ProjectsUploadView = ProjectsUploadView()
     fileprivate let localFileFetcher: LocalFileFetcher = LocalFileFetcher()
     fileprivate let dataFetcherService: DataFetcherService = DataFetcherService()
     
@@ -38,6 +38,7 @@ class LoaderViewController: UIViewController {
         label.textAlignment = .center
         return label
     }()
+    
     
     init(title: String, description: String) {
         super.init(nibName: nil, bundle: nil)
@@ -72,6 +73,11 @@ class LoaderViewController: UIViewController {
     
     func startUpload(guid: String) {
         guard let zipFilePath = self.localFileFetcher.getZipFilePath(id: guid) else { return }
+        
+        DispatchQueue.main.async {
+            self.projectsUploadView.startAnimation()
+        }
+        
         dataFetcherService.uploadFile(filePath: zipFilePath) { [weak self] (data) in
             self?.dismiss(animated: true, completion: {
                 self?.delegate?.finishUploadingFile(guid: data?.guid)
@@ -85,7 +91,9 @@ class LoaderViewController: UIViewController {
     
     func startDownload(guid: String) {
         
-        
+        DispatchQueue.main.async {
+            self.projectsUploadView.startAnimation()
+        }
         dataFetcherService.downloadFile(guid: guid)
         
         dataFetcherService.fileLocation = { [weak self] url in

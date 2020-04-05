@@ -10,7 +10,7 @@ import UIKit
 
 
 final class ProjectsUploadView: UIView {
-
+    
     fileprivate let label: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
@@ -20,22 +20,25 @@ final class ProjectsUploadView: UIView {
         return label
     }()
     
-//    private var dataFetcherService = DataFetcherService()
-//    private var uploadingService = UploadingService()
-//
+    
+    let loaderfirstView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .center
+        imageView.image = UIImage(named: "loaderfirst")
+        return imageView
+    }()
+    
+    let loadersecondView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .center
+        imageView.image = UIImage(named: "loadersecond")
+        return imageView
+    }()
     
     
-//
-//    let fileFetcher: LocalFileFetcher
-//    let projectId: String?
-//
-//    init(frame: CGRect, fileFetcher: LocalFileFetcher, id: String?) {
-//        self.projectId = id
-//        self.fileFetcher = fileFetcher
-//        super.init(frame: frame)
-//        setupUI()
-//
-//    }
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,16 +51,40 @@ final class ProjectsUploadView: UIView {
         UIView.animate(withDuration: 0.25) { [weak self] in
             self?.label.text = "\(Int(progress * 100))%"
         }
+        
+    }
+    
+    func startAnimation() {
+        loaderfirstView.rotate(duration: 8)
+        loadersecondView.rotate(duration: 4)
     }
     
     fileprivate func setupUI() {
         translatesAutoresizingMaskIntoConstraints = false
-
+        
+        addSubview(loaderfirstView)
+        loaderfirstView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        loaderfirstView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        loaderfirstView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        loaderfirstView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        
+        
+        addSubview(loadersecondView)
+        loadersecondView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        loadersecondView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        loadersecondView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        loadersecondView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+               
+        
+        
+        
         addSubview(label)
         label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-      
+        label.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 2).isActive = true
+        
     }
+    
     
     
     required init?(coder: NSCoder) {
@@ -65,4 +92,28 @@ final class ProjectsUploadView: UIView {
     }
     
     
+}
+
+
+extension UIView {
+    private static let kRotationAnimationKey = "rotationanimationkey"
+    
+    func rotate(duration: Double = 4) {
+        if layer.animation(forKey: UIView.kRotationAnimationKey) == nil {
+            let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
+            
+            rotationAnimation.fromValue = 0.0
+            rotationAnimation.toValue = Float.pi * 2.0
+            rotationAnimation.duration = duration
+            rotationAnimation.repeatCount = Float.infinity
+            
+            layer.add(rotationAnimation, forKey: UIView.kRotationAnimationKey)
+        }
+    }
+    
+    func stopRotating() {
+        if layer.animation(forKey: UIView.kRotationAnimationKey) != nil {
+            layer.removeAnimation(forKey: UIView.kRotationAnimationKey)
+        }
+    }
 }

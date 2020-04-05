@@ -102,7 +102,7 @@ class LocalFileFetcher {
             let fileUrls = try fileManager.contentsOfDirectory(at: projectPath, includingPropertiesForKeys: nil)
             let zipFilePath = projectPath.appendingPathComponent(archiveName)
             try Zip.zipFiles(paths: fileUrls, zipFilePath: zipFilePath, password: nil, progress: nil)
-            
+            print(zipFilePath)
         } catch  {}
     }
     
@@ -143,16 +143,12 @@ class LocalFileFetcher {
                         try fileManager.createDirectory(atPath: sandboxFolderURL.path, withIntermediateDirectories: true, attributes: nil)
                         try fileManager.copyItem(at: path, to: sandboxFolderURL.appendingPathComponent(path.lastPathComponent))
                         
+                        let darkPath = path.deletingLastPathComponent().appendingPathComponent("dark-\(index)").appendingPathExtension("png")
+                        try fileManager.copyItem(at: darkPath, to: sandboxFolderURL.appendingPathComponent("dark").appendingPathExtension("png"))
                         
-                        
-                        
-                        let darkPath = path.deletingLastPathComponent().appendingPathComponent("dark-\(index).png")
-                        try fileManager.copyItem(at: darkPath, to: sandboxFolderURL.appendingPathComponent("dark.png"))
-                        
-                        let lightPath = path.deletingLastPathComponent().appendingPathComponent("light-\(index).png")
-                        try fileManager.copyItem(at: lightPath, to: sandboxFolderURL.appendingPathComponent("light.png"))
-                        
-                        
+                        let lightPath = path.deletingLastPathComponent().appendingPathComponent("light-\(index)").appendingPathExtension("png")
+                        try fileManager.copyItem(at: lightPath, to: sandboxFolderURL.appendingPathComponent("light").appendingPathExtension("png"))
+      
                         
                         
                         StorageManager.create(id: guid, imagePath: darkPath.absoluteString, path) {
