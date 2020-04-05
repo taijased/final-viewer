@@ -381,8 +381,8 @@
             filePath = "viewer-final/Screens/Projects/View/ProjectsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
             landmarkName = "onEvents(type:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -429,8 +429,8 @@
             filePath = "viewer-final/Screens/Projects/View/ProjectsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
             landmarkName = "navigation(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -544,6 +544,70 @@
             startingLineNumber = "332"
             endingLineNumber = "332"
             landmarkName = "deinitController()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A1708576-4D37-490B-A736-04C23446F7CB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "viewer-final/Services/RateManager/RateManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "showRatesController()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A1708576-4D37-490B-A736-04C23446F7CB - 47f326fa772d827e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static ARQ_Viewer.RateManager.showRatesController() -&gt; ()"
+                  moduleName = "ARQ Viewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimspiridonov/Documents/ARQ/IOS/New%20Viewer/good-version/final-viewer/viewer-final/Services/RateManager/RateManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "664">
+               </Location>
+               <Location
+                  uuid = "A1708576-4D37-490B-A736-04C23446F7CB - 21fdec2c72eb7262"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in static ARQ_Viewer.RateManager.showRatesController() -&gt; ()"
+                  moduleName = "ARQ Viewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maksimspiridonov/Documents/ARQ/IOS/New%20Viewer/good-version/final-viewer/viewer-final/Services/RateManager/RateManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8298D8E7-DA0C-4FCE-B4C1-B5A52A565A94"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "viewer-final/Services/RateManager/RateManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "showRatesController()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

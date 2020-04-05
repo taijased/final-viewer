@@ -142,6 +142,7 @@
 		13E735962427CAE8009C236D /* light-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E735952427CAE8009C236D /* light-1.png */; };
 		13E735A32427CEAF009C236D /* light-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E735A22427CEAF009C236D /* light-3.png */; };
 		13E735A52427CFF3009C236D /* dark-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E735A42427CFF3009C236D /* dark-1.png */; };
+		13EEFFCD2439E98F005EF359 /* RateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EEFFCC2439E98F005EF359 /* RateManager.swift */; };
 		13F94AB02434BC48008B69CE /* UploadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F94AAF2434BC48008B69CE /* UploadingService.swift */; };
 		13F94AB22434C369008B69CE /* UploadingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F94AB12434C369008B69CE /* UploadingResponse.swift */; };
 /* End PBXBuildFile section */
@@ -289,6 +290,7 @@
 		13E735952427CAE8009C236D /* light-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-1.png"; sourceTree = "<group>"; };
 		13E735A22427CEAF009C236D /* light-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light-3.png"; sourceTree = "<group>"; };
 		13E735A42427CFF3009C236D /* dark-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-1.png"; sourceTree = "<group>"; };
+		13EEFFCC2439E98F005EF359 /* RateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateManager.swift; sourceTree = "<group>"; };
 		13F94AAF2434BC48008B69CE /* UploadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingService.swift; sourceTree = "<group>"; };
 		13F94AB12434C369008B69CE /* UploadingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadingResponse.swift; sourceTree = "<group>"; };
 		15B78AE3BE72EE7682A8D499 /* Pods-viewer-final.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viewer-final.release.xcconfig"; path = "Target Support Files/Pods-viewer-final/Pods-viewer-final.release.xcconfig"; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 		137ADD1223FC097300237368 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				13EEFFCB2439E977005EF359 /* RateManager */,
 				13D5BB1324093CDB00A65256 /* FileManager */,
 				137ADD1323FC098200237368 /* Network */,
 			);
@@ -872,6 +875,14 @@
 			path = FileManager;
 			sourceTree = "<group>";
 		};
+		13EEFFCB2439E977005EF359 /* RateManager */ = {
+			isa = PBXGroup;
+			children = (
+				13EEFFCC2439E98F005EF359 /* RateManager.swift */,
+			);
+			path = RateManager;
+			sourceTree = "<group>";
+		};
 		3A8DB4FDA48B643755DAA3AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1114,6 +1125,7 @@
 				137ADD5723FC36C600237368 /* AuthViewController.swift in Sources */,
 				135BA12A2420D12300EC67E9 /* InformationModel.swift in Sources */,
 				137ADD0823FC082A00237368 /* UIColor + hexValue.swift in Sources */,
+				13EEFFCD2439E98F005EF359 /* RateManager.swift in Sources */,
 				13F94AB02434BC48008B69CE /* UploadingService.swift in Sources */,
 				135BA11B2420B3D400EC67E9 /* SectionCollectionView.swift in Sources */,
 				130ADC1A2407C68400E6EAE3 /* CloudPopUpViewControllerVM.swift in Sources */,

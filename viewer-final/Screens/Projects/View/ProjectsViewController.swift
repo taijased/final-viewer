@@ -61,6 +61,8 @@ final class ProjectsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
+     
     }
     
     
@@ -133,6 +135,8 @@ final class ProjectsViewController: UIViewController {
         
         
         viewModel.downloadFile(guid)
+        
+        RateManager.showRatesController()
     }
     
     
