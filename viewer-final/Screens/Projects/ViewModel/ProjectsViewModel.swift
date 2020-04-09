@@ -34,6 +34,7 @@ protocol ProjectsViewModelType {
     var shareLink: URL? { get }
     var guid: String? { get }
     func downloadFile(_ guid: String?)
+    var projectItem: ProjectsCollectionViewCellVMType? { get set }
 }
 
 
@@ -42,7 +43,7 @@ class ProjectsViewModel: ProjectsViewModelType {
     var guid: String?
     var shareLink: URL?
     
-    private var projectItem: ProjectsCollectionViewCellVMType?
+    var projectItem: ProjectsCollectionViewCellVMType?
     
     weak var delegate: ProjectsViewModelDelegate?
     fileprivate let localFileFetcher: LocalFileFetcher = LocalFileFetcher()
@@ -94,7 +95,6 @@ class ProjectsViewModel: ProjectsViewModelType {
         
         
         let agree = UIAlertAction(title: "Share.agree".localized, style: .default, handler: { [weak self] _ in
-
             shareAlert.dismiss(animated: true, completion: nil)
             self?.delegate?.onEvents(type: .uploadItem)
             self?.uploadAlertController.startUpload(guid: self?.projectItem?.object.id ?? "")
@@ -263,8 +263,7 @@ class ProjectsViewModel: ProjectsViewModelType {
     
     fileprivate func renameItem(_ newValue: String) {
         guard let object = self.projectItem?.object else { return }
-        
-        
+
         StorageManager.update(object: ProjectFileModel(newValue: newValue, object: object)) { [weak self] in
             self?.collectionView.reloadData()
         }
@@ -274,8 +273,13 @@ class ProjectsViewModel: ProjectsViewModelType {
     
     
     fileprivate func shareItem() {
-        guard let project = self.projectItem else { return }
-        delegate?.onEvents(type: .longTappedItem(type: .share, item: project))
+        
+        if let guid = self.projectItem?.object.shareID {
+            delegate?.onEvents(type: .share(guid))
+        } else {
+            guard let project = self.projectItem else { return }
+            delegate?.onEvents(type: .longTappedItem(type: .share, item: project))
+        }
     }
     
     func downloadFile(_ guid: String?) {
@@ -333,11 +337,13 @@ extension ProjectsViewModel: LoaderViewControllerDelegate {
     }
     
     func finishUploadingFile(guid: String?) {
+
         if guid != nil {
-            if let link = URL(string: "https://share.arq.studio/\(guid!)") {
-                self.shareLink = link
-            }
+            guard let object = self.projectItem?.object else { return }
+            let newValue = ProjectFileModel(object: object, shareID: guid!)
+            StorageManager.update(object: newValue) {}
         }
+
         self.delegate?.onEvents(type: .share(guid))
     }
     

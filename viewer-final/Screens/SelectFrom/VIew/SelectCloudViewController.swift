@@ -27,9 +27,6 @@ final class SelectCloudViewController: UIViewController {
     
     fileprivate func setupUI() {
         
-        
-        
-        
         view.backgroundColor = .random()
         
         viewModel?.onNavigate = { [weak self] navigation in

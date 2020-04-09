@@ -78,6 +78,27 @@ class StorageManager {
         completion()
     }
     
+    static func create(id: String, imagePath: String, _ url: URL, shareID: String, completion: @escaping () -> Void) {
+        
+        let item = ProjectFileModel(object: ProjectFileModel(id: id, path: url, imagePath: imagePath), shareID: shareID)
+        
+        let exist = realm.object(ofType: ProjectFileModel.self, forPrimaryKey: item.id) == nil
+        let comperePath = realm.objects(ProjectFileModel.self).filter { $0.path == item.path }.first == nil
+        
+        
+        if exist && comperePath {
+            try! realm.write {
+                realm.add(item)
+                completion()
+            }
+        } else {
+            completion()
+        }
+        
+        completion()
+    }
+    
+
     
     static func read(id: String, completion: @escaping (ProjectFileModel?) -> Void) {
         guard let item = realm.object(ofType: ProjectFileModel.self, forPrimaryKey: id) else { return }

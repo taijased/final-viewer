@@ -31,6 +31,8 @@ class ProjectFileModel: Object {
     @objc dynamic var imagePath: String?
     @objc dynamic var lastPathComponent: String?
     @objc dynamic var objectRPS: String?
+    @objc dynamic var shareID: String?
+    
     
     
     convenience init(id: String, path: URL) {
@@ -84,6 +86,21 @@ class ProjectFileModel: Object {
         self.lastPathComponent = object.lastPathComponent
         self.objectRPS = object.objectRPS
     }
+    
+    convenience init(object: ProjectFileModel, shareID: String) {
+        self.init()
+        self.id = object.id
+        self.name = object.name
+        self.path = object.path
+        self.imagePath = object.imagePath
+        self.lastPathComponent = object.lastPathComponent
+        self.objectRPS = object.objectRPS
+        self.shareID = shareID
+    }
+    
+    
+    
+    
     
     override class func primaryKey() -> String? {
         return "id"

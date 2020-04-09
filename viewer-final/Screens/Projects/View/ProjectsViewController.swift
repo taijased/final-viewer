@@ -111,10 +111,6 @@ final class ProjectsViewController: UIViewController {
         self.definesPresentationContext = true
         
         
-        
-        
-        
-        
         view.addSubview(headerView)
         headerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -226,7 +222,7 @@ final class ProjectsViewController: UIViewController {
             
         case .share:
             
-            guard let link = self.viewModel?.shareLink else { return }
+            guard let guid = self.viewModel?.projectItem?.object.shareID, let link = URL(string: "https://share.arq.studio/\(guid)") else { return }
             let activityViewController = UIActivityViewController(activityItems: [link], applicationActivities: nil)
             activityViewController.view.backgroundColor = .clear
             activityViewController.excludedActivityTypes = [.airDrop]

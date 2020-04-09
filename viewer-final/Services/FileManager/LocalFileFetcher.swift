@@ -43,7 +43,7 @@ class LocalFileFetcher {
         let guid = UUID().uuidString
         let sandboxFolderURL = projectsPath.appendingPathComponent(guid)
         
-
+        
         do {
             
             //создани папкм
@@ -59,7 +59,7 @@ class LocalFileFetcher {
             
             let unzipFiles = try fileManager.contentsOfDirectory(at: projectsPath.appendingPathComponent(guid), includingPropertiesForKeys: nil)
             
-    
+            
             
             
             var modelPath: URL? = nil
@@ -75,9 +75,8 @@ class LocalFileFetcher {
             if modelPath != nil {
                 
                 if sandboxFolderURL.appendingPathComponent("light.png").checkFileExist() {
-
-                    StorageManager.create(id: guid, imagePath: sandboxFolderURL.appendingPathComponent("light.png").absoluteString, modelPath!) { }
                     
+                    StorageManager.create(id: guid, imagePath: sandboxFolderURL.appendingPathComponent("light.png").absoluteString, modelPath!) { }
                 } else {
                     StorageManager.create(id: guid, modelPath!) {}
                 }
@@ -148,15 +147,29 @@ class LocalFileFetcher {
                         
                         let lightPath = path.deletingLastPathComponent().appendingPathComponent("light-\(index)").appendingPathExtension("png")
                         try fileManager.copyItem(at: lightPath, to: sandboxFolderURL.appendingPathComponent("light").appendingPathExtension("png"))
-      
                         
                         
-                        StorageManager.create(id: guid, imagePath: darkPath.absoluteString, path) {
+                        
+//                        StorageManager.create(id: guid, imagePath: darkPath.absoluteString, path) {
+//
+//
+//                        }
+                        
+                        //share guid
+                                 
+                        
+                        let shareGuid = String(path.lastPathComponent.split(separator: ".").first!)
+                        
+                        StorageManager.create(id: guid, imagePath: darkPath.absoluteString, path, shareID: shareGuid) {
                             
                         }
+
+                        
+                        
+                        
+                        self.createZIP(id: guid)
                         index += 1
                         
-                        createZIP(id: guid)
                     }
                     catch let error as NSError  {
                         self.removeFolder(guid)
